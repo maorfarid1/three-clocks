@@ -1,0 +1,2057 @@
+{
+ "2309.17453": {
+  "title": "Efficient Streaming Language Models with Attention Sinks",
+  "authors": [
+   "Guangxuan Xiao",
+   "Yuandong Tian",
+   "Beidi Chen",
+   "Song Han",
+   "Mike Lewis"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2405.18781": {
+  "title": "On the Role of Attention Masks and LayerNorm in Transformers",
+  "authors": [
+   "Xinyi Wu",
+   "Amir Ajorlou",
+   "Yifei Wang",
+   "Stefanie Jegelka",
+   "Ali Jadbabaie"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "1512.03385": {
+  "title": "Deep Residual Learning for Image Recognition",
+  "authors": [
+   "Kaiming He",
+   "Xiangyu Zhang",
+   "Shaoqing Ren",
+   "Jian Sun"
+  ],
+  "year": "2015",
+  "journal": ""
+ },
+ "1706.03762": {
+  "title": "Attention Is All You Need",
+  "authors": [
+   "Ashish Vaswani",
+   "Noam Shazeer",
+   "Niki Parmar",
+   "Jakob Uszkoreit",
+   "Llion Jones",
+   "Aidan N. Gomez",
+   "Lukasz Kaiser",
+   "Illia Polosukhin"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "2502.12131": {
+  "title": "Transformer Dynamics: A neuroscientific approach to interpretability of large language models",
+  "authors": [
+   "Jesseba Fernando",
+   "Grigori Guitchounts"
+  ],
+  "year": "2025",
+  "journal": ""
+ },
+ "1806.07366": {
+  "title": "Neural Ordinary Differential Equations",
+  "authors": [
+   "Ricky T. Q. Chen",
+   "Yulia Rubanova",
+   "Jesse Bettencourt",
+   "David Duvenaud"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "2002.04745": {
+  "title": "On Layer Normalization in the Transformer Architecture",
+  "authors": [
+   "Ruibin Xiong",
+   "Yunchang Yang",
+   "Di He",
+   "Kai Zheng",
+   "Shuxin Zheng",
+   "Chen Xing",
+   "Huishuai Zhang",
+   "Yanyan Lan",
+   "Liwei Wang",
+   "Tie-Yan Liu"
+  ],
+  "year": "2020",
+  "journal": "Published on ICML 2020"
+ },
+ "2103.03404": {
+  "title": "Attention is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth",
+  "authors": [
+   "Yihe Dong",
+   "Jean-Baptiste Cordonnier",
+   "Andreas Loukas"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2403.02579": {
+  "title": "Geometric Dynamics of Signal Propagation Predict Trainability of Transformers",
+  "authors": [
+   "Aditya Cowsik",
+   "Tamra Nebabu",
+   "Xiao-Liang Qi",
+   "Surya Ganguli"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "1710.10121": {
+  "title": "Beyond Finite Layer Neural Networks: Bridging Deep Architectures and Numerical Differential Equations",
+  "authors": [
+   "Yiping Lu",
+   "Aoxiao Zhong",
+   "Quanzheng Li",
+   "Bin Dong"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "2312.10794": {
+  "title": "A mathematical perspective on Transformers",
+  "authors": [
+   "Borjan Geshkovski",
+   "Cyril Letrouit",
+   "Yury Polyanskiy",
+   "Philippe Rigollet"
+  ],
+  "year": "2023",
+  "journal": "Bull. Amer. Math. Soc. 62 (2025), 427-479"
+ },
+ "2306.12548": {
+  "title": "Finite-time Lyapunov exponents of deep neural networks",
+  "authors": [
+   "L. Storm",
+   "H. Linander",
+   "J. Bec",
+   "K. Gustavsson",
+   "B. Mehlig"
+  ],
+  "year": "2023",
+  "journal": "Phys. Rev. Lett. 132 (2024) 057301"
+ },
+ "2003.04887": {
+  "title": "ReZero is All You Need: Fast Convergence at Large Depth",
+  "authors": [
+   "Thomas Bachlechner",
+   "Bodhisattwa Prasad Majumder",
+   "Huanru Henry Mao",
+   "Garrison W. Cottrell",
+   "Julian McAuley"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2203.00555": {
+  "title": "DeepNet: Scaling Transformers to 1,000 Layers",
+  "authors": [
+   "Hongyu Wang",
+   "Shuming Ma",
+   "Li Dong",
+   "Shaohan Huang",
+   "Dongdong Zhang",
+   "Furu Wei"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2205.14612": {
+  "title": "Do Residual Neural Networks discretize Neural Ordinary Differential Equations?",
+  "authors": [
+   "Michael E. Sander",
+   "Pierre Ablin",
+   "Gabriel Peyr\u00e9"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "1606.05340": {
+  "title": "Exponential expressivity in deep neural networks through transient chaos",
+  "authors": [
+   "Ben Poole",
+   "Subhaneil Lahiri",
+   "Maithra Raghu",
+   "Jascha Sohl-Dickstein",
+   "Surya Ganguli"
+  ],
+  "year": "2016",
+  "journal": ""
+ },
+ "1509.03580": {
+  "title": "Discovering governing equations from data: Sparse identification of nonlinear dynamical systems",
+  "authors": [
+   "Steven L. Brunton",
+   "Joshua L. Proctor",
+   "J. Nathan Kutz"
+  ],
+  "year": "2015",
+  "journal": ""
+ },
+ "2302.00294": {
+  "title": "The geometry of hidden representations of large transformer models",
+  "authors": [
+   "Lucrezia Valeriani",
+   "Diego Doimo",
+   "Francesca Cuturello",
+   "Alessandro Laio",
+   "Alessio Ansuini",
+   "Alberto Cazzaniga"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2206.03126": {
+  "title": "Signal Propagation in Transformers: Theoretical Perspectives and the Role of Rank Collapse",
+  "authors": [
+   "Lorenzo Noci",
+   "Sotiris Anagnostidis",
+   "Luca Biggio",
+   "Antonio Orvieto",
+   "Sidak Pal Singh",
+   "Aurelien Lucchi"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2102.07870": {
+  "title": "Momentum Residual Neural Networks",
+  "authors": [
+   "Michael E. Sander",
+   "Pierre Ablin",
+   "Mathieu Blondel",
+   "Gabriel Peyr\u00e9"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2110.14856": {
+  "title": "An Operator Theoretic View on Pruning Deep Neural Networks",
+  "authors": [
+   "William T. Redman",
+   "Maria Fonoberova",
+   "Ryan Mohr",
+   "Ioannis G. Kevrekidis",
+   "Igor Mezic"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2006.02361": {
+  "title": "Optimizing Neural Networks via Koopman Operator Theory",
+  "authors": [
+   "Akshunna S. Dogra",
+   "William T Redman"
+  ],
+  "year": "2020",
+  "journal": "Advances in Neural Information Processing Systems 33, 2087-2097 (2020)"
+ },
+ "1705.03341": {
+  "title": "Stable Architectures for Deep Neural Networks",
+  "authors": [
+   "Eldad Haber",
+   "Lars Ruthotto"
+  ],
+  "year": "2017",
+  "journal": "Inverse Problems, Volume 34, Number 1 Inverse Problems, Volume 34, Number 1, 2017"
+ },
+ "1712.09707": {
+  "title": "Deep learning for universal linear embeddings of nonlinear dynamics",
+  "authors": [
+   "Bethany Lusch",
+   "J. Nathan Kutz",
+   "Steven L. Brunton"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "2411.04990": {
+  "title": "Clustering in Causal Attention Masking",
+  "authors": [
+   "Nikita Karagodin",
+   "Yury Polyanskiy",
+   "Philippe Rigollet"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2305.05465": {
+  "title": "The emergence of clusters in self-attention dynamics",
+  "authors": [
+   "Borjan Geshkovski",
+   "Cyril Letrouit",
+   "Yury Polyanskiy",
+   "Philippe Rigollet"
+  ],
+  "year": "2023",
+  "journal": "Advances in Neural Information Processing Systems 36 (2023), 57026-57037"
+ },
+ "1906.02762": {
+  "title": "Understanding and Improving Transformer From a Multi-Particle Dynamic System Point of View",
+  "authors": [
+   "Yiping Lu",
+   "Zhuohan Li",
+   "Di He",
+   "Zhiqing Sun",
+   "Bin Dong",
+   "Tao Qin",
+   "Liwei Wang",
+   "Tie-Yan Liu"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "1806.05393": {
+  "title": "Dynamical Isometry and a Mean Field Theory of CNNs: How to Train 10,000-Layer Vanilla Convolutional Neural Networks",
+  "authors": [
+   "Lechao Xiao",
+   "Yasaman Bahri",
+   "Jascha Sohl-Dickstein",
+   "Samuel S. Schoenholz",
+   "Jeffrey Pennington"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "1807.01083": {
+  "title": "A Mean-Field Optimal Control Formulation of Deep Learning",
+  "authors": [
+   "Weinan E",
+   "Jiequn Han",
+   "Qianxiao Li"
+  ],
+  "year": "2018",
+  "journal": "Research in the Mathematical Sciences, 6:10 (2019)"
+ },
+ "2110.11773": {
+  "title": "Sinkformers: Transformers with Doubly Stochastic Attention",
+  "authors": [
+   "Michael E. Sander",
+   "Pierre Ablin",
+   "Mathieu Blondel",
+   "Gabriel Peyr\u00e9"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2004.08249": {
+  "title": "Understanding the Difficulty of Training Transformers",
+  "authors": [
+   "Liyuan Liu",
+   "Xiaodong Liu",
+   "Jianfeng Gao",
+   "Weizhu Chen",
+   "Jiawei Han"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1711.04735": {
+  "title": "Resurrecting the sigmoid in deep learning through dynamical isometry: theory and practice",
+  "authors": [
+   "Jeffrey Pennington",
+   "Samuel S. Schoenholz",
+   "Surya Ganguli"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "1611.01232": {
+  "title": "Deep Information Propagation",
+  "authors": [
+   "Samuel S. Schoenholz",
+   "Justin Gilmer",
+   "Surya Ganguli",
+   "Jascha Sohl-Dickstein"
+  ],
+  "year": "2016",
+  "journal": ""
+ },
+ "1804.04272": {
+  "title": "Deep Neural Networks Motivated by Partial Differential Equations",
+  "authors": [
+   "Lars Ruthotto",
+   "Eldad Haber"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "2402.17762": {
+  "title": "Massive Activations in Large Language Models",
+  "authors": [
+   "Mingjie Sun",
+   "Xinlei Chen",
+   "J. Zico Kolter",
+   "Zhuang Liu"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2303.08112": {
+  "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+  "authors": [
+   "Nora Belrose",
+   "Igor Ostrovsky",
+   "Lev McKinney",
+   "Zach Furman",
+   "Logan Smith",
+   "Danny Halawi",
+   "Stella Biderman",
+   "Jacob Steinhardt"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2406.19384": {
+  "title": "The Remarkable Robustness of LLMs: Stages of Inference?",
+  "authors": [
+   "Vedang Lad",
+   "Jin Hwa Lee",
+   "Wes Gurnee",
+   "Max Tegmark"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2410.01545": {
+  "title": "Lines of Thought in Large Language Models",
+  "authors": [
+   "Rapha\u00ebl Sarfati",
+   "Toni J. B. Liu",
+   "Nicolas Boull\u00e9",
+   "Christopher J. Earls"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2305.16102": {
+  "title": "Demystifying Oversmoothing in Attention-Based Graph Neural Networks",
+  "authors": [
+   "Xinyi Wu",
+   "Amir Ajorlou",
+   "Zihui Wu",
+   "Ali Jadbabaie"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2410.06833": {
+  "title": "Dynamic metastability in the self-attention model",
+  "authors": [
+   "Borjan Geshkovski",
+   "Hugo Koubbi",
+   "Yury Polyanskiy",
+   "Philippe Rigollet"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2006.16236": {
+  "title": "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention",
+  "authors": [
+   "Angelos Katharopoulos",
+   "Apoorv Vyas",
+   "Nikolaos Pappas",
+   "Fran\u00e7ois Fleuret"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2006.14123": {
+  "title": "On Lyapunov Exponents for RNNs: Understanding Information Propagation Using Dynamical Systems Tools",
+  "authors": [
+   "Ryan Vogt",
+   "Maximilian Puelma Touzel",
+   "Eli Shlizerman",
+   "Guillaume Lajoie"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2303.06349": {
+  "title": "Resurrecting Recurrent Neural Networks for Long Sequences",
+  "authors": [
+   "Antonio Orvieto",
+   "Samuel L Smith",
+   "Albert Gu",
+   "Anushan Fernando",
+   "Caglar Gulcehre",
+   "Razvan Pascanu",
+   "Soham De"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2207.14484": {
+  "title": "Adaptive Gradient Methods at the Edge of Stability",
+  "authors": [
+   "Jeremy M. Cohen",
+   "Behrooz Ghorbani",
+   "Shankar Krishnan",
+   "Naman Agarwal",
+   "Sourabh Medapati",
+   "Michal Badura",
+   "Daniel Suo",
+   "David Cardoze",
+   "Zachary Nado",
+   "George E. Dahl",
+   "Justin Gilmer"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2204.02311": {
+  "title": "PaLM: Scaling Language Modeling with Pathways",
+  "authors": [
+   "Aakanksha Chowdhery",
+   "Sharan Narang",
+   "Jacob Devlin",
+   "Maarten Bosma",
+   "Gaurav Mishra",
+   "Adam Roberts",
+   "Paul Barham",
+   "Hyung Won Chung",
+   "Charles Sutton",
+   "Sebastian Gehrmann",
+   "Parker Schuh",
+   "Kensen Shi",
+   "Sasha Tsvyashchenko",
+   "Joshua Maynez",
+   "Abhishek Rao",
+   "Parker Barnes",
+   "Yi Tay",
+   "Noam Shazeer",
+   "Vinodkumar Prabhakaran",
+   "Emily Reif",
+   "Nan Du",
+   "Ben Hutchinson",
+   "Reiner Pope",
+   "James Bradbury",
+   "Jacob Austin",
+   "Michael Isard",
+   "Guy Gur-Ari",
+   "Pengcheng Yin",
+   "Toju Duke",
+   "Anselm Levskaya",
+   "Sanjay Ghemawat",
+   "Sunipa Dev",
+   "Henryk Michalewski",
+   "Xavier Garcia",
+   "Vedant Misra",
+   "Kevin Robinson",
+   "Liam Fedus",
+   "Denny Zhou",
+   "Daphne Ippolito",
+   "David Luan",
+   "Hyeontaek Lim",
+   "Barret Zoph",
+   "Alexander Spiridonov",
+   "Ryan Sepassi",
+   "David Dohan",
+   "Shivani Agrawal",
+   "Mark Omernick",
+   "Andrew M. Dai",
+   "Thanumalayan Sankaranarayana Pillai",
+   "Marie Pellat",
+   "Aitor Lewkowycz",
+   "Erica Moreira",
+   "Rewon Child",
+   "Oleksandr Polozov",
+   "Katherine Lee",
+   "Zongwei Zhou",
+   "Xuezhi Wang",
+   "Brennan Saeta",
+   "Mark Diaz",
+   "Orhan Firat",
+   "Michele Catasta",
+   "Jason Wei",
+   "Kathy Meier-Hellstern",
+   "Douglas Eck",
+   "Jeff Dean",
+   "Slav Petrov",
+   "Noah Fiedel"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2309.07311": {
+  "title": "Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs",
+  "authors": [
+   "Angelica Chen",
+   "Ravid Shwartz-Ziv",
+   "Kyunghyun Cho",
+   "Matthew L. Leavitt",
+   "Naomi Saphra"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2102.11174": {
+  "title": "Linear Transformers Are Secretly Fast Weight Programmers",
+  "authors": [
+   "Imanol Schlag",
+   "Kazuki Irie",
+   "J\u00fcrgen Schmidhuber"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2205.09745": {
+  "title": "Understanding Gradient Descent on Edge of Stability in Deep Learning",
+  "authors": [
+   "Sanjeev Arora",
+   "Zhiyuan Li",
+   "Abhishek Panigrahi"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2204.01050": {
+  "title": "Understanding the unstable convergence of gradient descent",
+  "authors": [
+   "Kwangjun Ahn",
+   "Jingzhao Zhang",
+   "Suvrit Sra"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2209.15594": {
+  "title": "Self-Stabilization: The Implicit Bias of Gradient Descent at the Edge of Stability",
+  "authors": [
+   "Alex Damian",
+   "Eshaan Nichani",
+   "Jason D. Lee"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2402.06184": {
+  "title": "The boundary of neural network trainability is fractal",
+  "authors": [
+   "Jascha Sohl-Dickstein"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2206.04817": {
+  "title": "The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon",
+  "authors": [
+   "Vimal Thilak",
+   "Etai Littwin",
+   "Shuangfei Zhai",
+   "Omid Saremi",
+   "Roni Paiss",
+   "Joshua Susskind"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2210.03294": {
+  "title": "Understanding Edge-of-Stability Training Dynamics with a Minimalist Example",
+  "authors": [
+   "Xingyu Zhu",
+   "Zixuan Wang",
+   "Xiang Wang",
+   "Mo Zhou",
+   "Rong Ge"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "1211.5063": {
+  "title": "On the difficulty of training Recurrent Neural Networks",
+  "authors": [
+   "Razvan Pascanu",
+   "Tomas Mikolov",
+   "Yoshua Bengio"
+  ],
+  "year": "2012",
+  "journal": ""
+ },
+ "2003.02218": {
+  "title": "The large learning rate phase of deep learning: the catapult mechanism",
+  "authors": [
+   "Aitor Lewkowycz",
+   "Yasaman Bahri",
+   "Ethan Dyer",
+   "Jascha Sohl-Dickstein",
+   "Guy Gur-Ari"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2010.00951": {
+  "title": "Coupled Oscillatory Recurrent Neural Network (coRNN): An accurate and (gradient) stable architecture for learning long time dependencies",
+  "authors": [
+   "T. Konstantin Rusch",
+   "Siddhartha Mishra"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2111.00396": {
+  "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+  "authors": [
+   "Albert Gu",
+   "Karan Goel",
+   "Christopher R\u00e9"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2201.02177": {
+  "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
+  "authors": [
+   "Alethea Power",
+   "Yuri Burda",
+   "Harri Edwards",
+   "Igor Babuschkin",
+   "Vedant Misra"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2205.10343": {
+  "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
+  "authors": [
+   "Ziming Liu",
+   "Ouail Kitouni",
+   "Niklas Nolte",
+   "Eric J. Michaud",
+   "Max Tegmark",
+   "Mike Williams"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2206.04172": {
+  "title": "Beyond the Edge of Stability via Two-step Gradient Updates",
+  "authors": [
+   "Lei Chen",
+   "Joan Bruna"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "1906.10720": {
+  "title": "Reverse engineering recurrent networks for sentiment classification reveals line attractor dynamics",
+  "authors": [
+   "Niru Maheswaranathan",
+   "Alex Williams",
+   "Matthew D. Golub",
+   "Surya Ganguli",
+   "David Sussillo"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2310.03789": {
+  "title": "Grokking as a First Order Phase Transition in Two Layer Networks",
+  "authors": [
+   "Noa Rubin",
+   "Inbar Seroussi",
+   "Zohar Ringel"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2312.00752": {
+  "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+  "authors": [
+   "Albert Gu",
+   "Tri Dao"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2301.05217": {
+  "title": "Progress measures for grokking via mechanistic interpretability",
+  "authors": [
+   "Neel Nanda",
+   "Lawrence Chan",
+   "Tom Lieberum",
+   "Jess Smith",
+   "Jacob Steinhardt"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2312.03002": {
+  "title": "The mechanistic basis of data dependence and abrupt learning in an in-context classification task",
+  "authors": [
+   "Gautam Reddy"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2302.12250": {
+  "title": "Phase diagram of early training dynamics in deep neural networks: effect of the learning rate, depth, and width",
+  "authors": [
+   "Dayal Singh Kalra",
+   "Maissam Barkeshli"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2006.02427": {
+  "title": "Lyapunov spectra of chaotic recurrent neural networks",
+  "authors": [
+   "Rainer Engelken",
+   "Fred Wolf",
+   "L. F. Abbott"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1906.08482": {
+  "title": "Beyond exploding and vanishing gradients: analysing RNN training using attractors and smoothness",
+  "authors": [
+   "Ant\u00f4nio H. Ribeiro",
+   "Koen Tiels",
+   "Luis A. Aguirre",
+   "Thomas B. Sch\u00f6n"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2006.12070": {
+  "title": "Lipschitz Recurrent Neural Networks",
+  "authors": [
+   "N. Benjamin Erichson",
+   "Omri Azencot",
+   "Alejandro Queiruga",
+   "Liam Hodgkinson",
+   "Michael W. Mahoney"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2311.18817": {
+  "title": "Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking",
+  "authors": [
+   "Kaifeng Lyu",
+   "Jikai Jin",
+   "Zhiyuan Li",
+   "Simon S. Du",
+   "Jason D. Lee",
+   "Wei Hu"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2209.11895": {
+  "title": "In-context Learning and Induction Heads",
+  "authors": [
+   "Catherine Olsson",
+   "Nelson Elhage",
+   "Neel Nanda",
+   "Nicholas Joseph",
+   "Nova DasSarma",
+   "Tom Henighan",
+   "Ben Mann",
+   "Amanda Askell",
+   "Yuntao Bai",
+   "Anna Chen",
+   "Tom Conerly",
+   "Dawn Drain",
+   "Deep Ganguli",
+   "Zac Hatfield-Dodds",
+   "Danny Hernandez",
+   "Scott Johnston",
+   "Andy Jones",
+   "Jackson Kernion",
+   "Liane Lovitt",
+   "Kamal Ndousse",
+   "Dario Amodei",
+   "Tom Brown",
+   "Jack Clark",
+   "Jared Kaplan",
+   "Sam McCandlish",
+   "Chris Olah"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2210.01117": {
+  "title": "Omnigrok: Grokking Beyond Algorithmic Data",
+  "authors": [
+   "Ziming Liu",
+   "Eric J. Michaud",
+   "Max Tegmark"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2310.06110": {
+  "title": "Grokking as the Transition from Lazy to Rich Training Dynamics",
+  "authors": [
+   "Tanishq Kumar",
+   "Blake Bordelon",
+   "Samuel J. Gershman",
+   "Cengiz Pehlevan"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2311.08360": {
+  "title": "The Transient Nature of Emergent In-Context Learning in Transformers",
+  "authors": [
+   "Aaditya K. Singh",
+   "Stephanie C. Y. Chan",
+   "Ted Moskovitz",
+   "Erin Grant",
+   "Andrew M. Saxe",
+   "Felix Hill"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "1902.09689": {
+  "title": "AntisymmetricRNN: A Dynamical System View on Recurrent Neural Networks",
+  "authors": [
+   "Bo Chang",
+   "Minmin Chen",
+   "Eldad Haber",
+   "Ed H. Chi"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2103.00065": {
+  "title": "Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability",
+  "authors": [
+   "Jeremy M. Cohen",
+   "Simran Kaur",
+   "Yuanzhi Li",
+   "J. Zico Kolter",
+   "Ameet Talwalkar"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2110.04369": {
+  "title": "A Loss Curvature Perspective on Training Instability in Deep Learning",
+  "authors": [
+   "Justin Gilmer",
+   "Behrooz Ghorbani",
+   "Ankush Garg",
+   "Sneha Kudugunta",
+   "Behnam Neyshabur",
+   "David Cardoze",
+   "George Dahl",
+   "Zachary Nado",
+   "Orhan Firat"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2002.06189": {
+  "title": "Stochasticity of Deterministic Gradient Descent: Large Learning Rate for Multiscale Objective Function",
+  "authors": [
+   "Lingkai Kong",
+   "Molei Tao"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2402.02364": {
+  "title": "Loss Landscape Degeneracy and Stagewise Development in Transformers",
+  "authors": [
+   "Jesse Hoogland",
+   "George Wang",
+   "Matthew Farrugia-Roberts",
+   "Liam Carroll",
+   "Susan Wei",
+   "Daniel Murfet"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2110.07238": {
+  "title": "On the difficulty of learning chaotic dynamics with RNNs",
+  "authors": [
+   "Jonas M. Mikhaeil",
+   "Zahra Monfared",
+   "Daniel Durstewitz"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2303.13506": {
+  "title": "The Quantization Model of Neural Scaling",
+  "authors": [
+   "Eric J. Michaud",
+   "Ziming Liu",
+   "Uzay Girit",
+   "Max Tegmark"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2208.01066": {
+  "title": "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes",
+  "authors": [
+   "Shivam Garg",
+   "Dimitris Tsipras",
+   "Percy Liang",
+   "Gregory Valiant"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "1812.04754": {
+  "title": "Gradient Descent Happens in a Tiny Subspace",
+  "authors": [
+   "Guy Gur-Ari",
+   "Daniel A. Roberts",
+   "Ethan Dyer"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "1503.02101": {
+  "title": "Escaping From Saddle Points --- Online Stochastic Gradient for Tensor Decomposition",
+  "authors": [
+   "Rong Ge",
+   "Furong Huang",
+   "Chi Jin",
+   "Yang Yuan"
+  ],
+  "year": "2015",
+  "journal": ""
+ },
+ "1703.00887": {
+  "title": "How to Escape Saddle Points Efficiently",
+  "authors": [
+   "Chi Jin",
+   "Rong Ge",
+   "Praneeth Netrapalli",
+   "Sham M. Kakade",
+   "Michael I. Jordan"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "1706.04454": {
+  "title": "Empirical Analysis of the Hessian of Over-Parametrized Neural Networks",
+  "authors": [
+   "Levent Sagun",
+   "Utku Evci",
+   "V. Ugur Guney",
+   "Yann Dauphin",
+   "Leon Bottou"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "2312.16903": {
+  "title": "Spike No More: Stabilizing the Pre-training of Large Language Models",
+  "authors": [
+   "Sho Takase",
+   "Shun Kiyono",
+   "Sosuke Kobayashi",
+   "Jun Suzuki"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "1912.05671": {
+  "title": "Linear Mode Connectivity and the Lottery Ticket Hypothesis",
+  "authors": [
+   "Jonathan Frankle",
+   "Gintare Karolina Dziugaite",
+   "Daniel M. Roy",
+   "Michael Carbin"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2001.08361": {
+  "title": "Scaling Laws for Neural Language Models",
+  "authors": [
+   "Jared Kaplan",
+   "Sam McCandlish",
+   "Tom Henighan",
+   "Tom B. Brown",
+   "Benjamin Chess",
+   "Rewon Child",
+   "Scott Gray",
+   "Alec Radford",
+   "Jeffrey Wu",
+   "Dario Amodei"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2009.11162": {
+  "title": "Implicit Gradient Regularization",
+  "authors": [
+   "David G. T. Barrett",
+   "Benoit Dherin"
+  ],
+  "year": "2020",
+  "journal": "Published as a conference paper at ICLR 2021"
+ },
+ "2206.07682": {
+  "title": "Emergent Abilities of Large Language Models",
+  "authors": [
+   "Jason Wei",
+   "Yi Tay",
+   "Rishi Bommasani",
+   "Colin Raffel",
+   "Barret Zoph",
+   "Sebastian Borgeaud",
+   "Dani Yogatama",
+   "Maarten Bosma",
+   "Denny Zhou",
+   "Donald Metzler",
+   "Ed H. Chi",
+   "Tatsunori Hashimoto",
+   "Oriol Vinyals",
+   "Percy Liang",
+   "Jeff Dean",
+   "William Fedus"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2212.07677": {
+  "title": "Transformers learn in-context by gradient descent",
+  "authors": [
+   "Johannes von Oswald",
+   "Eyvind Niklasson",
+   "Ettore Randazzo",
+   "Jo\u00e3o Sacramento",
+   "Alexander Mordvintsev",
+   "Andrey Zhmoginov",
+   "Max Vladymyrov"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2304.09871": {
+  "title": "A Theory on Adam Instability in Large-Scale Machine Learning",
+  "authors": [
+   "Igor Molybog",
+   "Peter Albert",
+   "Moya Chen",
+   "Zachary DeVito",
+   "David Esiobu",
+   "Naman Goyal",
+   "Punit Singh Koura",
+   "Sharan Narang",
+   "Andrew Poulton",
+   "Ruan Silva",
+   "Binh Tang",
+   "Diana Liskovich",
+   "Puxin Xu",
+   "Yuchen Zhang",
+   "Melanie Kambadur",
+   "Stephen Roller",
+   "Susan Zhang"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "1312.6120": {
+  "title": "Exact solutions to the nonlinear dynamics of learning in deep linear neural networks",
+  "authors": [
+   "Andrew M. Saxe",
+   "James L. McClelland",
+   "Surya Ganguli"
+  ],
+  "year": "2013",
+  "journal": ""
+ },
+ "1901.06053": {
+  "title": "A Tail-Index Analysis of Stochastic Gradient Noise in Deep Neural Networks",
+  "authors": [
+   "Umut Simsekli",
+   "Levent Sagun",
+   "Mert Gurbuzbalaban"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "1806.07572": {
+  "title": "Neural Tangent Kernel: Convergence and Generalization in Neural Networks",
+  "authors": [
+   "Arthur Jacot",
+   "Franck Gabriel",
+   "Cl\u00e9ment Hongler"
+  ],
+  "year": "2018",
+  "journal": "In Advances in neural information processing systems (pp. 8571-8580) 2018"
+ },
+ "1901.10159": {
+  "title": "An Investigation into Neural Net Optimization via Hessian Eigenvalue Density",
+  "authors": [
+   "Behrooz Ghorbani",
+   "Shankar Krishnan",
+   "Ying Xiao"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2203.15556": {
+  "title": "Training Compute-Optimal Large Language Models",
+  "authors": [
+   "Jordan Hoffmann",
+   "Sebastian Borgeaud",
+   "Arthur Mensch",
+   "Elena Buchatskaya",
+   "Trevor Cai",
+   "Eliza Rutherford",
+   "Diego de Las Casas",
+   "Lisa Anne Hendricks",
+   "Johannes Welbl",
+   "Aidan Clark",
+   "Tom Hennigan",
+   "Eric Noland",
+   "Katie Millican",
+   "George van den Driessche",
+   "Bogdan Damoc",
+   "Aurelia Guy",
+   "Simon Osindero",
+   "Karen Simonyan",
+   "Erich Elsen",
+   "Jack W. Rae",
+   "Oriol Vinyals",
+   "Laurent Sifre"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2309.14322": {
+  "title": "Small-scale proxies for large-scale Transformer training instabilities",
+  "authors": [
+   "Mitchell Wortsman",
+   "Peter J. Liu",
+   "Lechao Xiao",
+   "Katie Everett",
+   "Alex Alemi",
+   "Ben Adlam",
+   "John D. Co-Reyes",
+   "Izzeddin Gur",
+   "Abhishek Kumar",
+   "Roman Novak",
+   "Jeffrey Pennington",
+   "Jascha Sohl-dickstein",
+   "Kelvin Xu",
+   "Jaehoon Lee",
+   "Justin Gilmer",
+   "Simon Kornblith"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "1803.00195": {
+  "title": "The Anisotropic Noise in Stochastic Gradient Descent: Its Behavior of Escaping from Sharp Minima and Regularization Effects",
+  "authors": [
+   "Zhanxing Zhu",
+   "Jingfeng Wu",
+   "Bing Yu",
+   "Lei Wu",
+   "Jinwen Ma"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "2306.00297": {
+  "title": "Transformers learn to implement preconditioned gradient descent for in-context learning",
+  "authors": [
+   "Kwangjun Ahn",
+   "Xiang Cheng",
+   "Hadi Daneshmand",
+   "Suvrit Sra"
+  ],
+  "year": "2023",
+  "journal": "37th Conference on Neural Information Processing Systems (NeurIPS 2023)"
+ },
+ "2303.06296": {
+  "title": "Stabilizing Transformer Training by Preventing Attention Entropy Collapse",
+  "authors": [
+   "Shuangfei Zhai",
+   "Tatiana Likhomanenko",
+   "Etai Littwin",
+   "Dan Busbridge",
+   "Jason Ramapuram",
+   "Yizhe Zhang",
+   "Jiatao Gu",
+   "Josh Susskind"
+  ],
+  "year": "2023",
+  "journal": "In International Conference on Machine Learning (pp. 40770-40803). PMLR. 2023"
+ },
+ "1805.09545": {
+  "title": "On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport",
+  "authors": [
+   "Lenaic Chizat",
+   "Francis Bach"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "1806.08734": {
+  "title": "On the Spectral Bias of Neural Networks",
+  "authors": [
+   "Nasim Rahaman",
+   "Aristide Baratin",
+   "Devansh Arpit",
+   "Felix Draxler",
+   "Min Lin",
+   "Fred A. Hamprecht",
+   "Yoshua Bengio",
+   "Aaron Courville"
+  ],
+  "year": "2018",
+  "journal": "ICML 2019"
+ },
+ "2002.03495": {
+  "title": "A Diffusion Theory For Deep Learning Dynamics: Stochastic Gradient Descent Exponentially Favors Flat Minima",
+  "authors": [
+   "Zeke Xie",
+   "Issei Sato",
+   "Masashi Sugiyama"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2012.04728": {
+  "title": "Neural Mechanics: Symmetry and Broken Conservation Laws in Deep Learning Dynamics",
+  "authors": [
+   "Daniel Kunin",
+   "Javier Sagastuy-Brena",
+   "Surya Ganguli",
+   "Daniel L. K. Yamins",
+   "Hidenori Tanaka"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1704.04289": {
+  "title": "Stochastic Gradient Descent as Approximate Bayesian Inference",
+  "authors": [
+   "Stephan Mandt",
+   "Matthew D. Hoffman",
+   "David M. Blei"
+  ],
+  "year": "2017",
+  "journal": "Journal of Machine Learning Research 18 (2017) 1-35"
+ },
+ "2304.15004": {
+  "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+  "authors": [
+   "Rylan Schaeffer",
+   "Brando Miranda",
+   "Sanmi Koyejo"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "1804.06561": {
+  "title": "A Mean Field View of the Landscape of Two-Layers Neural Networks",
+  "authors": [
+   "Song Mei",
+   "Andrea Montanari",
+   "Phan-Minh Nguyen"
+  ],
+  "year": "2018",
+  "journal": ""
+ },
+ "2410.05192": {
+  "title": "Understanding Warmup-Stable-Decay Learning Rates: A River Valley Loss Landscape Perspective",
+  "authors": [
+   "Kaiyue Wen",
+   "Zhiyuan Li",
+   "Jason Wang",
+   "David Hall",
+   "Percy Liang",
+   "Tengyu Ma"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2211.15661": {
+  "title": "What learning algorithm is in-context learning? Investigations with linear models",
+  "authors": [
+   "Ekin Aky\u00fcrek",
+   "Dale Schuurmans",
+   "Jacob Andreas",
+   "Tengyu Ma",
+   "Denny Zhou"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2105.09557": {
+  "title": "Power-law escape rate of SGD",
+  "authors": [
+   "Takashi Mori",
+   "Liu Ziyin",
+   "Kangqiao Liu",
+   "Masahito Ueda"
+  ],
+  "year": "2021",
+  "journal": ""
+ },
+ "2011.14522": {
+  "title": "Feature Learning in Infinite-Width Neural Networks",
+  "authors": [
+   "Greg Yang",
+   "Edward J. Hu"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1710.06451": {
+  "title": "A Bayesian Perspective on Generalization and Stochastic Gradient Descent",
+  "authors": [
+   "Samuel L. Smith",
+   "Quoc V. Le"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "1710.11029": {
+  "title": "Stochastic gradient descent performs variational inference, converges to limit cycles for deep networks",
+  "authors": [
+   "Pratik Chaudhari",
+   "Stefano Soatto"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "1406.2572": {
+  "title": "Identifying and attacking the saddle point problem in high-dimensional non-convex optimization",
+  "authors": [
+   "Yann Dauphin",
+   "Razvan Pascanu",
+   "Caglar Gulcehre",
+   "Kyunghyun Cho",
+   "Surya Ganguli",
+   "Yoshua Bengio"
+  ],
+  "year": "2014",
+  "journal": ""
+ },
+ "2008.08186": {
+  "title": "Prevalence of Neural Collapse during the terminal phase of deep learning training",
+  "authors": [
+   "Vardan Papyan",
+   "X. Y. Han",
+   "David L. Donoho"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1511.06251": {
+  "title": "Stochastic modified equations and adaptive stochastic gradient algorithms",
+  "authors": [
+   "Qianxiao Li",
+   "Cheng Tai",
+   "Weinan E"
+  ],
+  "year": "2015",
+  "journal": ""
+ },
+ "1901.06523": {
+  "title": "Frequency Principle: Fourier Analysis Sheds Light on Deep Neural Networks",
+  "authors": [
+   "Zhi-Qin John Xu",
+   "Yaoyu Zhang",
+   "Tao Luo",
+   "Yanyang Xiao",
+   "Zheng Ma"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "1711.04623": {
+  "title": "Three Factors Influencing Minima in SGD",
+  "authors": [
+   "Stanis\u0142aw Jastrz\u0119bski",
+   "Zachary Kenton",
+   "Devansh Arpit",
+   "Nicolas Ballas",
+   "Asja Fischer",
+   "Yoshua Bengio",
+   "Amos Storkey"
+  ],
+  "year": "2017",
+  "journal": ""
+ },
+ "2307.03172": {
+  "title": "Lost in the Middle: How Language Models Use Long Contexts",
+  "authors": [
+   "Nelson F. Liu",
+   "Kevin Lin",
+   "John Hewitt",
+   "Ashwin Paranjape",
+   "Michele Bevilacqua",
+   "Fabio Petroni",
+   "Percy Liang"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2306.09927": {
+  "title": "Trained Transformers Learn Linear Models In-Context",
+  "authors": [
+   "Ruiqi Zhang",
+   "Spencer Frei",
+   "Peter L. Bartlett"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2110.05266": {
+  "title": "Chaos as an interpretable benchmark for forecasting and data-driven modelling",
+  "authors": [
+   "William Gilpin"
+  ],
+  "year": "2021",
+  "journal": "NeurIPS (Neural Information Processing Systems) 2021"
+ },
+ "2402.05201": {
+  "title": "The Effect of Sampling Temperature on Problem Solving in Large Language Models",
+  "authors": [
+   "Matthew Renze",
+   "Erhan Guven"
+  ],
+  "year": "2024",
+  "journal": "Findings of the Association for Computational Linguistics: EMNLP 2024, pp. 7346-7356"
+ },
+ "1908.04319": {
+  "title": "Neural Text Generation with Unlikelihood Training",
+  "authors": [
+   "Sean Welleck",
+   "Ilia Kulikov",
+   "Stephen Roller",
+   "Emily Dinan",
+   "Kyunghyun Cho",
+   "Jason Weston"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2307.01850": {
+  "title": "Self-Consuming Generative Models Go MAD",
+  "authors": [
+   "Sina Alemohammad",
+   "Josue Casco-Rodriguez",
+   "Lorenzo Luzi",
+   "Ahmed Imtiaz Humayun",
+   "Hossein Babaei",
+   "Daniel LeJeune",
+   "Ali Siahkoohi",
+   "Richard G. Baraniuk"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2303.08011": {
+  "title": "Model scale versus domain knowledge in statistical forecasting of chaotic systems",
+  "authors": [
+   "William Gilpin"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2310.06452": {
+  "title": "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+  "authors": [
+   "Robert Kirk",
+   "Ishita Mediratta",
+   "Christoforos Nalmpantis",
+   "Jelena Luketina",
+   "Eric Hambro",
+   "Edward Grefenstette",
+   "Roberta Raileanu"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2402.00795": {
+  "title": "LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law",
+  "authors": [
+   "Toni J. B. Liu",
+   "Nicolas Boull\u00e9",
+   "Rapha\u00ebl Sarfati",
+   "Christopher J. Earls"
+  ],
+  "year": "2024",
+  "journal": "EMNLP 2024"
+ },
+ "2605.21292": {
+  "title": "Unbiased Gradients, Moving Stability Boundaries: Exact Mini-Batch Geometry in Linear Self-Attention",
+  "authors": [
+   "Krishnakumar Balasubramanian"
+  ],
+  "year": "2026",
+  "journal": ""
+ },
+ "2007.14966": {
+  "title": "Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity",
+  "authors": [
+   "Sourya Basu",
+   "Govardana Sachitanandam Ramachandran",
+   "Nitish Shirish Keskar",
+   "Lav R. Varshney"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2005.03642": {
+  "title": "On Exposure Bias, Hallucination and Domain Shift in Neural Machine Translation",
+  "authors": [
+   "Chaojun Wang",
+   "Rico Sennrich"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "2305.13534": {
+  "title": "How Language Model Hallucinations Can Snowball",
+  "authors": [
+   "Muru Zhang",
+   "Ofir Press",
+   "William Merrill",
+   "Alisa Liu",
+   "Noah A. Smith"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2405.17088": {
+  "title": "Phase Transitions in the Output Distribution of Large Language Models",
+  "authors": [
+   "Julian Arnold",
+   "Flemming Holtorf",
+   "Frank Sch\u00e4fer",
+   "Niels L\u00f6rch"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2310.07820": {
+  "title": "Large Language Models Are Zero-Shot Time Series Forecasters",
+  "authors": [
+   "Nate Gruver",
+   "Marc Finzi",
+   "Shikai Qiu",
+   "Andrew Gordon Wilson"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2310.00429": {
+  "title": "On the Stability of Iterative Retraining of Generative Models on their own Data",
+  "authors": [
+   "Quentin Bertrand",
+   "Avishek Joey Bose",
+   "Alexandre Duplessis",
+   "Marco Jiralerspong",
+   "Gauthier Gidel"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2406.05335": {
+  "title": "Phase transition in large language models and the criticality of natural languages",
+  "authors": [
+   "Kai Nakaishi",
+   "Yoshihiko Nishikawa",
+   "Koji Hukushima"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2403.06963": {
+  "title": "The pitfalls of next-token prediction",
+  "authors": [
+   "Gregor Bachmann",
+   "Vaishnavh Nagarajan"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2410.02536": {
+  "title": "Intelligence at the Edge of Chaos",
+  "authors": [
+   "Shiyang Zhang",
+   "Aakash Patel",
+   "Syed A Rizvi",
+   "Nianchen Liu",
+   "Sizhuang He",
+   "Amin Karbasi",
+   "Emanuele Zappala",
+   "David van Dijk"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "1904.09751": {
+  "title": "The Curious Case of Neural Text Degeneration",
+  "authors": [
+   "Ari Holtzman",
+   "Jan Buys",
+   "Li Du",
+   "Maxwell Forbes",
+   "Yejin Choi"
+  ],
+  "year": "2019",
+  "journal": ""
+ },
+ "2305.18654": {
+  "title": "Faith and Fate: Limits of Transformers on Compositionality",
+  "authors": [
+   "Nouha Dziri",
+   "Ximing Lu",
+   "Melanie Sclar",
+   "Xiang Lorraine Li",
+   "Liwei Jiang",
+   "Bill Yuchen Lin",
+   "Peter West",
+   "Chandra Bhagavatula",
+   "Ronan Le Bras",
+   "Jena D. Hwang",
+   "Soumya Sanyal",
+   "Sean Welleck",
+   "Xiang Ren",
+   "Allyson Ettinger",
+   "Zaid Harchaoui",
+   "Yejin Choi"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2210.15191": {
+  "title": "Truncation Sampling as Language Model Desmoothing",
+  "authors": [
+   "John Hewitt",
+   "Christopher D. Manning",
+   "Percy Liang"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2305.17493": {
+  "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
+  "authors": [
+   "Ilia Shumailov",
+   "Zakhar Shumaylov",
+   "Yiren Zhao",
+   "Yarin Gal",
+   "Nicolas Papernot",
+   "Ross Anderson"
+  ],
+  "year": "2023",
+  "journal": ""
+ },
+ "2206.02369": {
+  "title": "Learning to Break the Loop: Analyzing and Mitigating Repetitions for Neural Text Generation",
+  "authors": [
+   "Jin Xu",
+   "Xiaojiang Liu",
+   "Jianhao Yan",
+   "Deng Cai",
+   "Huayang Li",
+   "Jian Li"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2605.14258": {
+  "title": "Dynamics of the Transformer Residual Stream: Coupling Spectral Geometry to Network Topology",
+  "authors": [
+   "Jesseba Fernando",
+   "Grigori Guitchounts"
+  ],
+  "year": "2026",
+  "journal": ""
+ },
+ "2012.14660": {
+  "title": "A Theoretical Analysis of the Repetition Problem in Text Generation",
+  "authors": [
+   "Zihao Fu",
+   "Wai Lam",
+   "Anthony Man-Cho So",
+   "Bei Shi"
+  ],
+  "year": "2020",
+  "journal": ""
+ },
+ "1506.03099": {
+  "title": "Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks",
+  "authors": [
+   "Samy Bengio",
+   "Oriol Vinyals",
+   "Navdeep Jaitly",
+   "Noam Shazeer"
+  ],
+  "year": "2015",
+  "journal": ""
+ },
+ "2202.00666": {
+  "title": "Locally Typical Sampling",
+  "authors": [
+   "Clara Meister",
+   "Tiago Pimentel",
+   "Gian Wiher",
+   "Ryan Cotterell"
+  ],
+  "year": "2022",
+  "journal": ""
+ },
+ "2405.00492": {
+  "title": "Is Temperature the Creativity Parameter of Large Language Models?",
+  "authors": [
+   "Max Peeperkorn",
+   "Tom Kouwenhoven",
+   "Dan Brown",
+   "Anna Jordanous"
+  ],
+  "year": "2024",
+  "journal": ""
+ },
+ "2605.26489": {
+  "title": "The Stability of Singular Distribution: A Spectral Perspective on the Two-Phase Dynamics of Language Model Pre-training",
+  "authors": [
+   "Hongtao Zhang",
+   "Wenjie Zhou",
+   "Chenxi Jia",
+   "Wei Chen",
+   "Xueqi Cheng"
+  ],
+  "year": "2026",
+  "journal": ""
+ },
+ "2604.26898": {
+  "title": "Stochastic Scaling Limits and Synchronization by Noise in Deep Transformer Models",
+  "authors": [
+   "Andrea Agazzi",
+   "Giuseppe Bruno",
+   "Eloy Mosig Garc\u00eda",
+   "Samuele Saviozzi",
+   "Marco Romito"
+  ],
+  "year": "2026"
+ },
+ "2604.26085": {
+  "title": "Spectral Selection in Symmetric Self-Attention Dynamics",
+  "authors": [
+   "Christian Kuehn",
+   "Jaeyoung Yoon"
+  ],
+  "year": "2026"
+ },
+ "2607.27805": {
+  "title": "Chaos in reason: How chain-of-thought LLMs can look for an answer",
+  "authors": [
+   "Gregorio Jaca",
+   "Krist\u00f3f Benedek",
+   "J\u00e1nos T\u00f6r\u00f6k"
+  ],
+  "year": "2026"
+ },
+ "2501.02378": {
+  "title": "A ghost mechanism: An analytical model of abrupt learning in recurrent networks",
+  "authors": [
+   "Fatih Dinc",
+   "Ege Cirakman",
+   "Bariscan Kurtkaya",
+   "Mert Yuksekgonul",
+   "Yiqi Jiang",
+   "Mark J. Schnitzer",
+   "Hidenori Tanaka"
+  ],
+  "year": "2025"
+ },
+ "2502.15208": {
+  "title": "Unveiling Attractor Cycles in Large Language Models: A Dynamical Systems View of Successive Paraphrasing",
+  "authors": [
+   "Zhilin Wang",
+   "Yafu Li",
+   "Jianhao Yan",
+   "Yu Cheng",
+   "Yue Zhang"
+  ],
+  "year": "2025"
+ },
+ "2604.19740": {
+  "title": "Generalization at the Edge of Stability",
+  "authors": [
+   "Mario Tuci",
+   "Caner Korkmaz",
+   "Umut \u015eim\u015fekli",
+   "Tolga Birdal"
+  ],
+  "year": "2026"
+ },
+ "2609.19288": {
+  "title": "Learning-Induced Dynamical Transition in Recurrent Neural Networks",
+  "authors": [
+   "Varun Vaidya"
+  ],
+  "year": "2026"
+ },
+ "2606.16768": {
+  "title": "Taming Curvature: Architecture Warm-Up for Stable Transformer Training",
+  "authors": [
+   "Sameera Ramasinghe",
+   "Ajanthan Thalaiyasingam",
+   "Hadi Mohaghegh Dolatabadi",
+   "Chamin Hewa Koneputugodage",
+   "Gil Avraham",
+   "Violetta Shevchenko",
+   "Yan Zuo",
+   "Karol Pajak",
+   "Alexander Long"
+  ],
+  "year": "2026"
+ },
+ "2501.18322": {
+  "title": "A Unified Perspective on the Dynamics of Deep Transformers",
+  "authors": [
+   "Val\u00e9rie Castin",
+   "Pierre Ablin",
+   "Jos\u00e9 Antonio Carrillo",
+   "Gabriel Peyr\u00e9"
+  ],
+  "year": "2025"
+ },
+ "2609.36230": {
+  "title": "The Role of Feed-Forward Layers in Transformer Dynamics",
+  "authors": [
+   "Thomas Jacob Maranzatto",
+   "Semih Akkoc",
+   "Sennur Ulukus"
+  ],
+  "year": "2026"
+ },
+ "2610.24715": {
+  "title": "When Do Repetition Loops Lock? Truncation Sampling, Bounded Penalties, and a Blind Spot in DRY",
+  "authors": [
+   "Yichuan Chen",
+   "Xin Wang"
+  ],
+  "year": "2026"
+ },
+ "2611.07065": {
+  "title": "Stochastic Dynamics of Generative AI: From Autoregressive Models to Interacting LLM Networks and Neural SDEs",
+  "authors": [
+   "Vikram Krishnamurthy",
+   "Yiming Zhang",
+   "Luke Snow"
+  ],
+  "year": "2026"
+ },
+ "2606.12058": {
+  "title": "Phase Transitions in Attention: A Bayesian Theory of Copy Head Emergence",
+  "authors": [
+   "Itay Lavie",
+   "Kirsten Fischer",
+   "Andrey Lekov",
+   "Frederic Van Maele",
+   "Zohar Ringel",
+   "Moritz Helias"
+  ],
+  "year": "2026"
+ },
+ "2607.18584": {
+  "title": "On the Diverse Dynamical Behaviors Arising in Deep Linear Transformers",
+  "authors": [
+   "Sixu Li",
+   "Thomas Jacob Maranzatto",
+   "Jan Peszek",
+   "Trevor Teolis",
+   "Semih Akkoc",
+   "Konstantin Riedl",
+   "Sennur Ulukus",
+   "Nicol\u00e1s Garc\u00eda Trillos"
+  ],
+  "year": "2026"
+ },
+ "2604.12946": {
+  "title": "Parcae: Scaling Laws For Stable Looped Language Models",
+  "authors": [
+   "Hayden Prairie",
+   "Zachary Novack",
+   "Taylor Berg-Kirkpatrick",
+   "Daniel Y. Fu"
+  ],
+  "year": "2026"
+ },
+ "2605.09213": {
+  "title": "Kinetic theory for Transformers and the lost-in-the-middle phenomenon",
+  "authors": [
+   "Mitia Duerinckx",
+   "Borjan Geshkovski",
+   "Stefano Rossi"
+  ],
+  "year": "2026"
+ },
+ "2609.38802": {
+  "title": "Uncovering Uncontrolled Repetition through Residual Stream Dynamics",
+  "authors": [
+   "Yuanhe Zhang",
+   "Xinyao Zhou",
+   "Haoran Gao",
+   "Yuyao Zhang",
+   "Zhenhong Zhou",
+   "Fanyu Meng",
+   "Li Sun",
+   "Sen Su"
+  ],
+  "year": "2026"
+ },
+ "2610.31692": {
+  "title": "Chaos and bifurcations in continuous language-model feedback",
+  "authors": [
+   "Timothy D. Jones"
+  ],
+  "year": "2026"
+ },
+ "2610.31955": {
+  "title": "A Mathematical Theory of the Jacobian Lens",
+  "authors": [
+   "Mitchell Ostrow",
+   "Daoyuan Qian",
+   "Toni Liu",
+   "Ila Fiete"
+  ],
+  "year": "2026"
+ },
+ "2304.01373": {
+  "title": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+  "authors": [
+   "Stella Biderman",
+   "Hailey Schoelkopf",
+   "Quentin Anthony",
+   "Herbie Bradley",
+   "Kyle O'Brien",
+   "Eric Hallahan",
+   "Mohammad Aflah Khan",
+   "Shivanshu Purohit",
+   "USVSN Sai Prashanth",
+   "Edward Raff",
+   "Aviya Skowron",
+   "Lintang Sutawika",
+   "Oskar van der Wal"
+  ],
+  "year": "2023",
+  "journal": ""
+ }
+}
