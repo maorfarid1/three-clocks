@@ -1,0 +1,30 @@
+\section{Open problems}
+\label{sec:open}
+
+Each problem below comes from an empty or weak cell of Table~\ref{tab:dictionary}, or from a place where two clocks meet, and each is stated with a first test. Problems \op{9} and \op{10} are conjectures that come from the mechanics of nonlinear oscillators. We include them because they make predictions that can be checked, and we do not claim evidence for them yet.
+
+\begin{enumerate}[label=\textbf{OP\,\arabic*.}, leftmargin=*, itemsep=3pt]
+\item \textbf{Coupling of clocks 1 and 2.} How does training reshape the depth dynamics, and which features of the Lyapunov profile settle before the loss does? Experiment~1 gives a first answer for two small models, in which the whole-stack exponent settles within 3\% of training while the per-layer exponents keep growing. The natural next test is the full Jacobian spectrum of every layer across the public checkpoints of a model family with more than a billion parameters.
+
+\item \textbf{Periodic orbits in depth.} Do models that reuse a block many times, such as looped and recurrent-depth models \citep{prairie2026parcae}, have periodic or quasi-periodic orbits in the residual stream, and do these orbits carry computation? Return maps of hidden states over many loop iterations would show such orbits directly.
+
+\item \textbf{The full Lyapunov spectrum of a language model.} Beyond the largest exponent, how many directions expand along a forward pass and along a generation, and what is the resulting attractor dimension? QR-based algorithms \citep{engelken2020lyapunov,vogt2020lyapunov} make this computation feasible for models of GPT-2 size.
+
+\item \textbf{The type of a loss spike.} Are loss spikes in pretraining crossings of the stability boundary, period-doubling cascades, catapults \citep{lewkowycz2020large}, or escapes from a basin? Each type leaves a different signature in the curvature and in the update direction just before the spike, so spikes in open training logs and checkpoints can be classified by these signatures.
+
+\item \textbf{Escape laws across samplers and scales.} Proposition~\ref{prop:arrhenius} fixes the low-temperature law for plain temperature sampling. How do nucleus sampling and repetition penalties change the barrier, and how does the growth of the barrier from cycle to cycle scale with model size? Experiment~3 can be repeated across a model family such as Pythia to answer the second question.
+
+\item \textbf{Fractal trainability of transformers.} Does the fractal boundary between convergent and divergent hyperparameters \citep{sohldickstein2024boundary} persist for transformers trained with Adam, and how does its dimension depend on depth? Fine grids over learning rate and warmup length for small transformers are enough for a first estimate.
+
+\item \textbf{Metastability in generation.} Is the length of a coherent stretch of generated text before drift a metastable residence time, exponentially long in some barrier, like the cluster states in depth \citep{geshkovski2024dynamic}? Survival curves of coherence, judged by an external model, as a function of temperature would test this.
+
+\item \textbf{Koopman modes of a forward pass.} Can a finite-dimensional linear operator fitted to residual-stream trajectories predict the effect of an intervention several layers ahead, and do its eigenfunctions align with known features? Dynamic mode decomposition on residual streams, compared with the tuned lens \citep{belrose2023eliciting}, is a direct test.
+
+\item \textbf{Targeted energy transfer (conjecture).} In coupled mechanical oscillators, a nonlinear energy sink absorbs vibration energy from a primary system in one direction and irreversibly \citep{vakakis2009nonlinear,farid2016tuned}. We conjecture that a similar one-way transfer of signal energy exists between spectral modes of the residual stream, with massive activations and attention sinks \citep{sun2024massive,xiao2023efficient} in the role of the sink. Tracking the energy carried by each singular mode of the layer Jacobians across depth and training, and testing whether transfer into the sink directions is reversible, would confirm or refute this.
+
+\item \textbf{Escape under internal forcing (conjecture).} At the edge of stability the iterate oscillates along the top Hessian direction, and the other directions see this oscillation as periodic forcing. In mechanics, a periodically forced particle escapes from a potential well when the forcing amplitude crosses a threshold that depends on the forcing frequency \citep{farid2019escape,farid2022escape}. We conjecture that some loss spikes are escapes of this kind, so that their onset can be predicted from the oscillation amplitude and the local shape of the basin. Gradient descent on a quartic well coupled to an oscillating direction is the simplest test, followed by the same diagnostic on small transformers.
+
+\item \textbf{Early warning signals.} Near a bifurcation, recovery from perturbations slows down and fluctuations grow. Do grokking, induction-head formation and loss spikes show rising autocorrelation and variance of the loss or of the gradient norm before they happen? Training runs in which the transition step is known, such as those of \citet{power2022grokking} and \citet{olsson2022incontext}, allow a direct check.
+
+\item \textbf{Control of clock 3.} Can a controller that adjusts the temperature or the hidden state from the stay probabilities \eqref{eq:stay} keep generation out of loops at a lower cost in quality than repetition penalties? Mirostat \citep{basu2020mirostat} and truncation sampling \citep{hewitt2022truncation} at matched quality are the natural baselines.
+\end{enumerate}

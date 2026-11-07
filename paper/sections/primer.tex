@@ -1,0 +1,63 @@
+\section{The three clocks, and a primer on the tools}
+\label{sec:primer}
+
+\subsection{Three coupled maps}
+\label{sec:maps}
+
+Fix a decoder-only transformer \citep{vaswani2017attention} with $L$ residual blocks, model width $d$ and vocabulary $\mathcal{V}$. For a context of $n$ tokens, write $x^{\ell}=(x^{\ell}_1,\dots,x^{\ell}_n)\in\mathbb{R}^{n\times d}$ for the residual stream after block $\ell$, and $\theta$ for all parameters. The model defines three maps.
+
+\begin{definition}[Clock 1: layer time]
+\label{def:clock1}
+For fixed $\theta$ and fixed input tokens,
+\begin{equation}
+x^{\ell+1} = x^{\ell} + f^{\ell}_{\theta}(x^{\ell}), \qquad \ell = 0,\dots,L-1,
+\label{eq:clock1}
+\end{equation}
+where $f^{\ell}_\theta$ contains attention, which couples token $i$ to tokens $j\le i$, and a token-wise MLP. The logits are $z = W_U\, \mathrm{LN}(x^{L}_n)$.
+\end{definition}
+
+\begin{definition}[Clock 2: training time]
+\label{def:clock2}
+For a loss $\mathcal{L}$ and data stream $\xi_t$,
+\begin{equation}
+\theta_{t+1} = \theta_t - \eta_t\, P_t\, \nabla_\theta \ell(\theta_t;\xi_t), \qquad t = 0,1,\dots
+\label{eq:clock2}
+\end{equation}
+where $P_t$ is a preconditioner (identity for gradient descent, a diagonal matrix built from gradient moments for Adam) and $\ell(\cdot;\xi_t)$ is the minibatch loss. With full batches the map is deterministic; with minibatches it is a random dynamical system.
+\end{definition}
+
+\begin{definition}[Clock 3: generation time]
+\label{def:clock3}
+For fixed $\theta$, a sampling temperature $T>0$ and a context $s_n=(y_1,\dots,y_n)$,
+\begin{equation}
+y_{n+1}\sim \pi_T(\cdot\mid s_n) = \mathrm{softmax}\big(z(s_n;\theta)/T\big), \qquad s_{n+1} = (s_n, y_{n+1}).
+\label{eq:clock3}
+\end{equation}
+This is a Markov chain on the growing space of contexts. Truncation rules such as top-$k$ or nucleus sampling change $\pi_T$ but not the structure.
+\end{definition}
+
+The three maps are nested. Evaluating $z(s_n;\theta)$ in \eqref{eq:clock3} means running \eqref{eq:clock1} to the end, and computing the gradient in \eqref{eq:clock2} means running \eqref{eq:clock1} on teacher-forced contexts. The weights produced by \eqref{eq:clock2} define the maps in \eqref{eq:clock1} and \eqref{eq:clock3}. In practice the clocks also run at very different speeds relative to each other: generation never changes $\theta$, and a single training step changes the forward map only by $O(\eta)$. In the language of slow-fast systems, clock~2 is the slow variable and clocks~1 and~3 are fast dynamics evaluated at a frozen slow state \citep{strogatz2018nonlinear}. Two well-studied effects break this picture: in-context learning, where the fast clock~1 appears to run an optimizer of its own \citep{oswald2022transformers,akyurek2022learning}, and self-training on model outputs, where clock~3 feeds clock~2 \citep{shumailov2023curse,bertrand2023stability}. Both are discussed in Sections~\ref{sec:clock1} and~\ref{sec:clock3}.
+
+\subsection{A short primer}
+\label{sec:tools}
+
+This subsection collects the dynamical-systems vocabulary used later. Readers who know it can skip to Section~\ref{sec:clock1}; a longer treatment is in \citet{strogatz2018nonlinear}.
+
+\paragraph{Maps, fixed points and stability.} A discrete-time system is a map $u_{k+1}=F(u_k)$. A fixed point $u^\ast=F(u^\ast)$ is linearly stable if every eigenvalue of the Jacobian $DF(u^\ast)$ lies inside the unit circle. For gradient descent on a quadratic with Hessian eigenvalue $\lambda$, the map $u\mapsto(1-\eta\lambda)u$ is stable exactly when $\eta\lambda<2$. This one-line calculation is the origin of the threshold $2/\eta$ in the edge-of-stability literature (Section~\ref{sec:eos}).
+
+\paragraph{Periodic orbits and bifurcations.} A period-$k$ orbit is a fixed point of $F^{k}$, and under a change of parameter such orbits can appear, disappear or exchange stability. A saddle-node bifurcation creates or destroys a pair of fixed points; after it, the system passes slowly through the region where they used to be (a ``ghost''), which produces long plateaus followed by fast jumps \citep{strogatz2018nonlinear,dinc2025ghost}. In a period-doubling bifurcation an eigenvalue crosses $-1$ and a period-2 orbit is born; a cascade of such doublings is a standard route to chaos.
+
+\paragraph{Lyapunov exponents.} For a trajectory $u_0,u_1,\dots$ the finite-time Lyapunov exponent over $K$ steps is
+\begin{equation}
+\lambda_K(u_0) = \frac{1}{K}\log \sigma_{\max}\big(DF(u_{K-1})\cdots DF(u_0)\big),
+\label{eq:ftle}
+\end{equation}
+where $\sigma_{\max}$ is the largest singular value. Positive values mean that nearby trajectories separate exponentially; the limit $K\to\infty$, when it exists, is the largest Lyapunov exponent. Deep networks have a fixed and small number of steps, so only finite-time exponents make sense for clock~1 \citep{storm2023finitetime}.
+
+\paragraph{Basins and metastability.} Boundaries between basins of attraction can be fractal, as in the hyperparameter space of neural network training \citep{sohldickstein2024boundary}. A metastable state is one that is not an attractor but holds trajectories for a very long time, for example a cluster configuration that eventually merges \citep{geshkovski2024dynamic}.
+
+\paragraph{Noise-driven escape.} Add noise of intensity $D$ to a system with a stable state inside a well of depth $\Delta U$. The mean time to leave the well grows as $\exp(\Delta U/D)$, with a prefactor set by the curvature at the bottom and at the barrier \citep{kramers1940brownian,hanggi1990reaction}. Escape from potential wells under deterministic periodic forcing is a related problem in mechanics, where the escape threshold in forcing amplitude depends on frequency and on the shape of the well \citep{farid2019escape,farid2022escape}. We use this lens for SGD in Section~\ref{sec:sgd} and for sampling in Section~\ref{sec:loops}.
+
+\paragraph{Synchronization and consensus.} Interacting units whose coupling pulls them together can reach a common state. Attention-based token dynamics over depth have this structure \citep{geshkovski2023mathematical}, and in two dimensions some of them reduce to Kuramoto-type models \citep{li2026diverse}.
+
+\paragraph{Koopman linearization.} A nonlinear map acts linearly on observables, $g\mapsto g\circ F$. Finite approximations of this Koopman operator give linear models of nonlinear dynamics that can be learned from data \citep{lusch2017deep,brunton2015discovering}, and they have been applied to the training dynamics of neural networks \citep{dogra2020optimizing,redman2021operator}.

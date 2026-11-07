@@ -1,0 +1,16 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+A transformer language model is iterated in three ways: over layers, over optimizer steps and over generated tokens. Each iteration has been studied with tools from dynamical systems, mostly by different communities and under different names. We gave the three iterations one formal frame, reviewed the results on each, and summarized them in a dictionary that records which concepts have been proved, measured or only conjectured on which clock. In three small experiments we found that training makes each layer of a Pythia model more expansive while the coherence of the whole forward pass falls, that gradient descent on a small transformer stays at the edge of stability across two decades of step size, and that repetition loops in GPT-2 and Pythia behave as wells whose depth grows while the model sits in them.
+
+Many cells of the dictionary are empty, and several of the open problems sit where two clocks meet, such as the effect of training on the depth dynamics, the feedback of generated text into training, and the prediction of training instabilities with the tools used for escape problems in mechanics. We hope the shared vocabulary makes it easier for researchers in machine learning and in nonlinear dynamics to work on these questions together.
+
+\subsubsection*{Code and data}
+Code to reproduce every figure and number, the raw results, and a maintained list of the papers in this review are available \codeurl. All experiments run on a CPU.
+
+\subsubsection*{Broader impact statement}
+This is a review with small-scale experiments on public models, and we do not foresee direct negative consequences. A better account of repetition loops and of training instabilities could reduce wasted compute in pretraining and make generation more reliable.
+
+\subsubsection*{Use of AI tools}
+\label{sec:ai}
+An AI assistant (Claude, Anthropic) was used to search and verify the literature, draft and edit text, and write and run experiment code under the author's direction. All references were checked against arXiv or Crossref records, all numbers come from the released code, and the author is responsible for every claim in the paper.

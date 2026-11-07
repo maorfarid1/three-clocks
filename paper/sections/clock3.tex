@@ -1,0 +1,59 @@
+\section{Clock 3: generation as a dynamical system}
+\label{sec:clock3}
+
+\subsection{Decoding as a stochastic map}
+
+Definition~\ref{def:clock3} makes generation a Markov chain whose state is the whole context. The state space grows with $n$, so the usual results on stationary distributions do not apply directly, but the questions of dynamical systems still make sense: which sets of contexts trap the chain, how long the chain stays in them, and how these answers depend on the temperature $T$ and on truncation. \citet{krishnamurthy2026stochastic} formulate language models as high-dimensional nonlinear autoregressive models and analyze networks of interacting models with mean-field equations. A deterministic version of clock~3, obtained by feeding back the expected embedding of the next-token distribution instead of a sample, is a continuous map that can be analyzed with standard tools \citep{jones2026chaos}.
+
+Temperature divides the logits by $T$, so $\pi_T$ in \eqref{eq:clock3} is a Gibbs distribution with energy $-z$ at temperature $T$. Greedy decoding is the limit $T\to0$, and $T$ sets how often the chain leaves the most likely path, so it serves as both the noise intensity and the natural bifurcation parameter of clock~3. Its effect on task accuracy \citep{renze2024effect} and on novelty and coherence \citep{peeperkorn2024temperature} has been measured directly.
+
+\subsection{Repetition loops as attractors}
+\label{sec:loops}
+
+With greedy or low-temperature decoding, models fall into loops that repeat a phrase or sentence until the length limit \citep{holtzman2019curious}. At $T=0$ the chain is deterministic and the loop is one of its periodic orbits. \citet{xu2022learning} showed that loops reinforce themselves: the probability of repeating a sentence grows with the number of times it already appears in the context. Unlikelihood training \citep{welleck2019neural}, truncation rules \citep{hewitt2022truncation,meister2022locally} and feedback control of perplexity \citep{basu2020mirostat} are partly attempts to keep the chain out of these attractors; \citet{fu2020theoretical} give a theoretical analysis of why they form. Recent work studies the inside of the loop: how it shows up in residual-stream dynamics before it becomes visible in the output \citep{zhang2026uncovering}, and the conditions under which a loop ``locks'' so that escape becomes impossible in practice under a given sampler \citep{chen2026repetition}. Loops also appear at the level of whole texts. Repeated paraphrasing converges to period-two attractor cycles even with sampling noise \citep{wang2025unveiling}.
+
+Escape from a loop has the structure of the noise-driven escape problem of Section~\ref{sec:tools}. Suppose the chain has locked into a loop of period $k$ with tokens $a_1,\dots,a_k$. As long as the sampler keeps choosing the loop token, the context is deterministic, so the logits $z_t$ along the loop are fixed numbers. Define the logit gaps $\Delta_t^{j}=z_t(a_t)-z_t(j)$ for $j\neq a_t$; all are positive because the loop is the greedy path. The probability of staying in the loop at step $t$ is
+\begin{equation}
+p_t(T)=\frac{1}{1+S_t(T)},\qquad S_t(T)=\sum_{j\neq a_t} e^{-\Delta_t^{j}/T},
+\label{eq:stay}
+\end{equation}
+and the probability of leaving during one cycle is $r(T)=1-\prod_{t=1}^{k}p_t(T)$.
+
+\begin{proposition}[Arrhenius law for loop escape]
+\label{prop:arrhenius}
+Let $\Delta_{\min}=\min_t\min_{j\neq a_t}\Delta_t^{j}$ and let $m$ be the number of pairs $(t,j)$ that attain it. Then $r(T)\le \sum_{t}S_t(T)$ for all $T>0$, and
+\begin{equation}
+r(T)= m\, e^{-\Delta_{\min}/T}\,\big(1+o(1)\big)\quad\text{as } T\to0,\qquad\text{so}\qquad \lim_{T\to0}T\log r(T)=-\Delta_{\min}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since $1-\prod_t(1-q_t)\le\sum_t q_t$ for $q_t\in[0,1]$, and $1-p_t=S_t/(1+S_t)\le S_t$, the bound follows. As $T\to0$, each $S_t(T)$ is dominated by its smallest gaps, $S_t(T)=m_t e^{-\delta_t/T}(1+o(1))$ with $\delta_t=\min_j\Delta_t^j$, and $1-\prod_t p_t=\sum_t S_t+O(\max_t S_t^2)$. The terms with $\delta_t=\Delta_{\min}$ dominate the sum.
+\end{proof}
+
+The logit gap therefore plays the role of the barrier height $\Delta U$ in Kramers' formula \citep{kramers1940brownian}, and $T$ plays the role of noise intensity. Proposition~\ref{prop:arrhenius} follows almost directly from the Gibbs form of the softmax. The barrier, however, changes with time. Because loops reinforce themselves \citep{xu2022learning}, the gaps grow with each completed cycle, so the well deepens while the chain sits in it. Let $\Delta_c$ be the smallest gap during cycle $c$ and $r_c(T)$ the escape probability during that cycle. The probability of never leaving is $\prod_{c\ge1}(1-r_c(T))$, which is positive exactly when $\sum_c r_c(T)<\infty$ (given $r_c<1$).
+
+\begin{proposition}[Deepening wells lock]
+\label{prop:lock}
+If $\Delta_c\ge\Delta_1+b\,(c-1)$ for some $b>0$, then for every $T>0$ the probability of never escaping is at least $1-k(|\mathcal V|-1)\,e^{-\Delta_1/T}/(1-e^{-b/T})$ whenever this bound is positive, and it is positive for every $T>0$. If instead the logits along the loop converge from cycle to cycle, so that $\Delta_c\to\Delta_\infty<\infty$, escape eventually happens with probability one, but the expected number of cycles before escape grows like $e^{\Delta_\infty/T}$ as $T\to0$.
+\end{proposition}
+\begin{proof}
+By the bound in Proposition~\ref{prop:arrhenius}, $r_c\le k(|\mathcal V|-1)e^{-\Delta_c/T}$, which is summable under linear growth, and $\prod_c(1-r_c)\ge1-\sum_c r_c$. If the logits converge, then $r_c$ tends to a positive limit and the second statement follows from the first part of Proposition~\ref{prop:arrhenius}.
+\end{proof}
+
+In practice logits are bounded, so the gaps must saturate and the second case applies; ``locking'' then means that the escape time exceeds any realistic generation budget. Experiment~3 (Section~\ref{sec:exp3}) measures $\Delta_c$ along real loops of GPT-2 and tests both propositions against the exact survival probabilities and against Monte Carlo sampling.
+
+\subsection{Temperature-driven transitions}
+
+At the level of statistics over many generations, temperature produces something close to a phase transition. \citet{nakaishi2024phase} varied $T$ in GPT-2 and found a low-temperature phase with repetitive structure, a high-temperature phase of incoherent text, and power-law correlations close to those of natural language at the transition point. \citet{arnold2024phase} proposed statistical methods to detect such transitions automatically from output distributions. \citet{jones2026chaos} found that in the continuous feedback version of generation, temperature and activation steering move the system between periodic orbits and chaos with positive finite-time Lyapunov exponents, with period-doubling scaling and periodic orbits proved by interval arithmetic. In chain-of-thought trajectories, \citet{jaca2026chaos} report sensitive dependence on initial conditions together with bounded evolution and fractal structure in hidden-state space. Sorting many generated trajectories into regimes (fixed point, periodic, irregular) without labels is a response-regime identification problem, for which unsupervised data-driven methods exist in mechanics \citep{farid2024unsupervised}.
+
+\subsection{Drift over long horizons}
+
+Training uses teacher forcing, while generation feeds the model its own outputs. Small errors therefore compound along clock~3, a problem known as exposure bias \citep{bengio2015scheduled,wang2020exposure}. Errors snowball in multi-step reasoning \citep{dziri2023faith} and in hallucinated justifications \citep{zhang2023language}, and next-token prediction can fail on planning tasks that require looking ahead \citep{bachmann2024pitfalls}. In dynamical terms these are statements about the growth of perturbations along a trajectory of the closed-loop system, which is what Lyapunov exponents measure.
+
+\subsection{Outer loops: when generation feeds training}
+
+The slow-fast separation of Section~\ref{sec:maps} breaks when generated text is used for training. Training repeatedly on a model's own outputs makes the tails of the distribution disappear \citep{shumailov2023curse,alemohammad2023selfconsuming}; whether the process stays near the original model depends on the fraction of real data in each round \citep{bertrand2023stability}. Reinforcement learning from human feedback reduces output diversity \citep{kirk2023effects}, which can be read as a contraction of the set of trajectories that clock~3 visits. These are dynamical systems over model versions, a fourth and much slower clock.
+
+\subsection{Language models as models of dynamical systems}
+
+A different line of work asks whether language models can forecast dynamical systems placed in their context. Pretrained models forecast time series zero-shot \citep{gruver2023large} and extrapolate trajectories of physical systems with accuracy that improves with context length \citep{liu2024llms}. Chaotic systems serve as a benchmark for such forecasters \citep{gilpin2021chaos,gilpin2023model,pathak2018model}, and training on data from cellular automata at the edge of chaos produces models with better downstream reasoning \citep{zhang2024intelligence}. These results are about the content a model processes, not about the model as a dynamical system, but they share tools with this paper.

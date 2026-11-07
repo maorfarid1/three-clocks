@@ -1,0 +1,47 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  layer/.style={draw=black!70, fill=blue!8, rounded corners=1.5pt, minimum width=2.3cm, minimum height=0.42cm, inner sep=1pt, font=\scriptsize},
+  mini/.style={draw=black!60, fill=green!10, rounded corners=1pt, minimum width=0.85cm, minimum height=0.2cm, inner sep=0pt},
+  tokbox/.style={draw=black!60, fill=orange!12, rounded corners=1pt, minimum width=0.62cm, minimum height=0.42cm, inner sep=1pt, font=\scriptsize},
+  clock/.style={-{Latex[length=2.4mm]}, line width=1.1pt},
+  thin/.style={-{Latex[length=1.5mm]}, black!55},
+  note/.style={font=\scriptsize, align=left},
+  ttl/.style={font=\small\bfseries, align=left}
+]
+% ================= Clock 2: training snapshots =================
+\foreach \k/\x/\lab/\op in {0/-7.2/{$\theta_0$}/0.35, 1/-6.0/{$\theta_t$}/0.65, 2/-4.8/{$\theta_{T}$}/1.0} {
+  \begin{scope}[opacity=\op]
+    \foreach \i in {0,...,5} { \node[mini] at (\x, 0.42+0.27*\i) {}; }
+  \end{scope}
+  \node[font=\scriptsize] at (\x, 0.05) {\lab};
+}
+\draw[clock, green!45!black] (-7.75, -0.3) -- (-4.25, -0.3);
+\node[ttl, text=green!40!black, anchor=north west] at (-7.8, -0.45) {Clock 2: training time $t$};
+\node[note, anchor=north west, text width=4.0cm] at (-7.8, -0.95) {$\theta_{t+1} = \theta_t - \eta\, g_t(\theta_t)$\\[1pt]edge of stability, catapults and loss spikes, saddle plateaus, grokking};
+\draw[thin, dashed] (-4.25, 1.1) -- node[above, font=\scriptsize] {weights $\theta$} (-1.3, 1.1);
+
+% ================= Clock 1: depth =================
+\foreach \i/\lab in {0/{embed $x^{0}$}, 1/{block $\ell=1$}, 2/{block $\ell=2$}, 3/{$\cdots$}, 4/{block $\ell=L$}} {
+  \node[layer] (L\i) at (0, 0.55*\i) {\lab};
+}
+\node[draw=black!70, fill=gray!12, rounded corners=1.5pt, minimum width=2.3cm, minimum height=0.42cm, inner sep=1pt, font=\scriptsize] (head) at (0, 2.95) {$\mathrm{softmax}(z/T)$};
+\draw[thin] (L4.north) -- (head.south);
+\draw[clock, blue!70!black] (1.45, -0.2) -- (1.45, 2.45);
+\node[ttl, text=blue!60!black, anchor=north west] at (1.65, 2.55) {Clock 1: layer time $\ell$};
+\node[note, anchor=north west, text width=3.9cm] at (1.65, 2.05) {$x^{\ell+1}_i = x^{\ell}_i + f_{\theta}^{\ell}\big(x^{\ell}_i;\, x^{\ell}_{1:n}\big)$\\[1pt]tokens as interacting particles; clustering, rank collapse, order to chaos, dynamical isometry};
+
+% ================= Clock 3: generation =================
+\foreach \j/\t in {0/{$y_1$}, 1/{$y_2$}, 2/{$\cdots$}, 3/{$y_{n}$}} {
+  \node[tokbox] (T\j) at (-1.05+0.7*\j, -1.0) {\t};
+}
+\node[tokbox, fill=orange!40] (Tn) at (1.85, -1.0) {$y_{n+1}$};
+\draw[thin] (0, -0.77) -- (L0.south);
+\draw[clock, orange!80!black, rounded corners=8pt] (head.east) -- (6.0, 2.95) -- (6.0, -1.0) -- (Tn.east);
+\node[ttl, text=orange!70!black, anchor=north west] at (-1.4, -1.4) {Clock 3: generation time $n$};
+\node[note, anchor=north west, text width=7.2cm] at (-1.4, -1.9) {$y_{n+1} \sim \mathrm{softmax}\big(z(y_{1:n};\theta)/T\big)$: repetition loops as attractors, temperature transitions, drift, collapse};
+\end{tikzpicture}
+\caption{The three clocks of a transformer language model. \textbf{Clock 1} (blue) iterates the residual update over layers for a fixed input and fixed weights. \textbf{Clock 2} (green) iterates the optimizer over the weights; it hands its current weights to the model. \textbf{Clock 3} (orange) iterates sampling: each new token is appended to the context and the whole stack runs again. One tick of clock~3 contains a full run of clock~1, and clock~2 changes the map that both of them iterate. Typical behavior studied on each clock is listed next to it; Table~\ref{tab:dictionary} maps it onto dynamical-systems concepts.}
+\label{fig:clocks}
+\end{figure}
