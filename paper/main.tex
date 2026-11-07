@@ -1,0 +1,76 @@
+\documentclass[10pt]{article}
+
+% Build modes: default = anonymized TMLR submission.
+% For the arXiv version, compile with \def\ARXIV{1} before \input (see Makefile).
+\ifdefined\ARXIV
+  \usepackage[preprint]{tmlr}
+  \newcommand{\codeurl}{at \url{https://github.com/maorfarid1/three-clocks}}
+\else
+  \usepackage{tmlr}
+  \newcommand{\codeurl}{in the anonymized supplementary material}
+\fi
+
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,decorations.pathreplacing}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\op}[1]{\textbf{OP\,#1}}
+\newcommand{\statusP}{\textsf{P}}
+\newcommand{\statusM}{\textsf{M}}
+\newcommand{\statusC}{\textsf{C}}
+\newcommand{\na}{\textsf{?}}
+
+\title{Large Language Models as Nonlinear Dynamical Systems:\\ The Three Clocks of Depth, Training, and Generation}
+
+\author{\name Maor Farid \email maor@getleo.ai \\
+      \addr Leo AI, Inc.\\
+      50 Milk Street, Boston, MA 02109, United States}
+
+\def\month{MM}
+\def\year{YYYY}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/intro}
+\input{sections/primer}
+\input{sections/clock1}
+\input{sections/clock2}
+\input{sections/clock3}
+\input{sections/dictionary}
+\input{sections/experiments}
+\input{sections/openproblems}
+\input{sections/conclusion}
+
+\bibliography{refs}
+\bibliographystyle{tmlr}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}
