@@ -84,11 +84,3 @@ At the level of statistics over many generations, temperature produces something
 \subsection{Drift over long horizons}
 
 Training uses teacher forcing, while generation feeds the model its own outputs. Small errors therefore compound along clock~3, a problem known as exposure bias \citep{bengio2015scheduled,wang2020exposure}. Errors snowball in multi-step reasoning \citep{dziri2023faith} and in hallucinated justifications \citep{zhang2023language}, and next-token prediction can fail on planning tasks that require looking ahead \citep{bachmann2024pitfalls}. In dynamical terms these are statements about the growth of perturbations along a trajectory of the closed-loop system, which is what Lyapunov exponents measure.
-
-\subsection{Outer loops: when generation feeds training}
-
-The slow-fast separation of Section~\ref{sec:maps} breaks when generated text is used for training. Training repeatedly on a model's own outputs makes the tails of the distribution disappear \citep{shumailov2023curse,alemohammad2023selfconsuming}; whether the process stays near the original model depends on the fraction of real data in each round \citep{bertrand2023stability}. Reinforcement learning from human feedback reduces output diversity \citep{kirk2023effects}, which can be read as a contraction of the set of trajectories that clock~3 visits. These are dynamical systems over model versions, a fourth and much slower clock.
-
-\subsection{Language models as models of dynamical systems}
-
-A different line of work asks whether language models can forecast dynamical systems placed in their context. Pretrained models forecast time series zero-shot \citep{gruver2023large} and extrapolate trajectories of physical systems with accuracy that improves with context length \citep{liu2024llms}. Chaotic systems serve as a benchmark for such forecasters \citep{gilpin2021chaos,gilpin2023model,pathak2018model}, and training on data from cellular automata at the edge of chaos produces models with better downstream reasoning \citep{zhang2024intelligence}. These results are about the content a model processes, not about the model as a dynamical system, but they share tools with this paper.
