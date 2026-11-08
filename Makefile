@@ -6,7 +6,7 @@ PY ?= python3
 
 all: experiments figures paper
 
-experiments: results/exp1.json results/exp2.json results/exp2_seed1.json results/exp2_seed2.json results/exp3_gpt2.json results/exp3_pythia160m.json results/exp3b_gpt2.json results/exp3b_pythia160m.json results/exp3b_human.json results/exp3c_gpt2.json results/exp3c_pythia160m.json results/exp4_gpt2.json results/eos_geom_seed0.json results/eos_geom_seed1.json results/eos_geom_seed2.json results/eos_rotation/rot_seed0.json results/eos_rotation/rot_seed1.json results/eos_rotation/rot_seed2.json scaling reasoning atlas controllers
+experiments: results/exp1.json results/exp2.json results/exp2_seed1.json results/exp2_seed2.json results/exp3_gpt2.json results/exp3_pythia160m.json results/exp3b_gpt2.json results/exp3b_pythia160m.json results/exp3b_human.json results/exp3c_gpt2.json results/exp3c_pythia160m.json results/exp4_gpt2.json results/eos_geom_seed0.json results/eos_geom_seed1.json results/eos_geom_seed2.json results/eos_rotation/rot_seed0.json results/eos_rotation/rot_seed1.json results/eos_rotation/rot_seed2.json scaling reasoning atlas controllers reduced
 
 results/exp2.json:
 	$(PY) exp2_bifurcation/bifurcation.py --out $@
@@ -87,6 +87,13 @@ results/atlas.json:
 results/atlas_stats.json:
 	$(PY) exp3_escape/atlas_stats.py --n 10 --out $@
 controllers: results/exp4b_gpt2.json results/exp4c_summary.json
+# Reduced-order models (Section 2.3): deepening-well model of loop escape; barrier/noise regime diagram.
+.PHONY: reduced
+reduced: results/reduced.json results/collapse.json
+results/reduced.json: results/exp3_gpt2.json results/exp3_pythia160m.json
+	$(PY) exp3_escape/reduced.py --out $@
+results/collapse.json: results/exp3_gpt2.json
+	$(PY) exp3_escape/collapse.py --n_prompts 5 --out $@
 results/exp4b_gpt2.json:
 	$(PY) exp3_escape/rollback.py --temps 0.5 --out $@
 results/exp4c_summary.json:
@@ -105,6 +112,8 @@ figures:
 	$(PY) exp3_escape/reasoning_plot.py
 	$(PY) paper/fig_pairs.py
 	$(PY) exp3_escape/plot_atlas.py
+	$(PY) exp3_escape/plot_reduced.py
+	$(PY) exp3_escape/plot_collapse.py
 
 paper:
 	cd paper && $(PY) make_bib.py && latexmk -pdf -interaction=nonstopmode main.tex
