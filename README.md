@@ -13,6 +13,8 @@ A transformer language model is iterated in three ways: over layers (clock 1), o
 - **The well deepens, then saturates.** The barrier grows with every repeat and levels off, so no loop locks forever; the temperature needed to escape within N cycles falls like 1/ln N.
 - **Larger models dig deeper wells.** Across Pythia 70M to 1B (same data and order), the saturated barrier rises from 3.0 to 4.8 and the locking temperature by about half.
 - **Coherent text lives in a narrow temperature window** between repetition and incoherence (about 0.7 to 0.9), which closes entirely for some prompts.
+- **Same pictures, two worlds.** Paired figures put a textbook system and a language model in one representation: gradient descent on a double well next to a transformer at the edge of stability (period two in the spectrum), a Brownian particle next to GPT-2 loops (Arrhenius plots), Kuramoto oscillators next to tokens over depth, and a noisy Duffing oscillator next to GPT-2 at three temperatures (time history, spectrum, phase portrait, recurrence plot).
+- **Controllers that act on the noise do not beat the best fixed temperature.** Rolling a loop back to its start or steering the temperature by feedback removes exact loops and finds the temperature window without a sweep, but the trap lives in the context.
 - **Reasoning models have the window too, without the loops.** Qwen3-0.6B on GSM8K reaches the most answers within a fixed budget at T = 0.6, the value its developers recommend. Below that it rethinks the same step until the budget runs out, a recurrent orbit rather than an exact loop.
 - **The edge of stability is multi-mode.** In a small transformer, 2 to 6 Hessian eigenvalues sit 5 to 14% above 2/eta while the curvature along the actual step equals 2/eta; power iteration underestimates the sharpness there.
 - **Training reshapes depth dynamics.** Per-layer Lyapunov exponents of Pythia rise over training while the alignment of stretched directions across layers falls.
@@ -37,6 +39,9 @@ make arxiv                        # de-anonymized build: paper/main_arxiv.pdf
 | 3c. Loops as orbits in hidden-state space | `exp3_escape/orbit.py` | `results/exp3c_*.json` |
 | 3d. Loop-triggered temperature control (negative result) | `exp3_escape/control.py` | `results/exp4_gpt2.json` |
 | 3e. Scaling across Pythia sizes | `exp3_escape/plot_scaling.py` | `results/exp3e_scaling_summary.json` |
+| Paired figures (mechanical vs learning system) | `paper/fig_pairs.py` | `results/pairs_summary.json` |
+| Regime atlas (Duffing vs GPT-2) | `exp3_escape/atlas.py`, `atlas_stats.py`, `plot_atlas.py` | `results/atlas*.json` |
+| 4b, 4c. Rollback and feedback controllers | `exp3_escape/rollback.py`, `regime_control.py`, `score_control.py` | `results/exp4b_gpt2.json`, `results/exp4c_summary.json` |
 | 3f. Reasoning model (Qwen3-0.6B, GSM8K) vs the recommended temperature | `exp3_escape/reasoning.py`, `reasoning_plot.py` | `results/exp3f_*.json` |
 
 ## Layout

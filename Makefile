@@ -6,7 +6,7 @@ PY ?= python3
 
 all: experiments figures paper
 
-experiments: results/exp1.json results/exp2.json results/exp2_seed1.json results/exp2_seed2.json results/exp3_gpt2.json results/exp3_pythia160m.json results/exp3b_gpt2.json results/exp3b_pythia160m.json results/exp3b_human.json results/exp3c_gpt2.json results/exp3c_pythia160m.json results/exp4_gpt2.json results/eos_geom_seed0.json results/eos_geom_seed1.json results/eos_geom_seed2.json results/eos_rotation/rot_seed0.json results/eos_rotation/rot_seed1.json results/eos_rotation/rot_seed2.json scaling reasoning
+experiments: results/exp1.json results/exp2.json results/exp2_seed1.json results/exp2_seed2.json results/exp3_gpt2.json results/exp3_pythia160m.json results/exp3b_gpt2.json results/exp3b_pythia160m.json results/exp3b_human.json results/exp3c_gpt2.json results/exp3c_pythia160m.json results/exp4_gpt2.json results/eos_geom_seed0.json results/eos_geom_seed1.json results/eos_geom_seed2.json results/eos_rotation/rot_seed0.json results/eos_rotation/rot_seed1.json results/eos_rotation/rot_seed2.json scaling reasoning atlas controllers
 
 results/exp2.json:
 	$(PY) exp2_bifurcation/bifurcation.py --out $@
@@ -79,6 +79,20 @@ results/exp3f_qwen3_think_sample.json:
 results/exp3f_qwen3_nothink_sample.json:
 	$(PY) exp3_escape/reasoning.py --model Qwen/Qwen3-0.6B --think 0 --mode sample --n 20 --gen 640 --samples 2 --temps 0.2,0.4,0.7,1.0,1.3 --out $@
 
+# Regime atlas (Duffing vs GPT-2) and its statistics; controllers for clock 3 (Exp. 4b, 4c).
+.PHONY: atlas controllers
+atlas: results/atlas.json results/atlas_stats.json
+results/atlas.json:
+	$(PY) exp3_escape/atlas.py --gen 576 --out $@
+results/atlas_stats.json:
+	$(PY) exp3_escape/atlas_stats.py --n 10 --out $@
+controllers: results/exp4b_gpt2.json results/exp4c_summary.json
+results/exp4b_gpt2.json:
+	$(PY) exp3_escape/rollback.py --temps 0.5 --out $@
+results/exp4c_summary.json:
+	$(PY) exp3_escape/regime_control.py --only "feedback T0=0.4,feedback T0=0.6,feedback T0=0.8" --out results/exp4c_gpt2.json
+	$(PY) exp3_escape/score_control.py results/exp4c_gpt2.json.raw $@
+
 figures:
 	$(PY) exp1_ftle/plot.py results/exp1.json paper/figs/exp1_ftle.pdf
 	$(PY) exp2_bifurcation/plot.py results/exp2.json,results/exp2_seed1.json,results/exp2_seed2.json paper/figs/exp2_bifurcation.pdf
@@ -89,7 +103,8 @@ figures:
 	$(PY) exp3_escape/eval_control.py
 	$(PY) exp3_escape/plot_scaling.py
 	$(PY) exp3_escape/reasoning_plot.py
-	$(PY) paper/fig_primer.py
+	$(PY) paper/fig_pairs.py
+	$(PY) exp3_escape/plot_atlas.py
 
 paper:
 	cd paper && $(PY) make_bib.py && latexmk -pdf -interaction=nonstopmode main.tex
