@@ -10,14 +10,34 @@ Temperature divides the logits by $T$, so $\pi_T$ in \eqref{eq:clock3} is a Gibb
 \subsection{Repetition loops as attractors}
 \label{sec:loops}
 
-With greedy or low-temperature decoding, models fall into loops that repeat a phrase or sentence until the length limit \citep{holtzman2019curious}. At $T=0$ the chain is deterministic and the loop is one of its periodic orbits. \citet{xu2022learning} showed that loops reinforce themselves: the probability of repeating a sentence grows with the number of times it already appears in the context. Unlikelihood training \citep{welleck2019neural}, truncation rules \citep{hewitt2022truncation,meister2022locally} and feedback control of perplexity \citep{basu2020mirostat} are partly attempts to keep the chain out of these attractors; \citet{fu2020theoretical} give a theoretical analysis of why they form. Recent work studies the inside of the loop: how it shows up in residual-stream dynamics before it becomes visible in the output \citep{zhang2026uncovering}, and the conditions under which a loop ``locks'' so that escape becomes impossible in practice under a given sampler \citep{chen2026repetition}. Loops also appear at the level of whole texts. Repeated paraphrasing converges to period-two attractor cycles even with sampling noise \citep{wang2025unveiling}.
+With greedy or low-temperature decoding, models fall into loops that repeat a phrase or sentence until the length limit \citep{holtzman2019curious}. At $T=0$ the chain is deterministic and the loop is one of its periodic orbits. \citet{xu2022learning} showed that loops reinforce themselves: the probability of repeating a sentence grows with the number of times it already appears in the context. Unlikelihood training \citep{welleck2019neural}, truncation rules \citep{hewitt2022truncation,meister2022locally} and feedback control of perplexity \citep{basu2020mirostat} are partly attempts to keep the chain out of these attractors; \citet{fu2020theoretical} give a theoretical analysis of why they form. Recent work studies the inside of the loop: how it shows up in residual-stream dynamics before it becomes visible in the output \citep{zhang2026uncovering}, and the conditions under which a loop ``locks'' so that escape becomes impossible in practice under a given sampler \citep{chen2026repetition}. Loops also appear at the level of whole texts. Repeated paraphrasing converges to period-two attractor cycles even with sampling noise \citep{wang2025unveiling}. Reasoning models loop too, mostly at low temperature, which \citet{pipis2025wait} trace to errors in learning hard steps of a task and to temporally correlated errors.
 
 Escape from a loop has the structure of the noise-driven escape problem of Section~\ref{sec:tools}. Suppose the chain has locked into a loop of period $k$ with tokens $a_1,\dots,a_k$. As long as the sampler keeps choosing the loop token, the context is deterministic, so the logits $z_t$ along the loop are fixed numbers. Define the logit gaps $\Delta_t^{j}=z_t(a_t)-z_t(j)$ for $j\neq a_t$; all are positive because the loop is the greedy path. The probability of staying in the loop at step $t$ is
 \begin{equation}
 p_t(T)=\frac{1}{1+S_t(T)},\qquad S_t(T)=\sum_{j\neq a_t} e^{-\Delta_t^{j}/T},
 \label{eq:stay}
 \end{equation}
-and the probability of leaving during one cycle is $r(T)=1-\prod_{t=1}^{k}p_t(T)$.
+and the probability of leaving during one cycle is $r(T)=1-\prod_{t=1}^{k}p_t(T)$ (Figure~\ref{fig:loop}). \citet{chen2026repetition} use the same product of per-step continuation probabilities to ask when a sampler locks a loop exactly, with probability one, and show that plain temperature sampling never does. Here a loop locks in a weaker, probabilistic sense: the probability of never escaping is positive (Proposition~\ref{prop:lock}), or escape takes longer than the generation (Section~\ref{sec:exp3}).
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[>=stealth, tok/.style={circle, draw=black, thick, fill=blue!8, minimum size=8.5mm, inner sep=0pt, font=\small}, exitnode/.style={circle, draw=gray, fill=gray!10, minimum size=5mm, inner sep=0pt, font=\scriptsize, text=gray}]
+\def\R{1.45}
+\foreach \i/\ang in {1/90,2/0,3/270,4/180}{\node[tok] (a\i) at (\ang:\R) {$a_{\i}$};}
+\foreach \i/\j/\bend in {1/2/30,2/3/30,3/4/30,4/1/30}{\draw[->, thick, blue!60!black] (a\i) to[bend left=\bend] node[midway, font=\scriptsize, fill=white, inner sep=1pt] {$p_{\j}$} (a\j);}
+\foreach \i/\ang/\pl in {1/90/right,2/0/above,3/270/right,4/180/above}{\node[exitnode] (o\i) at (\ang:2.9) {$j$};
+  \draw[->, dashed, red!70!black] (a\i) -- node[font=\scriptsize, text=red!70!black, \pl=1pt, pos=0.5] {$e^{-\Delta^{j}_{\i}/T}$} (o\i);}
+\node[font=\small, align=center] at (0,0) {loop of\\period $k$};
+\node[anchor=west, align=left, font=\small, text width=6.3cm] at (3.7,0.2) {%
+$p_t(T)=\dfrac{1}{1+\sum_{j\neq a_t}e^{-\Delta_t^{j}/T}}$\\[4pt]
+escape per cycle: $\;r(T)=1-\prod_{t=1}^{k}p_t(T)$\\[4pt]
+barrier: $\;\Delta=\min_{t,j}\Delta_t^{j}$ (the logit gap)\\[4pt]
+low $T$: $\;r(T)\approx m\,e^{-\Delta/T}$ \quad (Arrhenius)\\[6pt]
+{\footnotesize The gaps change from cycle to cycle because the context grows: $\Delta_c$ deepens while the model repeats itself (Proposition~\ref{prop:lock}) and in practice saturates (Section~\ref{sec:exp3}).}};
+\end{tikzpicture}
+\caption{A repetition loop as a periodic orbit of clock~3 with noise-driven exits. Along the loop the sampler keeps the greedy token $a_t$ with probability $p_t$ (solid arrows). Every other token $j$ is an exit whose probability is set by its logit gap $\Delta_t^j$ to the loop token, exactly as a Boltzmann factor with barrier $\Delta_t^j$ and temperature $T$ (dashed arrows). The smallest gap acts as the barrier height in Kramers' escape problem.}
+\label{fig:loop}
+\end{figure}
 
 \begin{proposition}[Arrhenius law for loop escape]
 \label{prop:arrhenius}
@@ -40,11 +60,26 @@ If $\Delta_c\ge\Delta_1+b\,(c-1)$ for some $b>0$, then for every $T>0$ the proba
 By the bound in Proposition~\ref{prop:arrhenius}, $r_c\le k(|\mathcal V|-1)e^{-\Delta_c/T}$, which is summable under linear growth, and $\prod_c(1-r_c)\ge1-\sum_c r_c$. If the logits converge, then $r_c$ tends to a positive limit and the second statement follows from the first part of Proposition~\ref{prop:arrhenius}.
 \end{proof}
 
-In practice logits are bounded, so the gaps must saturate and the second case applies; ``locking'' then means that the escape time exceeds any realistic generation budget. Experiment~3 (Section~\ref{sec:exp3}) measures $\Delta_c$ along real loops of GPT-2 and tests both propositions against the exact survival probabilities and against Monte Carlo sampling.
+Between linear growth and saturation lies a growth law with a sharp threshold in temperature.
+
+\begin{proposition}[Locking temperature]
+\label{prop:tlock}
+If $\Delta_c=a+\gamma\ln c$ for all $c\ge1$ with $\gamma>0$, the probability of never escaping is positive for $T<\gamma$, and escape happens with probability one for $T\ge\gamma$. For $T>\gamma$ the probability of staying in the loop for $N$ cycles is $\exp\!\big(-\Theta(N^{1-\gamma/T})\big)$.
+\end{proposition}
+\begin{proof}
+At the step of cycle $c$ that attains $\Delta_c$, $1-p_t=S_t/(1+S_t)\ge\tfrac12\min(1,e^{-\Delta_c/T})$, so $r_c\ge\tfrac12\min(1,e^{-\Delta_c/T})$, and Proposition~\ref{prop:arrhenius} gives $r_c\le k(|\mathcal V|-1)e^{-\Delta_c/T}$. For large $c$ both bounds are constant multiples of $c^{-\gamma/T}$, so $\sum_c r_c$ converges exactly when $\gamma/T>1$, and $\prod_c(1-r_c)>0$ exactly when the sum converges. For $T>\gamma$, $r_c\to0$, so $-\log\prod_{c\le N}(1-r_c)$ is within constant factors of $\sum_{c\le N}c^{-\gamma/T}=\Theta(N^{1-\gamma/T})$.
+\end{proof}
+
+Proposition~\ref{prop:tlock} gives an infinite-horizon locking temperature $T_{\mathrm{lock}}=\gamma$, below which survival decays to a positive constant and above which it decays as a stretched exponential. Linear growth locks at every temperature and saturating growth at none, so the three cases of Propositions~\ref{prop:lock} and \ref{prop:tlock} cover the possible outcomes for an unbounded generation. A real generation has a finite budget of $N$ cycles. If the barrier has saturated at $\Delta_\infty$ and the escape probability per cycle is $m\,e^{-\Delta_\infty/T}\ll1$, survival over $N$ cycles equals one half at
+\begin{equation}
+T_{1/2}(N)\approx\frac{\Delta_\infty}{\ln\!\big(mN/\ln2\big)},
+\label{eq:thalf}
+\end{equation}
+so the locking temperature observed in a saturating loop falls like $1/\ln N$ with the length of the generation. In practice logits are bounded, so the gaps cannot grow without limit. Experiment~3 (Section~\ref{sec:exp3}) measures $\Delta_c$ along real loops of GPT-2 and Pythia-160M, tests Propositions~\ref{prop:arrhenius} and \ref{prop:lock} against the exact survival probabilities and against Monte Carlo sampling, and asks which growth law the barriers follow.
 
 \subsection{Temperature-driven transitions}
 
-At the level of statistics over many generations, temperature produces something close to a phase transition. \citet{nakaishi2024phase} varied $T$ in GPT-2 and found a low-temperature phase with repetitive structure, a high-temperature phase of incoherent text, and power-law correlations close to those of natural language at the transition point. \citet{arnold2024phase} proposed statistical methods to detect such transitions automatically from output distributions. \citet{jones2026chaos} found that in the continuous feedback version of generation, temperature and activation steering move the system between periodic orbits and chaos with positive finite-time Lyapunov exponents, with period-doubling scaling and periodic orbits proved by interval arithmetic. In chain-of-thought trajectories, \citet{jaca2026chaos} report sensitive dependence on initial conditions together with bounded evolution and fractal structure in hidden-state space. Sorting many generated trajectories into regimes (fixed point, periodic, irregular) without labels is a response-regime identification problem, for which unsupervised data-driven methods exist in mechanics \citep{farid2024unsupervised}.
+At the level of statistics over many generations, temperature produces something close to a phase transition. \citet{nakaishi2024phase} varied $T$ in GPT-2 and found a low-temperature phase with repetitive structure, a high-temperature phase of incoherent text, and power-law correlations close to those of natural language at the transition point. Seen from clock~3, both phases are failures, and useful text lives in a window between them. The lower edge of the window is the loop escape of Section~\ref{sec:loops}. The upper edge, where sampling noise spreads over so much of the vocabulary that the text loses coherence, has no dynamical definition yet, and Experiment~3 locates it only through proxies. \citet{arnold2024phase} proposed statistical methods to detect such transitions automatically from output distributions. \citet{jones2026chaos} found that in the continuous feedback version of generation, temperature and activation steering move the system between periodic orbits and chaos with positive finite-time Lyapunov exponents, with period-doubling scaling and periodic orbits proved by interval arithmetic. In chain-of-thought trajectories, \citet{jaca2026chaos} report sensitive dependence on initial conditions together with bounded evolution and fractal structure in hidden-state space. Sorting many generated trajectories into regimes (fixed point, periodic, irregular) without labels is a response-regime identification problem, for which unsupervised data-driven methods exist in mechanics \citep{farid2024unsupervised}.
 
 \subsection{Drift over long horizons}
 
