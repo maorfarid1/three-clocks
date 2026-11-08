@@ -101,3 +101,77 @@ and shows a transition to collective synchrony once $K$ exceeds a critical value
 \end{figure}
 
 \paragraph{Koopman linearization.} A nonlinear map acts linearly on observables, $g\mapsto g\circ F$ \citep{koopman1931hamiltonian}. Eigenfunctions of this Koopman operator give coordinates in which the dynamics is linear, and finite approximations can be learned from data \citep{mezic2005spectral}. Dynamic mode decomposition, for instance, extracts the oscillation frequencies and spatial modes of a jet in crossflow directly from snapshots \citep{rowley2009spectral}. Related data-driven methods learn linear embeddings of nonlinear dynamics with neural networks \citep{lusch2017deep} or sparse governing equations from data \citep{brunton2015discovering}. Koopman methods have also been applied to the training dynamics of neural networks \citep{dogra2020optimizing,redman2021operator}.
+
+\subsection{Why the analogies hold: reduced-order models}
+\label{sec:reduced}
+
+\input{sections/fig_models}
+
+Engineers often understand a complex system through a simple model that shares its governing terms. Sloshing in a partially filled liquid tank is a free-surface flow, yet its response regimes, including the strongly nonlinear ones with hydraulic impacts on the walls, are reproduced by an equivalent mechanical model in which a linear oscillator is coupled to a vibro-impact unit \citep{farid2017response}. The correspondences shown in Figures~\ref{fig:pair_training} to~\ref{fig:pair_depth} rest on reductions of the same kind. For each one we name the physical model and its governing equation (Figure~\ref{fig:models}), derive the part of the language model that reduces to it, and state where the reduction stops holding, and Table~\ref{tab:reduced} summarizes the five cases.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Reduced-order models of language-model behavior. The shared term is the part of the governing equation that produces the behavior in both systems.}
+\label{tab:reduced}
+\begin{tabular}{p{0.2\linewidth}p{0.22\linewidth}p{0.27\linewidth}p{0.22\linewidth}}
+\toprule
+Language model & Reduced model & Shared term & Status \\
+\midrule
+Escape from a loop (clock 3) & Particle in a well under noise, Fig.~\ref{fig:models}(b) & Boltzmann factor: $e^{-\Delta/T}$ and $e^{-\Delta U/D}$ & Exact identity (Prop.~\ref{prop:arrhenius}) \\
+Period two at the edge of stability (clock 2) & Explicit Euler step on a nonlinear spring & Step multiplier $1-\eta\lambda$ crossing $-1$, cubic term of the loss & Derived; multi-mode edge not covered \\
+Clustering over depth (clock 1) & Kuramoto oscillators, Fig.~\ref{fig:models}(c) & Coupling $\sin(\theta_j-\theta_i)$ & Exact for idealized attention; trained GPT-2 departs \\
+Loops that hold for a while (clock 3) & Particle in a deepening well, Fig.~\ref{fig:models}(d) & Barrier that grows with residence time & Fitted; $T_{1/2}$ within 9\% to 25\% \\
+Regimes of generation (clock 3) & Noisy double-well Duffing oscillator, Fig.~\ref{fig:models}(a) & Ratio of barrier to noise & Same ordering, measured \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The softmax is a Boltzmann distribution.} In statistical mechanics a system in contact with a heat bath occupies a state of energy $E$ with probability proportional to $e^{-E/k_BT}$. The sampler \eqref{eq:clock3} has exactly this form, with the energy of token $y$ equal to minus its logit, $E_y=-z_y$, and $k_B=1$. A token is a state, a logit is minus an energy, and the sampling temperature is a temperature in the physical sense. Along a loop the next token $a_t$ has the highest logit, and every other token $j$ is an exit whose energy is higher by $\Delta^j_t=z_{a_t}-z_j$. The probability of leaving at step $t$ is
+\begin{equation}
+1-p_t(T)=\frac{\sum_{j\neq a_t}e^{-\Delta_t^j/T}}{1+\sum_{j\neq a_t}e^{-\Delta_t^j/T}}\;\approx\;m_t\,e^{-\Delta_t/T}\qquad (T\to0),
+\label{eq:boltz_exit}
+\end{equation}
+where $\Delta_t$ is the smallest gap and $m_t$ the number of tokens that attain it. This is the Arrhenius factor of Kramers' problem \eqref{eq:kramers}, with the logit gap in place of the barrier height $\Delta U$ and $T$ in place of the noise intensity $D$ (Figure~\ref{fig:models}b). The correspondence is an identity, which is why every loop in Figure~\ref{fig:pair_escape}(b) gives a straight line whose slope is its gap. Two differences remain. A Brownian particle diffuses up to the barrier, and the curvatures at the bottom and the top of the well set Kramers' prefactor; the sampler jumps in one step, so the prefactor is the number of exits $m_t$. In addition, the energies of a language model change as the context grows, which we treat below.
+
+\paragraph{Gradient descent is an Euler step on a nonlinear spring.} Gradient descent $\theta_{t+1}=\theta_t-\eta\nabla\mathcal L(\theta_t)$ is the explicit Euler scheme with step $\eta$ for the gradient flow $\dot\theta=-\nabla\mathcal L(\theta)$, the motion of an overdamped particle in the potential $\mathcal L$. Restrict it to the eigenvector $u$ of the largest Hessian eigenvalue $\lambda$ at a minimum $\theta^\ast$, with $x=\langle\theta-\theta^\ast,u\rangle$ and $\ell(x)=\mathcal L(\theta^\ast+xu)$. Then
+\begin{equation}
+x_{t+1}=x_t-\eta\,\ell'(x_t),\qquad \ell'(x)=\lambda x+\tfrac12\ell'''x^2+\tfrac16\ell''''x^3+\dots,
+\label{eq:gd_spring}
+\end{equation}
+and $-\ell'(x)$ is the restoring force of a spring with linear, quadratic and cubic stiffness, the Duffing spring of Figure~\ref{fig:models}(a) when the quadratic term vanishes. The linear term alone gives $x_{t+1}=(1-\eta\lambda)x_t$, whose multiplier crosses $-1$ at $\eta\lambda=2$. The minimum then loses stability through a period-doubling bifurcation, the same instability that limits the time step of the explicit Euler scheme for a stiff spring. The nonlinear terms decide what follows. For the double well $\ell(x)=(x^2-1)^2/4$ around $x=1$, where $\lambda=2$, the iterate settles on a period-2 orbit for $\eta\lambda$ between 2 and about 2.47, on a period-4 orbit from 2.48, on a period-8 orbit near 2.58, and on no orbit of period up to 64 from about 2.62 (Figure~\ref{fig:pair_training}a,b). A period-2 orbit is what produces the spectral line at frequency $1/2$. A network adds a third ingredient: $\lambda$ depends on $\theta$, so the oscillation along $u$ changes the curvature that drives it. \citet{damian2022selfstabilization} reduce this feedback to the two-variable map \eqref{eq:selfstab}, in which the cubic term of the loss lowers the sharpness whenever the oscillation grows. The feedback explains why the transformer of Experiment~2 shows a line at $1/2$ (Figure~\ref{fig:pair_training}c,f) across two decades of step size instead of a cascade to chaos at one step size: training keeps its own bifurcation parameter at the threshold. The one-direction reduction holds while one eigenvalue dominates. In our transformer two to six eigenvalues sit above $2/\eta$ (Section~\ref{sec:exp2}), which neither \eqref{eq:gd_spring} nor the two-variable map describes.
+
+\paragraph{Attention on the circle is a Kuramoto model.} In the transformer model of \citet{geshkovski2023mathematical}, layer normalization keeps every token on the unit sphere, and self-attention with identity query, key and value matrices moves token $i$ by
+\begin{equation*}
+\dot x_i=P_{x_i}\Big(Z_i^{-1}\sum_j e^{\beta\langle x_i,x_j\rangle}x_j\Big),\qquad Z_i=\sum_j e^{\beta\langle x_i,x_j\rangle},
+\end{equation*}
+where $P_x$ projects onto the tangent space of the sphere at $x$. In two dimensions write $x_i=(\cos\theta_i,\sin\theta_i)$. The unit tangent at $x_i$ is $(-\sin\theta_i,\cos\theta_i)$, its inner product with $x_j$ is $\sin(\theta_j-\theta_i)$, and $\langle x_i,x_j\rangle=\cos(\theta_j-\theta_i)$, so
+\begin{equation}
+\dot\theta_i=Z_i^{-1}\sum_j e^{\beta\cos(\theta_j-\theta_i)}\sin(\theta_j-\theta_i).
+\label{eq:attn_kuramoto}
+\end{equation}
+For $\beta=0$, $Z_i=N$ and \eqref{eq:attn_kuramoto} is the Kuramoto model \eqref{eq:kuramoto} with $\omega_i=0$ and $K=1$, the model of identical metronomes on a common board, which synchronize from almost every initial condition (Figure~\ref{fig:models}c). In both systems each unit is pulled toward a weighted average of the others, and for $\beta>0$ the pull is stronger between tokens that are already close, which lets several clusters form and persist (Section~\ref{sec:clock1}). The reduction accounts for Figure~\ref{fig:pair_depth}(c) and for GPT-2 with random weights in panel (d). Trained GPT-2 departs from it: its order parameter stays near 0.8 over all twelve blocks. The reduction drops the learned query, key and value maps, the MLP blocks and the finite depth. One candidate explanation is that these terms act like the spread of natural frequencies $\omega_i$ in the Kuramoto model, which opposes synchronization; we have not tested it.
+
+\paragraph{A repetition loop is a well that deepens while it is occupied.} The Boltzmann identity \eqref{eq:boltz_exit} holds at every step, but the energies change from cycle to cycle, because each completed cycle adds the same text to the context and the model grows more confident that it will repeat it. Figure~\ref{fig:reduced}(a) shows the smallest gap $\Delta_c$ of each cycle along three GPT-2 loops: it grows and then saturates. The physical counterpart is a particle in a well that deepens while it is occupied (Figure~\ref{fig:models}d). Rock friction behaves this way: the static friction between two surfaces grows with the time they have been in contact \citep{dieterich1972time}, so a block that has rested longer needs a larger force to slide. The reduced model has two ingredients, a saturating barrier fitted to the gaps of each loop,
+\begin{equation}
+\Delta_c=\Delta_\infty-(\Delta_\infty-\Delta_1)\,e^{-(c-1)/\tau},\qquad r_c(T)=1-\big(1+e^{-\Delta_c/T}\big)^{-\nu},
+\label{eq:reduced}
+\end{equation}
+and an escape probability per cycle $r_c$ for a single exit attempted $\nu$ times per cycle. The three numbers $\Delta_1,\Delta_\infty,\tau$ of each loop come from its greedy run alone, and $\nu$ plays the role of Kramers' prefactor; we use one value per model, chosen on a grid ($\nu=3$ for GPT-2, $\nu=4$ for Pythia-160M). Figure~\ref{fig:reduced} compares the locking temperature $T_{1/2}(N)$ of this model with the full computation from all logits of all steps (Section~\ref{sec:exp3}). For horizons of 4 to 256 cycles the reduced model is within a median of 9\% to 25\% of the full value for individual loops, with correlations of 0.74 to 0.95 across loops, and it reproduces the slow fall of $T_{1/2}$ with $N$. For a single cycle it is off by 30\% to 50\%. For long horizons the reduced model gives $T_{1/2}(N)\approx\Delta_\infty/\ln(\nu N/\ln2)$, the form of \eqref{eq:thalf}, since an escape within $N$ cycles becomes likely once $\nu N e^{-\Delta_\infty/T}$ is of order one, so the locking temperature falls like $1/\ln N$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/reduced.pdf}
+\caption{The reduced-order model of loop escape against the full computation. (a) Smallest logit gap of each cycle (dots) along three GPT-2 loops of at least 15 cycles, with the saturating fit of \eqref{eq:reduced} (lines). (b) Locking temperature for a horizon of 16 cycles after a burn-in of two cycles, from the reduced model (three numbers per loop read from the greedy run, one attempt number $\nu$ per model) against the full computation from all logits, one point per loop. (c) Median locking temperature against the horizon for both models, full (filled) and reduced (open).}
+\label{fig:reduced}
+\end{figure}
+
+\paragraph{Generation regimes follow the ratio of barrier to noise.} The same ratio organizes the three regimes of Figure~\ref{fig:atlas}. For the double-well Duffing oscillator with unit mass, damping $c$ and noise amplitude $\sigma$, the unforced motion has the stationary density $\propto\exp\{-(\dot x^2/2+U(x))/D\}$ with $D=\sigma^2/(2c)$, so the depth of a well in units of the noise is $\Delta U/D$, with $\Delta U=1/4$ for $U=-x^2/2+x^4/4$. If an escape has probability of order $e^{-\Delta U/D}$ per period, the oscillator is expected to leave a well within $N$ periods once $\Delta U/D\lesssim\ln(N/\ln2)$. Above this value it stays on a periodic orbit in one well, near it it hops between wells, and far below it the noise dominates. For a loop of a language model the corresponding ratio is $\Delta/T$, with $\Delta$ the barrier of the loop, and the same estimate gives $\Delta/T\lesssim\ln(\nu N/\ln2)$, with $N$ the number of cycles in the window. Figure~\ref{fig:collapse} plots the determinism of the trajectory against this ratio for both systems. For the oscillator (512 samples, about 98 forcing periods, so $\ln(N/\ln2)\approx4.9$) DET rises from 0.38 to 0.78 as $\Delta U/D$ grows from 0.09 to 50, with its largest step between 3.1 and 5.6. For GPT-2 we sampled five prompts whose greedy runs loop, at eight temperatures from 0.3 to 1.4, and took $\Delta$ as the gap of the last cycles of the greedy loop. DET rises with $\Delta/T$ (correlation 0.75 with $\log(\Delta/T)$ over 40 runs), and the binned median climbs from 0.37 to 0.82 between $\Delta/T\approx5.6$ and 12, just above the value 4.9 at which one escape is expected in the window. The scatter between prompts is large, and five prompts do not determine the shape of the curve, but both systems leave the periodic regime when the barrier falls to a few times the noise, at the value set by the length of the observation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/collapse.pdf}
+\caption{Determinism of the trajectory against the ratio of barrier height to noise intensity. (a) Forced double-well Duffing oscillator of Figure~\ref{fig:atlas}, ten noise levels, five seeds each (median and range), with $D=\sigma^2/(2c)$ and $\Delta U=1/4$. (b) GPT-2, five prompts whose greedy runs end in a loop, sampled at eight temperatures from 0.3 to 1.4; $\Delta$ is the median logit gap of the last three cycles of the greedy loop. Thin lines: individual prompts; thick line: median in bins of $\Delta/T$. Dotted lines: the ratio at which one escape is expected within the observed window, $\ln(N/\ln2)$ for the oscillator and $\ln(\nu N/\ln2)$ with $\nu=3$ for GPT-2.}
+\label{fig:collapse}
+\end{figure}
+
