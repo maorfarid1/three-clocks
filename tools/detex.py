@@ -1,0 +1,26 @@
+"""Crude LaTeX -> prose for linting: drops math, cites, refs, environments."""
+import re, sys, os
+def detex(s):
+    s = re.sub(r"(?<!\\)%.*", "", s)
+    s = re.sub(r"\\begin\{(figure|table|tikzpicture|tabularx|equation|proof)\}.*?\\end\{\1\}", "", s, flags=re.S)
+    s = re.sub(r"\\begin\{(proposition|definition)\}(\[[^\]]*\])?", "", s); s = re.sub(r"\\end\{(proposition|definition|enumerate|itemize)\}", "", s)
+    s = re.sub(r"\\begin\{enumerate\}(\[[^\]]*\])?", "", s)
+    s = re.sub(r"\$[^$]*\$", "X", s)
+    s = re.sub(r"\\cite[pt]?\{[^}]*\}", "[1]", s)
+    s = re.sub(r"\\(eq)?ref\{[^}]*\}", "1", s)
+    s = re.sub(r"\\(label|input)\{[^}]*\}", "", s)
+    s = re.sub(r"\\(section|subsection|subsubsection|paragraph)\*?\{([^}]*)\}", r"\n\2.\n", s)
+    s = re.sub(r"\\(textbf|emph|textit|texttt|textsf)\{([^}]*)\}", r"\2", s)
+    s = re.sub(r"\\footnote\{", " (", s)
+    s = re.sub(r"\\item", "\n", s)
+    s = s.replace("~", " ").replace("\\%", "%").replace("{,}", ",")
+    s = re.sub(r"\\op\{(\d+)\}", r"OP \1", s)
+    s = re.sub(r"\\[a-zA-Z]+\*?", "", s)
+    s = s.replace("{", "").replace("}", "")
+    s = re.sub(r"[ \t]+", " ", s)
+    return s.strip()
+for f in sys.argv[1:]:
+    out = os.path.join(sys.argv[0].rsplit('/',1)[0] if '/' in sys.argv[0] else '.', 'txt', os.path.basename(f).replace('.tex', '.txt'))
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, 'w').write(detex(open(f).read()))
+    print(out)
