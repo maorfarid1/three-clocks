@@ -72,6 +72,12 @@ for si, src in enumerate(srcs):
     fr = d["free"]
     ft = np.array(sorted(float(k) for k in fr))
     ff = np.array([fr[k]["frac_loop"] for k in sorted(fr, key=float)])
+    tag = {"gpt2": "gpt2", "EleutherAI/pythia-160m": "pythia160m"}.get(d["args"]["model"])
+    fb = f"results/exp3b_{tag}.json"
+    if tag and os.path.exists(fb):  # larger free-sampling run of Exp. 3b (three samples per prompt)
+        rows = json.load(open(fb))["rows"]
+        ft = np.array(sorted({r["T"] for r in rows}))
+        ff = np.array([np.mean([r["loop"] > 0 for r in rows if r["T"] == t]) for t in ft])
     ax[3].semilogx(ft, ff, "s--", ms=2.5, lw=0.8, color=col, alpha=0.8, label=f"{name}: free runs loop")
     S["surv_median"] = dict(zip(np.round(temps, 3).tolist(), np.round(np.median(surv, 0), 3).tolist()))
     S["free_frac_loop"] = dict(zip(ft.tolist(), ff.tolist()))

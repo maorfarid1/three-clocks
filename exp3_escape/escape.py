@@ -141,6 +141,7 @@ if __name__ == "__main__":
     ap.add_argument("--revision", default=None)
     ap.add_argument("--gen", type=int, default=320)
     ap.add_argument("--n_prompts", type=int, default=40)
+    ap.add_argument("--first_prompt", type=int, default=0, help="run prompts first_prompt..n_prompts-1 (to split large models into parts)")
     ap.add_argument("--burn_cycles", type=int, default=2, help="cycles already in context before timing")
     ap.add_argument("--mc_loops", type=int, default=4)
     ap.add_argument("--mc_n", type=int, default=128)
@@ -156,7 +157,7 @@ if __name__ == "__main__":
     model = AutoModelForCausalLM.from_pretrained(a.model, **kw).float().eval()
     temps = np.round(np.geomspace(0.15, 2.0, 30), 4).tolist()
     loops, t0 = [], time.time()
-    for i, text in enumerate(PROMPTS[: a.n_prompts]):
+    for i, text in list(enumerate(PROMPTS[: a.n_prompts]))[a.first_prompt:]:
         ids = tok(text, return_tensors="pt").input_ids
         toks, zs = greedy_with_logits(model, ids, a.gen)
         k, onset = find_loop(toks, min_reps=3)
@@ -201,7 +202,7 @@ if __name__ == "__main__":
             mc.append(row)
             print("  MC", row, flush=True)
     free = free_sampling(model, tok, PROMPTS[: a.n_prompts],
-                         [float(x) for x in a.free_temps.split(",")], a.free_gen, a.seed)
+                         [float(x) for x in a.free_temps.split(",")], a.free_gen, a.seed) if a.free_temps else {}
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     json.dump(dict(args={k: v for k, v in vars(a).items()}, temps=temps, loops=loops, mc=mc, free={str(k): v for k, v in free.items()}),
               open(a.out, "w"))
