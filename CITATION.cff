@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code, data or reading list, please cite the paper."
+title: "Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation"
+authors:
+  - family-names: Farid
+    given-names: Maor
+    affiliation: "Leo AI, Inc."
+type: software
+license: MIT
+repository-code: "https://github.com/maorfarid1/three-clocks"
+keywords:
+  - large language models
+  - transformers
+  - nonlinear dynamics
+  - dynamical systems
+  - edge of stability
+  - repetition loops
+  - sampling temperature
+  - Lyapunov exponents
+  - bifurcation
+  - Kramers escape
+  - attention clustering
+preferred-citation:
+  type: article
+  title: "Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation"
+  authors:
+    - family-names: Farid
+      given-names: Maor
+  year: 2026

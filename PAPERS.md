@@ -4,6 +4,8 @@ Papers that treat transformer language models as nonlinear dynamical systems, gr
 *Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation*.
 Every arXiv entry was checked by ID against the arXiv API; non-arXiv items were checked by DOI.
 
+Last updated November 2026.
+
 Pull requests with new papers are welcome. Please add one line: title, link, authors, year, and one sentence on why it matters.
 
 ## Clock 1: depth as time (47)
@@ -56,8 +58,17 @@ Pull requests with new papers are welcome. Please add one line: title, link, aut
 - [Deep Information Propagation](https://arxiv.org/abs/1611.01232), Schoenholz et al. 2016. Depth scales of signal propagation; edge of chaos for trainability.
 - [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385), He et al. 2015. ResNets; the residual update that makes depth a time variable.
 
-## Clock 2: training as a dynamical system (74)
+## Clock 2: training as a dynamical system (83)
 
+- [Understanding Optimization in Deep Learning with Central Flows](https://arxiv.org/abs/2410.24206), Cohen et al. 2024. Time-averaged ODE (central flow) for gradient descent at the edge of stability.
+- [The Multiple Timescales of Gradient Descent on the Edge of Stability: A Perturbative Derivation of the Central Flow](https://arxiv.org/abs/2609.01034), Berthier 2026. Multiple-scales derivation of the central flow with three time scales.
+- [Edge Flow: A Tractable and Predictive Continuous-Time Model for Gradient Descent at the Edge of Stability](https://arxiv.org/abs/2606.18080), Marion 2026. Three coupled ODEs for center, direction and amplitude of the EoS oscillation.
+- [A Bifurcation Theory Framework for Gradient Descent on the Edge of Stability](https://arxiv.org/abs/2606.15551), Gan 2026. Flip bifurcation and center manifold near a manifold of minimizers.
+- [On the Stability of Nonlinear Dynamics in GD and SGD: Beyond Quadratic Potentials](https://arxiv.org/abs/2602.14789), Mulayoff & Stich 2026. Exact criterion for stable GD oscillations via third and fourth derivatives.
+- [The Origin of Edge of Stability](https://arxiv.org/abs/2604.20446), Litman 2026. Telescoping identity forcing step-direction curvature to 2/eta.
+- [Trajectory Alignment: Understanding the Edge of Stability Phenomenon via Bifurcation Theory](https://arxiv.org/abs/2307.04204), Song & Yun 2023. GD trajectories align on a bifurcation diagram in simple models.
+- [Second-order regression models exhibit progressive sharpening to the edge of stability](https://arxiv.org/abs/2210.04860), Agarwala et al. 2022. Progressive sharpening proved in a second-order regression model.
+- [Universal Sharpness Dynamics in Neural Network Training: Fixed Point Analysis, Edge of Stability, and Route to Chaos](https://arxiv.org/abs/2311.02076), Kalra et al. 2023. Fixed points, EoS and route to chaos in a two-layer linear model.
 - [Generalization at the Edge of Stability](https://arxiv.org/abs/2604.19740), Tuci et al. 2026. Optimizers as random dynamical systems with fractal attractors; generalization at EoS.
 - [Taming Curvature: Architecture Warm-Up for Stable Transformer Training](https://arxiv.org/abs/2606.16768), Ramasinghe et al. 2026. Curvature control via architecture warm-up prevents transformer loss spikes.
 - [Unbiased Gradients, Moving Stability Boundaries: Exact Mini-Batch Geometry in Linear Self-Attention](https://arxiv.org/abs/2605.21292), Balasubramanian 2026. Mini-batch sampling moves stability boundaries in linear self-attention training.
@@ -133,8 +144,11 @@ Pull requests with new papers are welcome. Please add one line: title, link, aut
 - [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120), Saxe et al. 2013. Plateaus and stage-wise mode learning in deep linear nets.
 - [On the difficulty of training Recurrent Neural Networks](https://arxiv.org/abs/1211.5063), Pascanu et al. 2012. Exploding gradients via bifurcations and attractors.
 
-## Clock 3: generation (and in-context learning) (41)
+## Clock 3: generation (and in-context learning) (44)
 
+- [When Do Repetition Loops Lock? Truncation Sampling, Bounded Penalties, and a Blind Spot in DRY](https://arxiv.org/abs/2610.24715), Chen 2026. Exact loop survival from per-step continuation probabilities; when samplers lock loops.
+- [Wait, Wait, Wait... Why Do Reasoning Models Loop?](https://arxiv.org/abs/2512.12895), Pipis et al. 2025. Why reasoning models loop at low temperature: learning errors and correlated errors.
+- [CTRL: A Conditional Transformer Language Model for Controllable Generation](https://arxiv.org/abs/1909.05858), Keskar et al. 2019. Introduces the repetition penalty used as a decoding baseline.
 - [Chaos and bifurcations in continuous language-model feedback](https://arxiv.org/abs/2610.31692), Jones 2026. Continuous LM feedback: temperature moves loops into chaos; Feigenbaum scaling; proven periodic orbits.
 - [When Do Repetition Loops Lock? Truncation Sampling, Bounded Penalties, and a Blind Spot in DRY](https://arxiv.org/abs/2610.24715), Chen & Wang 2026. When repetition loops lock under sampling; exit probability per loop.
 - [Uncovering Uncontrolled Repetition through Residual Stream Dynamics](https://arxiv.org/abs/2609.38802), Zhang et al. 2026. Repetition traced through residual-stream dynamics.

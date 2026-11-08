@@ -1,8 +1,10 @@
 # Tested with Python 3.13 on CPU. Install torch from https://download.pytorch.org/whl/cpu if you have no GPU.
+matplotlib==3.11.2
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==26.0.1
+safetensors==0.8.0
+scipy==1.18.1
+tokenizers==0.23.3
 torch==2.15.0
 transformers==5.22.2
-tokenizers==0.23.3
-safetensors==0.8.0
-numpy==2.5.3
-scipy==1.18.1
-matplotlib==3.11.2
