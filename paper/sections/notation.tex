@@ -1,0 +1,107 @@
+\section{Notation}
+\label{app:notation}
+
+Each symbol has one meaning throughout the paper. The indices $i$ and $j$ count tokens (and $i$ the steps within a loop); their range is given where they appear.
+
+{\small
+\setlength{\LTpre}{2pt}\setlength{\LTpost}{2pt}
+\begin{longtable}{@{}p{0.2\linewidth}p{0.76\linewidth}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{2}{@{}l}{\emph{Language model and clock 1 (layer time)}}\\
+$L$ & number of residual blocks (depth) \\
+$\ell$ & block index; the layer time of clock~1 \\
+$d$ & model width \\
+$\mathcal V$, $|\mathcal V|$ & vocabulary; its size \\
+$x^{\ell}_i$, $x^{\ell}$ & hidden state (residual stream) of token $i$ after block $\ell$; all tokens together \\
+$f^{\ell}_\theta$ & update added by block $\ell$ (attention and MLP) \\
+$F$, $F_\ell$ & a generic map; the map of block $\ell$ \\
+$\mathrm{D}F$ & Jacobian of $F$ \\
+$z$, $z_y$ & logits; logit of token $y$ \\
+$W_U$; $W_Q,W_K,W_V$ & unembedding matrix; query, key and value matrices \\
+$\beta$ & inverse temperature of attention \\
+$Z_i$ & normalizer of the attention weights of token $i$ \\
+$\Pi_x$ & projection onto the tangent space of the unit sphere at $x$ \\
+$\phi$ & activation function of a fully connected network (Section~\ref{sec:edgechaos}) \\
+$\sigma_w^2$, $\sigma_b^2$ & variances of the weights and biases at initialization \\
+$Q^\ast$, $G$ & fixed point of the length map; a standard Gaussian random variable \\
+$\chi_1$ & factor by which one layer multiplies the distance between nearby inputs \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{Clock 2 (training time)}}\\
+$t$ & optimizer step; the training time of clock~2 \\
+$\theta$, $\theta_t$, $\theta^\ast$ & all trainable parameters; at step $t$; at a minimum \\
+$\mathcal L$, $\mathcal L(\theta;\mathcal B_t)$ & training loss; loss on the minibatch $\mathcal B_t$ \\
+$B$ & batch size \\
+$\eta$, $\eta_t$ & learning rate (step size); at step $t$ \\
+$P_t$ & preconditioner (identity for gradient descent) \\
+$g_t$ & gradient at step $t$ \\
+$H$ & Hessian of the loss \\
+$\lambda$, $\lambda_{\max}$ & eigenvalue of the Hessian; the largest one (sharpness) \\
+$\lambda_t$ & sharpness at step $t$ in the self-stabilization map \eqref{eq:selfstab} \\
+$v$ & top eigenvector of the Hessian \\
+$\mathcal L_v$ & loss restricted to the line through $\theta^\ast$ along $v$ \\
+$\alpha$ & rate of progressive sharpening in \eqref{eq:selfstab} \\
+$C$, $\Sigma$ & covariance of per-example gradients; stationary covariance of SGD near a minimum \\
+$\mathcal W_t$ & Wiener process \\
+$w_1,w_2$ & the two weights of the catapult model (Figure~\ref{fig:catapult}) \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{Clock 3 (generation time)}}\\
+$n$ & number of tokens in the context; the generation time of clock~3 \\
+$y_n$, $s_n$ & token at position $n$; context $(y_1,\dots,y_n)$ \\
+$y$ & a token of the vocabulary \\
+$T$, $T_0$ & sampling temperature; base temperature of a controller \\
+$\pi_T$ & next-token distribution at temperature $T$ \\
+$E$, $E_y$, $k_B$ & energy; energy of token $y$, $E_y=-z_y$; Boltzmann constant, set to 1 \\
+$k$ & period of a loop in tokens; period of an orbit \\
+$a_i$ & $i$-th token of a loop \\
+$p_i(T)$ & probability that the sampler stays on the loop at step $i$ \\
+$S_i(T)$ & sum of the Boltzmann factors of all exits at step $i$ \\
+$\Delta_i^{y}$, $\Delta_i$ & logit gap between the loop token $a_i$ and token $y$; smallest gap at step $i$ \\
+$\Delta$, $\Delta_{\min}$ & barrier of a loop: its smallest logit gap \\
+$m$, $m_i$ & number of exits that attain the smallest gap (of the cycle; at step $i$) \\
+$c$ & cycle index of a loop \\
+$\Delta_c$ & smallest logit gap during cycle $c$ \\
+$\Delta_1$, $\Delta_2$, $\Delta_\infty$ & barrier in cycles 1 and 2; its saturation level \\
+$b$, $\gamma$ & growth rate of the barrier under linear and logarithmic growth \\
+$c_\ast$ & number of cycles over which the barrier saturates \\
+$r(T)$, $r_c(T)$ & escape probability per cycle; during cycle $c$ \\
+$r_\ast$ & target escape probability of the Arrhenius-guided controller \\
+$\nu$ & number of escape attempts per cycle in the reduced model \eqref{eq:reduced} \\
+$N$ & horizon: number of cycles (or forcing periods) observed \\
+$T_{1/2}(N)$ & temperature at which a loop survives $N$ cycles with probability one half \\
+$T_{\mathrm{lock}}$ & temperature below which a loop is never left with positive probability \\
+$\mathrm{dist}_c$ & distance between the hidden state and its value one period earlier, in cycle $c$ \\
+$\mathrm{rep}$, $\mathcal I$ & fraction of repeated 4-grams in a window; mean surprisal of the window \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{Physical and reduced models}}\\
+$\tau$, $\bar\tau$ & physical time; mean time to escape from a well \\
+$q$, $\dot q$ & displacement of an oscillator or particle (or along $v$); velocity \\
+$M$, $\zeta$ & mass; friction coefficient \\
+$k_1$, $k_3$ & linear and cubic stiffness \\
+$A$, $\Omega$ & amplitude and frequency of harmonic forcing \\
+$\xi$, $D$ & Gaussian white noise; its intensity \\
+$U$, $\Delta U$ & potential energy; height of the barrier \\
+$\omega_{\mathrm{w}}$, $\omega_{\mathrm{b}}$ & frequencies set by the curvature at the bottom of the well and at the top of the barrier \\
+$\psi_i$, $\omega_i$ & phase and natural frequency of oscillator $i$ \\
+$J$ & coupling strength of the Kuramoto model \\
+$\rho$, $\rho_\ell$ & order parameter of synchrony; of the residual stream entering block $\ell$ \\
+$u$, $\mu$ & state of a generic map; parameter of the logistic map \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{Dynamical-systems tools}}\\
+$\Lambda_K$ & finite-time Lyapunov exponent over $K$ steps \eqref{eq:ftle} \\
+$\Lambda$, $\tilde\Lambda_\ell$ & exponent of the whole stack; relative exponent of block $\ell$ (Section~\ref{sec:exp1}) \\
+$\sigma_{\max}$, $\sigma_\ell$ & largest singular value; largest singular value of the Jacobian of block $\ell$ \\
+$\kappa$ & coherence of stretching between blocks (Section~\ref{sec:exp1}) \\
+$\delta$ & size of an initial perturbation \\
+$R_{ij}$, $\varepsilon$ & recurrence matrix; recurrence threshold \\
+$\mathcal H_s$, DET & normalized spectral entropy; determinism of a recurrence plot \\
+$h$ & an observable acted on by the Koopman operator \\
+$I$ & identity matrix \\
+$O$, $o$, $\Theta$ & asymptotic orders \\
+$\mathcal N(0,\cdot)$ & Gaussian distribution with mean zero and the stated variance \\
+\end{longtable}
+}

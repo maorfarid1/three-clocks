@@ -11,7 +11,7 @@
   ttl/.style={font=\small\bfseries, align=left}
 ]
 % ================= Clock 2: training snapshots =================
-\foreach \k/\x/\lab/\op in {0/-7.2/{$\theta_0$}/0.35, 1/-6.0/{$\theta_t$}/0.65, 2/-4.8/{$\theta_{T}$}/1.0} {
+\foreach \k/\x/\lab/\op in {0/-7.2/{$\theta_0$}/0.35, 1/-6.0/{$\theta_t$}/0.65, 2/-4.8/{$\theta_{\mathrm{end}}$}/1.0} {
   \begin{scope}[opacity=\op]
     \foreach \i in {0,...,5} { \node[mini] at (\x, 0.42+0.27*\i) {}; }
   \end{scope}
