@@ -149,7 +149,7 @@ for m, name, col in MODELS:
         ax[1].set_xlabel("PC 1"); ax[1].set_ylabel("PC 2"); ax[1].set_xticks([]); ax[1].set_yticks([])
         ax[1].set_title(f"(b) one GPT-2 loop, period {k}", loc="left", fontsize=8)
         summary["orbit_example"] = dict(prompt=e["prompt"], k=k, var=e["var"], text=e["text"])
-ax[0].set_xlabel("cycle $c$ since loop onset"); ax[0].set_ylabel("return distance $d_c$")
+ax[0].set_xlabel("cycle $c$ since loop onset"); ax[0].set_ylabel("return distance $\\mathrm{dist}_c$")
 ax[0].set_title("(a) distance to previous cycle", loc="left", fontsize=8)
 ax[0].legend(fontsize=6.5, frameon=False)
 fig.tight_layout(w_pad=0.8)

@@ -29,7 +29,7 @@ for m, name, col in MODELS:
     L = [l for l in D[m]["loops"] if l["T_half_exact"]]
     ax[0].plot([l["c"] for l in L], [l["T_half_exact"] for l in L], "o", ms=2.3, color=col, label=name)
 ax[0].set_xlim(0, 3.2); ax[0].set_ylim(0, 3.2)
-ax[0].set_xlabel("growth rate $\\gamma$ in $\\Delta_c=a+\\gamma\\ln c$"); ax[0].set_ylabel("temperature $T$")
+ax[0].set_xlabel("growth rate $\\gamma$ in $\\Delta_c=\\Delta_1+\\gamma\\ln c$"); ax[0].set_ylabel("temperature $T$")
 ax[0].set_title("(a) locking phase diagram", loc="left", fontsize=8)
 ax[0].legend(fontsize=5.8, frameon=False, loc="upper left", bbox_to_anchor=(0.0, 0.88))
 
@@ -39,7 +39,7 @@ w = 0.38
 for i, (m, name, col) in enumerate(MODELS):
     bc = D[m]["summary"]["best_counts"]
     ax[1].bar(np.arange(3) + (i - 0.5) * w, [bc[k] for k in laws], w, color=col, label=name)
-ax[1].set_xticks(range(3)); ax[1].set_xticklabels(["$a+\\gamma\\ln c$", "$a+bc$", "saturating"])
+ax[1].set_xticks(range(3)); ax[1].set_xticklabels(["logarithmic", "linear", "saturating"])
 ax[1].set_ylabel("loops where law fits best")
 ax[1].set_title("(b) barrier growth law (AICc)", loc="left", fontsize=8)
 ax[1].legend(fontsize=6, frameon=False)
