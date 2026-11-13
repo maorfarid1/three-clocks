@@ -5,18 +5,18 @@ The first list defines terms of machine learning for readers from nonlinear dyna
 
 \subsection*{Terms from machine learning}
 \begin{description}[leftmargin=0pt,itemsep=1pt,font=\normalfont\bfseries]
-\item[Token, vocabulary.] The unit of text a model reads and writes, usually a word or a piece of a word; the vocabulary $\mathcal V$ is the finite set of all tokens (about 50{,}000 for GPT-2).
-\item[Context.] The sequence of tokens the model conditions on when it predicts the next one.
-\item[Embedding, hidden state, residual stream.] Each token is mapped to a vector in $\mathbb{R}^d$; the vector of a token after block $\ell$ is its hidden state, and the sequence of these vectors through the blocks is called the residual stream.
-\item[Transformer block.] One step of clock~1: an attention sublayer that mixes information across tokens, followed by a multilayer perceptron (MLP) that acts on each token separately, each added to the hidden state through a residual (skip) connection.
-\item[Attention.] A weighted average of the hidden states of earlier tokens, with weights given by a softmax of inner products between learned projections (queries and keys); it is the coupling between tokens.
-\item[Layer normalization.] Rescaling of each hidden state to zero mean and unit variance before a sublayer, which keeps the tokens near a sphere.
-\item[Logits, softmax.] The logits $z$ are the scores the model assigns to each token of the vocabulary; the softmax $e^{z_y}/\sum_{y'}e^{z_{y'}}$ turns them into probabilities.
-\item[Sampling temperature.] The divisor $T$ of the logits before the softmax; $T\to0$ always picks the most likely token (greedy decoding), and large $T$ makes all tokens nearly equally likely.
+\item[Token, vocabulary.] The unit of text a model reads and writes, usually a word or a word fragment such as ``ing''. GPT-2's vocabulary $\mathcal V$ holds about 50{,}000 of them, so each step of clock~3 picks one of 50{,}000 states.
+\item[Context.] Everything the model has seen so far, prompt plus generated text, on which its next prediction is conditioned.
+\item[Embedding, hidden state, residual stream.] The state of clock~1. Token $i$ starts as a vector in $\mathbb{R}^d$ (its embedding) and after block $\ell$ is the hidden state $x_i^\ell$. Across depth this vector is called the residual stream, since each block reads it and adds its own update.
+\item[Transformer block.] One step of clock~1. Attention first mixes information across tokens, then a multilayer perceptron (MLP) acts on each token alone, and each of the two outputs is added back to the hidden state through a skip (residual) connection.
+\item[Attention.] The coupling between tokens in clock~1. Each token takes an average of the hidden states of earlier tokens, weighted by a softmax of inner products between learned projections (queries and keys).
+\item[Layer normalization.] Each hidden state is shifted and scaled to zero mean and unit variance before entering a sublayer, so the tokens stay close to a sphere.
+\item[Logits, softmax.] One real score $z_y$ per vocabulary token, read off the last hidden state; in Section~\ref{sec:loops} minus the logit plays the role of an energy. Sampling uses $e^{z_y}/\sum_{y'}e^{z_{y'}}$ (the softmax), which is the Boltzmann distribution at $T=1$.
+\item[Sampling temperature.] The number $T$ that divides the logits before the softmax, and the noise intensity of clock~3. As $T\to0$ the sampler always takes the top token (greedy decoding); at large $T$ every token becomes nearly equally likely.
 \item[Top-k and nucleus (top-p) sampling.] Truncation rules that sample only from the $k$ most likely tokens, or from the smallest set whose probabilities sum to $p$.
-\item[Autoregressive generation.] Producing text one token at a time, each sampled token being appended to the context for the next step.
-\item[Loss, cross-entropy.] The training objective; for language models, the mean negative log-probability that the model assigns to the true next token.
-\item[Surprisal, perplexity.] The surprisal of a token is $-\log p$ of that token; perplexity is the exponential of the mean surprisal.
+\item[Autoregressive generation.] Writing text one token at a time, appending each sampled token to the context before predicting the next.
+\item[Loss, cross-entropy.] The potential $\mathcal L$ that clock~2 descends. For next-token prediction it averages $-\log p$ over the training text, with $p$ the probability the model gave to the token that actually came next.
+\item[Surprisal, perplexity.] The surprisal of a token is $-\log p$, in nats in this paper; perplexity is $e$ raised to the mean surprisal.
 \item[Minibatch, SGD, learning rate.] Stochastic gradient descent (SGD) estimates the gradient on a random subset of the data (a minibatch) and steps against it with step size $\eta$, the learning rate.
 \item[Adam, preconditioner.] Adam rescales each coordinate of the gradient by running estimates of its first and second moments, which acts as a diagonal preconditioner.
 \item[Pretraining, checkpoint.] Training a model on a large text corpus to predict the next token; a checkpoint is a saved copy of the weights at one training step.
