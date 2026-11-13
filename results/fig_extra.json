@@ -1,0 +1,51 @@
+{
+ "basins": {
+  "duffing_A0.1": {
+   "right": 0.5275077160493827,
+   "left": 0.47249228395061726,
+   "both": 0.0
+  },
+  "duffing_A0.25": {
+   "right": 0.4468441358024691,
+   "left": 0.4371604938271605,
+   "both": 0.11599537037037037
+  },
+  "nn_trained_fraction": 0.32437777777777776,
+  "nn_zoom_trained_fraction": 0.4602333333333333,
+  "zoom": [
+   [
+    0.55,
+    0.65
+   ],
+   [
+    -0.40618729096989964,
+    -0.30618729096989966
+   ]
+  ]
+ },
+ "catapult": {
+  "loss_peak": 0.6564635825612796,
+  "loss_start": 0.06389790402582679,
+  "curv_start": 2.740156355596184,
+  "curv_end": 2.013032858569023,
+  "start": [
+   1.6062865110546698,
+   0.4
+  ],
+  "end": [
+   0.9480113372017168,
+   1.0556075800722708
+  ]
+ },
+ "escape_time": {
+  "D": 0.06,
+  "hops": 9,
+  "T": 0.55,
+  "prompt": 8,
+  "seed": 1,
+  "loop_entries": 2,
+  "loop_exits": 2,
+  "frac_in_loop": 0.5116666666666667,
+  "text": " Madagascar. The frog has been named 'Grizzly Frog' because of its size and the fact it has a thick, glossy body.\n\nThe frog is named after the name of an ancient Greek philosopher who was a hunter.\n\nGrizzly frog has been named after Greek philosopher Gaius Pliny and his colleague, Plato.\n\nScientists have discovered a new species of frog in the forest of Madagascar. The frog has been named 'Grizzly Frog' because of its size and the fact it has a thick, glossy body.\n\nScientists have discovered a new species of frog in the forest of Madagascar. The frog has been named 'Grizzly Frog' because of its size and the fact it has a thick, glossy body.\n\nThe frog was named after the name of an ancient Greek philosopher who was a hunter.\n\nScientists have discovered a new species of frog in the forest of Madagascar. The frog has been named 'Grizzly Frog' because of its size and the fact it has a thick, glossy body.\n\nThe frog was named after the name of an ancient Greek philosopher who was a hunter.\n\nScientists have discovered a new species of frog in the forest of Madagascar. The frog has been named 'Grizzly Frog' because of its size and the fact it has a thick, glossy body.\n\nThe frog was named after the name of an ancient Greek philosopher who was a hunter"
+ }
+}
