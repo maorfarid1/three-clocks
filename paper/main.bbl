@@ -1,9 +1,25 @@
-\begin{thebibliography}{183}
+\begin{thebibliography}{222}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acebr{\'o}n et~al.(2005)Acebr{\'o}n, Bonilla, P{\'e}rez~Vicente,
+  Ritort, and Spigler]{acebron2005kuramoto}
+Juan~A. Acebr{\'o}n, L.~L. Bonilla, Conrad~J. P{\'e}rez~Vicente, F{\'e}lix
+  Ritort, and Renato Spigler.
+\newblock {The Kuramoto model: A simple paradigm for synchronization
+  phenomena}.
+\newblock \emph{Reviews of Modern Physics}, 77\penalty0 (1), 2005.
+\newblock \doi{10.1103/RevModPhys.77.137}.
+
+\bibitem[Agarwala et~al.(2022)Agarwala, Pedregosa, and
+  Pennington]{agarwala2022secondorder}
+Atish Agarwala, Fabian Pedregosa, and Jeffrey Pennington.
+\newblock {Second-order regression models exhibit progressive sharpening to the
+  edge of stability}.
+\newblock arXiv preprint arXiv:2210.04860, 2022.
 
 \bibitem[Agazzi et~al.(2026)Agazzi, Bruno, García, Saviozzi, and
   Romito]{agazzi2026stochastic}
@@ -17,14 +33,15 @@ Andrea Agazzi, Giuseppe Bruno, Eloy~Mosig García, Samuele Saviozzi, and Marco
 Kwangjun Ahn, Jingzhao Zhang, and Suvrit Sra.
 \newblock {Understanding the unstable convergence of gradient descent}.
 \newblock \emph{arXiv preprint arXiv:2204.01050}, 2022.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Ahn et~al.(2023)Ahn, Cheng, Daneshmand, and Sra]{ahn2023transformers}
 Kwangjun Ahn, Xiang Cheng, Hadi Daneshmand, and Suvrit Sra.
 \newblock {Transformers learn to implement preconditioned gradient descent for
   in-context learning}.
 \newblock \emph{arXiv preprint arXiv:2306.00297}, 2023.
-\newblock 37th Conference on Neural Information Processing Systems (NeurIPS
-  2023).
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Akyürek et~al.(2022)Akyürek, Schuurmans, Andreas, Ma, and
   Zhou]{akyurek2022learning}
@@ -32,6 +49,8 @@ Ekin Akyürek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou.
 \newblock {What learning algorithm is in-context learning? Investigations with
   linear models}.
 \newblock \emph{arXiv preprint arXiv:2211.15661}, 2022.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Alemohammad et~al.(2023)Alemohammad, Casco-Rodriguez, Luzi, Humayun,
   Babaei, LeJeune, Siahkoohi, and Baraniuk]{alemohammad2023selfconsuming}
@@ -39,6 +58,8 @@ Sina Alemohammad, Josue Casco-Rodriguez, Lorenzo Luzi, Ahmed~Imtiaz Humayun,
   Hossein Babaei, Daniel LeJeune, Ali Siahkoohi, and Richard~G. Baraniuk.
 \newblock {Self-Consuming Generative Models Go MAD}.
 \newblock \emph{arXiv preprint arXiv:2307.01850}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Arnold et~al.(2024)Arnold, Holtorf, Schäfer, and
   Lörch]{arnold2024phase}
@@ -53,18 +74,29 @@ Sanjeev Arora, Zhiyuan Li, and Abhishek Panigrahi.
   Learning}.
 \newblock \emph{arXiv preprint arXiv:2205.09745}, 2022.
 
+\bibitem[Arrhenius(1889)]{arrhenius1889reaktionsgeschwindigkeit}
+Svante Arrhenius.
+\newblock {{\"U}ber die Reaktionsgeschwindigkeit bei der Inversion von
+  Rohrzucker durch S{\"a}uren}.
+\newblock \emph{Zeitschrift f{\"u}r Physikalische Chemie}, 4U\penalty0 (1),
+  1889.
+\newblock \doi{10.1515/zpch-1889-0416}.
+
 \bibitem[Bachlechner et~al.(2020)Bachlechner, Majumder, Mao, Cottrell, and
   McAuley]{bachlechner2020rezero}
 Thomas Bachlechner, Bodhisattwa~Prasad Majumder, Huanru~Henry Mao, Garrison~W.
   Cottrell, and Julian McAuley.
 \newblock {ReZero is All You Need: Fast Convergence at Large Depth}.
 \newblock \emph{arXiv preprint arXiv:2003.04887}, 2020.
+\newblock Published in Conference on Uncertainty in Artificial Intelligence
+  (UAI).
 
 \bibitem[Bachmann \& Nagarajan(2024)Bachmann and
   Nagarajan]{bachmann2024pitfalls}
 Gregor Bachmann and Vaishnavh Nagarajan.
 \newblock {The pitfalls of next-token prediction}.
 \newblock \emph{arXiv preprint arXiv:2403.06963}, 2024.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Balasubramanian(2026)]{balasubramanian2026unbiased}
 Krishnakumar Balasubramanian.
@@ -76,7 +108,8 @@ Krishnakumar Balasubramanian.
 David G.~T. Barrett and Benoit Dherin.
 \newblock {Implicit Gradient Regularization}.
 \newblock \emph{arXiv preprint arXiv:2009.11162}, 2020.
-\newblock Published as a conference paper at ICLR 2021.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Basu et~al.(2020)Basu, Ramachandran, Keskar, and
   Varshney]{basu2020mirostat}
@@ -99,6 +132,22 @@ Samy Bengio, Oriol Vinyals, Navdeep Jaitly, and Noam Shazeer.
 \newblock {Scheduled Sampling for Sequence Prediction with Recurrent Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1506.03099}, 2015.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
+
+\bibitem[Bennett et~al.(2002)Bennett, Schatz, Rockwood, and
+  Wiesenfeld]{bennett2002huygens}
+Matthew Bennett, Michael~F. Schatz, Heidi Rockwood, and Kurt Wiesenfeld.
+\newblock {Huygens's clocks}.
+\newblock \emph{Proceedings of the Royal Society of London. Series A},
+  458\penalty0 (2019), 2002.
+\newblock \doi{10.1098/rspa.2001.0888}.
+
+\bibitem[Berthier(2026)]{berthier2026multiple}
+Rapha{\"e}l Berthier.
+\newblock {The Multiple Timescales of Gradient Descent on the Edge of
+  Stability: A Perturbative Derivation of the Central Flow}.
+\newblock arXiv preprint arXiv:2609.01034, 2026.
 
 \bibitem[Bertrand et~al.(2023)Bertrand, Bose, Duplessis, Jiralerspong, and
   Gidel]{bertrand2023stability}
@@ -107,6 +156,8 @@ Quentin Bertrand, Avishek~Joey Bose, Alexandre Duplessis, Marco Jiralerspong,
 \newblock {On the Stability of Iterative Retraining of Generative Models on
   their own Data}.
 \newblock \emph{arXiv preprint arXiv:2310.00429}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Biderman et~al.(2023)Biderman, Schoelkopf, Anthony, Bradley, O'Brien,
   Hallahan, Khan, Purohit, Prashanth, Raff, Skowron, Sutawika, and van~der
@@ -118,6 +169,7 @@ Stella Biderman, Hailey Schoelkopf, Quentin Anthony, Herbie Bradley, Kyle
 \newblock {Pythia: A Suite for Analyzing Large Language Models Across Training
   and Scaling}.
 \newblock \emph{arXiv preprint arXiv:2304.01373}, 2023.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Brunton et~al.(2015)Brunton, Proctor, and
   Kutz]{brunton2015discovering}
@@ -125,6 +177,7 @@ Steven~L. Brunton, Joshua~L. Proctor, and J.~Nathan Kutz.
 \newblock {Discovering governing equations from data: Sparse identification of
   nonlinear dynamical systems}.
 \newblock \emph{arXiv preprint arXiv:1509.03580}, 2015.
+\newblock Published in Proceedings of the National Academy of Sciences.
 
 \bibitem[Castin et~al.(2025)Castin, Ablin, Carrillo, and
   Peyré]{castin2025unified}
@@ -138,6 +191,8 @@ Bo~Chang, Minmin Chen, Eldad Haber, and Ed~H. Chi.
 \newblock {AntisymmetricRNN: A Dynamical System View on Recurrent Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1902.09689}, 2019.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Chaudhari \& Soatto(2017)Chaudhari and
   Soatto]{chaudhari2017stochastic}
@@ -145,6 +200,7 @@ Pratik Chaudhari and Stefano Soatto.
 \newblock {Stochastic gradient descent performs variational inference,
   converges to limit cycles for deep networks}.
 \newblock \emph{arXiv preprint arXiv:1710.11029}, 2017.
+\newblock Published in Information Theory and Applications Workshop.
 
 \bibitem[Chen et~al.(2023)Chen, Shwartz-Ziv, Cho, Leavitt, and
   Saphra]{chen2023sudden}
@@ -153,6 +209,8 @@ Angelica Chen, Ravid Shwartz-Ziv, Kyunghyun Cho, Matthew~L. Leavitt, and Naomi
 \newblock {Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and
   Simplicity Bias in MLMs}.
 \newblock \emph{arXiv preprint arXiv:2309.07311}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Chen \& Bruna(2022)Chen and Bruna]{chen2022edge}
 Lei Chen and Joan Bruna.
@@ -164,6 +222,8 @@ Lei Chen and Joan Bruna.
 Ricky T.~Q. Chen, Yulia Rubanova, Jesse Bettencourt, and David Duvenaud.
 \newblock {Neural Ordinary Differential Equations}.
 \newblock \emph{arXiv preprint arXiv:1806.07366}, 2018.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Chen \& Wang(2026)Chen and Wang]{chen2026repetition}
 Yichuan Chen and Xin Wang.
@@ -176,6 +236,8 @@ Lenaic Chizat and Francis Bach.
 \newblock {On the Global Convergence of Gradient Descent for Over-parameterized
   Models using Optimal Transport}.
 \newblock \emph{arXiv preprint arXiv:1805.09545}, 2018.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Chowdhery et~al.(2022)Chowdhery, Narang, Devlin, Bosma, Mishra,
   Roberts, Barham, Chung, Sutton, Gehrmann, Schuh, Shi, Tsvyashchenko, Maynez,
@@ -201,6 +263,13 @@ Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra,
   Kathy Meier-Hellstern, Douglas Eck, Jeff Dean, Slav Petrov, and Noah Fiedel.
 \newblock {PaLM: Scaling Language Modeling with Pathways}.
 \newblock \emph{arXiv preprint arXiv:2204.02311}, 2022.
+\newblock Published in Journal of Machine Learning Research.
+
+\bibitem[Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Chen, Jun,
+  et~al.]{cobbe2021training}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, et~al.
+\newblock {Training Verifiers to Solve Math Word Problems}.
+\newblock arXiv preprint arXiv:2110.14168, 2021.
 
 \bibitem[Cohen et~al.(2021)Cohen, Kaur, Li, Kolter, and
   Talwalkar]{cohen2021gradient}
@@ -208,6 +277,8 @@ Jeremy~M. Cohen, Simran Kaur, Yuanzhi Li, J.~Zico Kolter, and Ameet Talwalkar.
 \newblock {Gradient Descent on Neural Networks Typically Occurs at the Edge of
   Stability}.
 \newblock \emph{arXiv preprint arXiv:2103.00065}, 2021.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Cohen et~al.(2022)Cohen, Ghorbani, Krishnan, Agarwal, Medapati,
   Badura, Suo, Cardoze, Nado, Dahl, and Gilmer]{cohen2022adaptive}
@@ -217,12 +288,20 @@ Jeremy~M. Cohen, Behrooz Ghorbani, Shankar Krishnan, Naman Agarwal, Sourabh
 \newblock {Adaptive Gradient Methods at the Edge of Stability}.
 \newblock \emph{arXiv preprint arXiv:2207.14484}, 2022.
 
+\bibitem[Cohen et~al.(2024)Cohen, Damian, Talwalkar, Kolter, and
+  Lee]{cohen2024central}
+Jeremy~M. Cohen, Alex Damian, Ameet Talwalkar, J.~Zico Kolter, and Jason~D.
+  Lee.
+\newblock {Understanding Optimization in Deep Learning with Central Flows}.
+\newblock arXiv preprint arXiv:2410.24206, 2024.
+
 \bibitem[Cowsik et~al.(2024)Cowsik, Nebabu, Qi, and
   Ganguli]{cowsik2024geometric}
 Aditya Cowsik, Tamra Nebabu, Xiao-Liang Qi, and Surya Ganguli.
 \newblock {Geometric Dynamics of Signal Propagation Predict Trainability of
   Transformers}.
 \newblock \emph{arXiv preprint arXiv:2403.02579}, 2024.
+\newblock Published in Physical Review E.
 
 \bibitem[Damian et~al.(2022)Damian, Nichani, and
   Lee]{damian2022selfstabilization}
@@ -230,6 +309,8 @@ Alex Damian, Eshaan Nichani, and Jason~D. Lee.
 \newblock {Self-Stabilization: The Implicit Bias of Gradient Descent at the
   Edge of Stability}.
 \newblock \emph{arXiv preprint arXiv:2209.15594}, 2022.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Dauphin et~al.(2014)Dauphin, Pascanu, Gulcehre, Cho, Ganguli, and
   Bengio]{dauphin2014identifying}
@@ -238,6 +319,29 @@ Yann Dauphin, Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, Surya Ganguli,
 \newblock {Identifying and attacking the saddle point problem in
   high-dimensional non-convex optimization}.
 \newblock \emph{arXiv preprint arXiv:1406.2572}, 2014.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
+
+\bibitem[{DeepSeek-AI}(2025)]{deepseekr1card}
+{DeepSeek-AI}.
+\newblock {DeepSeek-R1} model card, usage recommendations.
+\newblock \url{https://huggingface.co/deepseek-ai/DeepSeek-R1}, accessed
+  November 2026, 2025.
+
+\bibitem[{DeepSeek-AI} et~al.(2025){DeepSeek-AI}, Guo, Yang, Zhang,
+  et~al.]{guo2025deepseekr1}
+{DeepSeek-AI}, Daya Guo, Dejian Yang, Haowei Zhang, et~al.
+\newblock {DeepSeek-R1} incentivizes reasoning in {LLMs} through reinforcement
+  learning.
+\newblock \emph{Nature}, 645, 2025.
+\newblock \doi{10.1038/s41586-025-09422-z}.
+\newblock arXiv:2501.12948.
+
+\bibitem[Dieterich(1972)]{dieterich1972time}
+James~H. Dieterich.
+\newblock Time-dependent friction in rocks.
+\newblock \emph{Journal of Geophysical Research}, 77\penalty0 (20), 1972.
+\newblock \doi{10.1029/JB077i020p03690}.
 
 \bibitem[Dinc et~al.(2025)Dinc, Cirakman, Kurtkaya, Yuksekgonul, Jiang,
   Schnitzer, and Tanaka]{dinc2025ghost}
@@ -246,19 +350,21 @@ Fatih Dinc, Ege Cirakman, Bariscan Kurtkaya, Mert Yuksekgonul, Yiqi Jiang,
 \newblock {A ghost mechanism: An analytical model of abrupt learning in
   recurrent networks}.
 \newblock \emph{arXiv preprint arXiv:2501.02378}, 2025.
+\newblock Published in Physical Review X.
 
 \bibitem[Dogra \& Redman(2020)Dogra and Redman]{dogra2020optimizing}
 Akshunna~S. Dogra and William~T Redman.
 \newblock {Optimizing Neural Networks via Koopman Operator Theory}.
 \newblock \emph{arXiv preprint arXiv:2006.02361}, 2020.
-\newblock Advances in Neural Information Processing Systems 33, 2087-2097
-  (2020).
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Dong et~al.(2021)Dong, Cordonnier, and Loukas]{dong2021attention}
 Yihe Dong, Jean-Baptiste Cordonnier, and Andreas Loukas.
 \newblock {Attention is Not All You Need: Pure Attention Loses Rank Doubly
   Exponentially with Depth}.
 \newblock \emph{arXiv preprint arXiv:2103.03404}, 2021.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Duerinckx et~al.(2026)Duerinckx, Geshkovski, and
   Rossi]{duerinckx2026kinetic}
@@ -276,6 +382,8 @@ Nouha Dziri, Ximing Lu, Melanie Sclar, Xiang~Lorraine Li, Liwei Jiang,
   Harchaoui, and Yejin Choi.
 \newblock {Faith and Fate: Limits of Transformers on Compositionality}.
 \newblock \emph{arXiv preprint arXiv:2305.18654}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[E(2017)]{e2017proposal}
 Weinan E.
@@ -288,12 +396,20 @@ Weinan E.
 Weinan E, Jiequn Han, and Qianxiao Li.
 \newblock {A Mean-Field Optimal Control Formulation of Deep Learning}.
 \newblock \emph{arXiv preprint arXiv:1807.01083}, 2018.
-\newblock Research in the Mathematical Sciences, 6:10 (2019).
+\newblock Published in Research in the Mathematical Sciences.
+
+\bibitem[Eckmann et~al.(1987)Eckmann, Oliffson~Kamphorst, and
+  Ruelle]{eckmann1987recurrence}
+Jean-Pierre Eckmann, Sylvie Oliffson~Kamphorst, and David Ruelle.
+\newblock Recurrence plots of dynamical systems.
+\newblock \emph{Europhysics Letters}, 4\penalty0 (9), 1987.
+\newblock \doi{10.1209/0295-5075/4/9/006}.
 
 \bibitem[Engelken et~al.(2020)Engelken, Wolf, and Abbott]{engelken2020lyapunov}
 Rainer Engelken, Fred Wolf, and L.~F. Abbott.
 \newblock {Lyapunov spectra of chaotic recurrent neural networks}.
 \newblock \emph{arXiv preprint arXiv:2006.02427}, 2020.
+\newblock Published in Physical Review Research.
 
 \bibitem[Erichson et~al.(2020)Erichson, Azencot, Queiruga, Hodgkinson, and
   Mahoney]{erichson2020lipschitz}
@@ -301,6 +417,8 @@ N.~Benjamin Erichson, Omri Azencot, Alejandro Queiruga, Liam Hodgkinson, and
   Michael~W. Mahoney.
 \newblock {Lipschitz Recurrent Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:2006.12070}, 2020.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Farid(2022)]{farid2022escape}
 Maor Farid.
@@ -323,11 +441,24 @@ Maor Farid and Oleg~V. Gendelman.
 \newblock \emph{Journal of Vibration and Control}, 2016.
 \newblock \doi{10.1177/1077546315578561}.
 
+\bibitem[Farid \& Gendelman(2017)Farid and Gendelman]{farid2017response}
+Maor Farid and Oleg~V. Gendelman.
+\newblock Response regimes in equivalent mechanical model of strongly nonlinear
+  liquid sloshing.
+\newblock \emph{International Journal of Non-Linear Mechanics}, 94, 2017.
+\newblock \doi{10.1016/j.ijnonlinmec.2017.04.006}.
+
 \bibitem[Farid \& Gendelman(2019)Farid and Gendelman]{farid2019escape}
 Maor Farid and Oleg~V. Gendelman.
 \newblock {Escape of a forced-damped particle from weakly nonlinear truncated
   potential well}.
 \newblock \emph{arXiv preprint arXiv:1910.08545}, 2019.
+
+\bibitem[Feigenbaum(1978)]{feigenbaum1978quantitative}
+Mitchell~J. Feigenbaum.
+\newblock {Quantitative universality for a class of nonlinear transformations}.
+\newblock \emph{Journal of Statistical Physics}, 19, 1978.
+\newblock \doi{10.1007/BF01020332}.
 
 \bibitem[Fernando \& Guitchounts(2025)Fernando and
   Guitchounts]{fernando2025transformer}
@@ -349,12 +480,20 @@ Jonathan Frankle, Gintare~Karolina Dziugaite, Daniel~M. Roy, and Michael
   Carbin.
 \newblock {Linear Mode Connectivity and the Lottery Ticket Hypothesis}.
 \newblock \emph{arXiv preprint arXiv:1912.05671}, 2019.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Fu et~al.(2020)Fu, Lam, So, and Shi]{fu2020theoretical}
 Zihao Fu, Wai Lam, Anthony Man-Cho So, and Bei Shi.
 \newblock {A Theoretical Analysis of the Repetition Problem in Text
   Generation}.
 \newblock \emph{arXiv preprint arXiv:2012.14660}, 2020.
+\newblock Published in AAAI Conference on Artificial Intelligence.
+
+\bibitem[Gan(2026)]{gan2026bifurcation}
+Eric Gan.
+\newblock {A Bifurcation Theory Framework for Gradient Descent on the Edge of
+  Stability}.
+\newblock arXiv preprint arXiv:2606.15551, 2026.
 
 \bibitem[Garg et~al.(2022)Garg, Tsipras, Liang, and
   Valiant]{garg2022transformers}
@@ -362,27 +501,30 @@ Shivam Garg, Dimitris Tsipras, Percy Liang, and Gregory Valiant.
 \newblock {What Can Transformers Learn In-Context? A Case Study of Simple
   Function Classes}.
 \newblock \emph{arXiv preprint arXiv:2208.01066}, 2022.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Ge et~al.(2015)Ge, Huang, Jin, and Yuan]{ge2015escaping}
 Rong Ge, Furong Huang, Chi Jin, and Yang Yuan.
 \newblock {Escaping From Saddle Points: Online Stochastic Gradient for Tensor
   Decomposition}.
 \newblock \emph{arXiv preprint arXiv:1503.02101}, 2015.
+\newblock Published in Conference on Learning Theory (COLT).
 
 \bibitem[Geshkovski et~al.(2023{\natexlab{a}})Geshkovski, Letrouit, Polyanskiy,
   and Rigollet]{geshkovski2023emergence}
 Borjan Geshkovski, Cyril Letrouit, Yury Polyanskiy, and Philippe Rigollet.
 \newblock {The emergence of clusters in self-attention dynamics}.
 \newblock \emph{arXiv preprint arXiv:2305.05465}, 2023{\natexlab{a}}.
-\newblock Advances in Neural Information Processing Systems 36 (2023),
-  57026-57037.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Geshkovski et~al.(2023{\natexlab{b}})Geshkovski, Letrouit, Polyanskiy,
   and Rigollet]{geshkovski2023mathematical}
 Borjan Geshkovski, Cyril Letrouit, Yury Polyanskiy, and Philippe Rigollet.
 \newblock {A mathematical perspective on Transformers}.
 \newblock \emph{arXiv preprint arXiv:2312.10794}, 2023{\natexlab{b}}.
-\newblock Bull. Amer. Math. Soc. 62 (2025), 427-479.
+\newblock Published in Bulletin of the American Mathematical Society.
 
 \bibitem[Geshkovski et~al.(2024)Geshkovski, Koubbi, Polyanskiy, and
   Rigollet]{geshkovski2024dynamic}
@@ -396,6 +538,7 @@ Behrooz Ghorbani, Shankar Krishnan, and Ying Xiao.
 \newblock {An Investigation into Neural Net Optimization via Hessian Eigenvalue
   Density}.
 \newblock \emph{arXiv preprint arXiv:1901.10159}, 2019.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Gilmer et~al.(2021)Gilmer, Ghorbani, Garg, Kudugunta, Neyshabur,
   Cardoze, Dahl, Nado, and Firat]{gilmer2021loss}
@@ -410,18 +553,27 @@ William Gilpin.
 \newblock {Chaos as an interpretable benchmark for forecasting and data-driven
   modelling}.
 \newblock \emph{arXiv preprint arXiv:2110.05266}, 2021.
-\newblock NeurIPS (Neural Information Processing Systems) 2021.
+\newblock Published in NeurIPS Datasets and Benchmarks Track.
 
 \bibitem[Gilpin(2023)]{gilpin2023model}
 William Gilpin.
 \newblock {Model scale versus domain knowledge in statistical forecasting of
   chaotic systems}.
 \newblock \emph{arXiv preprint arXiv:2303.08011}, 2023.
+\newblock Published in Physical Review Research.
+
+\bibitem[Goldreich \& Peale(1966)Goldreich and Peale]{goldreich1966spin}
+Peter Goldreich and Stanton Peale.
+\newblock {Spin-orbit coupling in the solar system}.
+\newblock \emph{The Astronomical Journal}, 71:\penalty0 425, 1966.
+\newblock \doi{10.1086/109947}.
 
 \bibitem[Gruver et~al.(2023)Gruver, Finzi, Qiu, and Wilson]{gruver2023large}
 Nate Gruver, Marc Finzi, Shikai Qiu, and Andrew~Gordon Wilson.
 \newblock {Large Language Models Are Zero-Shot Time Series Forecasters}.
 \newblock \emph{arXiv preprint arXiv:2310.07820}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Gu \& Dao(2023)Gu and Dao]{gu2023mamba}
 Albert Gu and Tri Dao.
@@ -432,6 +584,8 @@ Albert Gu and Tri Dao.
 Albert Gu, Karan Goel, and Christopher Ré.
 \newblock {Efficiently Modeling Long Sequences with Structured State Spaces}.
 \newblock \emph{arXiv preprint arXiv:2111.00396}, 2021.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Gur-Ari et~al.(2018)Gur-Ari, Roberts, and Dyer]{gurari2018gradient}
 Guy Gur-Ari, Daniel~A. Roberts, and Ethan Dyer.
@@ -456,11 +610,15 @@ Peter H{\"a}nggi, Peter Talkner, and Michal Borkovec.
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock {Deep Residual Learning for Image Recognition}.
 \newblock \emph{arXiv preprint arXiv:1512.03385}, 2015.
+\newblock Published in IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR).
 
 \bibitem[Hewitt et~al.(2022)Hewitt, Manning, and Liang]{hewitt2022truncation}
 John Hewitt, Christopher~D. Manning, and Percy Liang.
 \newblock {Truncation Sampling as Language Model Desmoothing}.
 \newblock \emph{arXiv preprint arXiv:2210.15191}, 2022.
+\newblock Published in Conference on Empirical Methods in Natural Language
+  Processing (EMNLP).
 
 \bibitem[Hoffmann et~al.(2022)Hoffmann, Borgeaud, Mensch, Buchatskaya, Cai,
   Rutherford, de~Las~Casas, Hendricks, Welbl, Clark, Hennigan, Noland,
@@ -473,12 +631,16 @@ Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
   Elsen, Jack~W. Rae, Oriol Vinyals, and Laurent Sifre.
 \newblock {Training Compute-Optimal Large Language Models}.
 \newblock \emph{arXiv preprint arXiv:2203.15556}, 2022.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Holtzman et~al.(2019)Holtzman, Buys, Du, Forbes, and
   Choi]{holtzman2019curious}
 Ari Holtzman, Jan Buys, Li~Du, Maxwell Forbes, and Yejin Choi.
 \newblock {The Curious Case of Neural Text Degeneration}.
 \newblock \emph{arXiv preprint arXiv:1904.09751}, 2019.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Hoogland et~al.(2024)Hoogland, Wang, Farrugia-Roberts, Carroll, Wei,
   and Murfet]{hoogland2024loss}
@@ -487,6 +649,7 @@ Jesse Hoogland, George Wang, Matthew Farrugia-Roberts, Liam Carroll, Susan Wei,
 \newblock {Loss Landscape Degeneracy and Stagewise Development in
   Transformers}.
 \newblock \emph{arXiv preprint arXiv:2402.02364}, 2024.
+\newblock Published in Transactions on Machine Learning Research.
 
 \bibitem[Jaca et~al.(2026)Jaca, Benedek, and Török]{jaca2026chaos}
 Gregorio Jaca, Kristóf Benedek, and János Török.
@@ -498,8 +661,8 @@ Arthur Jacot, Franck Gabriel, and Clément Hongler.
 \newblock {Neural Tangent Kernel: Convergence and Generalization in Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1806.07572}, 2018.
-\newblock In Advances in neural information processing systems (pp. 8571-8580)
-  2018.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Jastrzębski et~al.(2017)Jastrzębski, Kenton, Arpit, Ballas, Fischer,
   Bengio, and Storkey]{jastrzebski2017three}
@@ -513,6 +676,7 @@ Stanisław Jastrzębski, Zachary Kenton, Devansh Arpit, Nicolas Ballas, Asja
 Chi Jin, Rong Ge, Praneeth Netrapalli, Sham~M. Kakade, and Michael~I. Jordan.
 \newblock {How to Escape Saddle Points Efficiently}.
 \newblock \emph{arXiv preprint arXiv:1703.00887}, 2017.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Jones(2026)]{jones2026chaos}
 Timothy~D. Jones.
@@ -524,6 +688,14 @@ Dayal~Singh Kalra and Maissam Barkeshli.
 \newblock {Phase diagram of early training dynamics in deep neural networks:
   effect of the learning rate, depth, and width}.
 \newblock \emph{arXiv preprint arXiv:2302.12250}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
+
+\bibitem[Kalra et~al.(2023)Kalra, He, and Barkeshli]{kalra2023universal}
+Dayal~Singh Kalra, Tianyu He, and Maissam Barkeshli.
+\newblock {Universal Sharpness Dynamics in Neural Network Training: Fixed Point
+  Analysis, Edge of Stability, and Route to Chaos}.
+\newblock arXiv preprint arXiv:2311.02076, 2023.
 
 \bibitem[Kaplan et~al.(2020)Kaplan, McCandlish, Henighan, Brown, Chess, Child,
   Gray, Radford, Wu, and Amodei]{kaplan2020scaling}
@@ -537,6 +709,8 @@ Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
 Nikita Karagodin, Yury Polyanskiy, and Philippe Rigollet.
 \newblock {Clustering in Causal Attention Masking}.
 \newblock \emph{arXiv preprint arXiv:2411.04990}, 2024.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Katharopoulos et~al.(2020)Katharopoulos, Vyas, Pappas, and
   Fleuret]{katharopoulos2020transformers}
@@ -544,6 +718,15 @@ Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, and François Fleuret.
 \newblock {Transformers are RNNs: Fast Autoregressive Transformers with Linear
   Attention}.
 \newblock \emph{arXiv preprint arXiv:2006.16236}, 2020.
+\newblock Published in International Conference on Machine Learning (ICML).
+
+\bibitem[Keskar et~al.(2019)Keskar, McCann, Varshney, Xiong, and
+  Socher]{keskar2019ctrl}
+Nitish~Shirish Keskar, Bryan McCann, Lav~R. Varshney, Caiming Xiong, and
+  Richard Socher.
+\newblock {CTRL: A Conditional Transformer Language Model for Controllable
+  Generation}.
+\newblock arXiv preprint arXiv:1909.05858, 2019.
 
 \bibitem[Kirk et~al.(2023)Kirk, Mediratta, Nalmpantis, Luketina, Hambro,
   Grefenstette, and Raileanu]{kirk2023effects}
@@ -552,12 +735,23 @@ Robert Kirk, Ishita Mediratta, Christoforos Nalmpantis, Jelena Luketina, Eric
 \newblock {Understanding the Effects of RLHF on LLM Generalisation and
   Diversity}.
 \newblock \emph{arXiv preprint arXiv:2310.06452}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Kong \& Tao(2020)Kong and Tao]{kong2020stochasticity}
 Lingkai Kong and Molei Tao.
 \newblock {Stochasticity of Deterministic Gradient Descent: Large Learning Rate
   for Multiscale Objective Function}.
 \newblock \emph{arXiv preprint arXiv:2002.06189}, 2020.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
+
+\bibitem[Koopman(1931)]{koopman1931hamiltonian}
+B.~O. Koopman.
+\newblock {Hamiltonian systems and transformation in Hilbert space}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (5), 1931.
+\newblock \doi{10.1073/pnas.17.5.315}.
 
 \bibitem[Kramers(1940)]{kramers1940brownian}
 H.~A. Kramers.
@@ -583,6 +777,8 @@ Christian Kuehn and Jaeyoung Yoon.
 Tanishq Kumar, Blake Bordelon, Samuel~J. Gershman, and Cengiz Pehlevan.
 \newblock {Grokking as the Transition from Lazy to Rich Training Dynamics}.
 \newblock \emph{arXiv preprint arXiv:2310.06110}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Kunin et~al.(2020)Kunin, Sagastuy-Brena, Ganguli, Yamins, and
   Tanaka]{kunin2020neural}
@@ -591,6 +787,16 @@ Daniel Kunin, Javier Sagastuy-Brena, Surya Ganguli, Daniel L.~K. Yamins, and
 \newblock {Neural Mechanics: Symmetry and Broken Conservation Laws in Deep
   Learning Dynamics}.
 \newblock \emph{arXiv preprint arXiv:2012.04728}, 2020.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
+
+\bibitem[Kuramoto(1975)]{kuramoto1975self}
+Yoshiki Kuramoto.
+\newblock {Self-entrainment of a population of coupled non-linear oscillators}.
+\newblock In \emph{International Symposium on Mathematical Problems in
+  Theoretical Physics}, volume~39 of \emph{Lecture Notes in Physics}. Springer,
+  1975.
+\newblock \doi{10.1007/BFb0013365}.
 
 \bibitem[Lad et~al.(2024)Lad, Lee, Gurnee, and Tegmark]{lad2024remarkable}
 Vedang Lad, Jin~Hwa Lee, Wes Gurnee, and Max Tegmark.
@@ -618,6 +824,7 @@ Qianxiao Li, Cheng Tai, and Weinan E.
 \newblock {Stochastic modified equations and adaptive stochastic gradient
   algorithms}.
 \newblock \emph{arXiv preprint arXiv:1511.06251}, 2015.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Li et~al.(2026)Li, Maranzatto, Peszek, Teolis, Akkoc, Riedl, Ulukus,
   and Trillos]{li2026diverse}
@@ -627,10 +834,17 @@ Sixu Li, Thomas~Jacob Maranzatto, Jan Peszek, Trevor Teolis, Semih Akkoc,
   Transformers}.
 \newblock \emph{arXiv preprint arXiv:2607.18584}, 2026.
 
+\bibitem[Litman(2026)]{litman2026origin}
+Elon Litman.
+\newblock {The Origin of Edge of Stability}.
+\newblock arXiv preprint arXiv:2604.20446, 2026.
+
 \bibitem[Liu et~al.(2020)Liu, Liu, Gao, Chen, and Han]{liu2020difficulty}
 Liyuan Liu, Xiaodong Liu, Jianfeng Gao, Weizhu Chen, and Jiawei Han.
 \newblock {Understanding the Difficulty of Training Transformers}.
 \newblock \emph{arXiv preprint arXiv:2004.08249}, 2020.
+\newblock Published in Conference on Empirical Methods in Natural Language
+  Processing (EMNLP).
 
 \bibitem[Liu et~al.(2023)Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, and
   Liang]{liu2023lost}
@@ -638,13 +852,16 @@ Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua,
   Fabio Petroni, and Percy Liang.
 \newblock {Lost in the Middle: How Language Models Use Long Contexts}.
 \newblock \emph{arXiv preprint arXiv:2307.03172}, 2023.
+\newblock Published in Transactions of the Association for Computational
+  Linguistics.
 
 \bibitem[Liu et~al.(2024)Liu, Boullé, Sarfati, and Earls]{liu2024llms}
 Toni J.~B. Liu, Nicolas Boullé, Raphaël Sarfati, and Christopher~J. Earls.
 \newblock {LLMs learn governing principles of dynamical systems, revealing an
   in-context neural scaling law}.
 \newblock \emph{arXiv preprint arXiv:2402.00795}, 2024.
-\newblock EMNLP 2024.
+\newblock Published in Conference on Empirical Methods in Natural Language
+  Processing (EMNLP).
 
 \bibitem[Liu et~al.(2022{\natexlab{a}})Liu, Kitouni, Nolte, Michaud, Tegmark,
   and Williams]{liu2022grokking}
@@ -653,18 +870,29 @@ Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric~J. Michaud, Max Tegmark, and Mike
 \newblock {Towards Understanding Grokking: An Effective Theory of
   Representation Learning}.
 \newblock \emph{arXiv preprint arXiv:2205.10343}, 2022{\natexlab{a}}.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Liu et~al.(2022{\natexlab{b}})Liu, Michaud, and
   Tegmark]{liu2022omnigrok}
 Ziming Liu, Eric~J. Michaud, and Max Tegmark.
 \newblock {Omnigrok: Grokking Beyond Algorithmic Data}.
 \newblock \emph{arXiv preprint arXiv:2210.01117}, 2022{\natexlab{b}}.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
+
+\bibitem[Lorenz(1963)]{lorenz1963deterministic}
+Edward~N. Lorenz.
+\newblock {Deterministic nonperiodic flow}.
+\newblock \emph{Journal of the Atmospheric Sciences}, 20, 1963.
+\newblock \doi{10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2}.
 
 \bibitem[Lu et~al.(2017)Lu, Zhong, Li, and Dong]{lu2017finite}
 Yiping Lu, Aoxiao Zhong, Quanzheng Li, and Bin Dong.
 \newblock {Beyond Finite Layer Neural Networks: Bridging Deep Architectures and
   Numerical Differential Equations}.
 \newblock \emph{arXiv preprint arXiv:1710.10121}, 2017.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Lu et~al.(2019)Lu, Li, He, Sun, Dong, Qin, Wang, and
   Liu]{lu2019improving}
@@ -679,12 +907,15 @@ Bethany Lusch, J.~Nathan Kutz, and Steven~L. Brunton.
 \newblock {Deep learning for universal linear embeddings of nonlinear
   dynamics}.
 \newblock \emph{arXiv preprint arXiv:1712.09707}, 2017.
+\newblock Published in Nature Communications.
 
 \bibitem[Lyu et~al.(2023)Lyu, Jin, Li, Du, Lee, and Hu]{lyu2023dichotomy}
 Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon~S. Du, Jason~D. Lee, and Wei Hu.
 \newblock {Dichotomy of Early and Late Phase Implicit Biases Can Provably
   Induce Grokking}.
 \newblock \emph{arXiv preprint arXiv:2311.18817}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Maheswaranathan et~al.(2019)Maheswaranathan, Williams, Golub, Ganguli,
   and Sussillo]{maheswaranathan2019reverse}
@@ -693,12 +924,14 @@ Niru Maheswaranathan, Alex Williams, Matthew~D. Golub, Surya Ganguli, and David
 \newblock {Reverse engineering recurrent networks for sentiment classification
   reveals line attractor dynamics}.
 \newblock \emph{arXiv preprint arXiv:1906.10720}, 2019.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Mandt et~al.(2017)Mandt, Hoffman, and Blei]{mandt2017stochastic}
 Stephan Mandt, Matthew~D. Hoffman, and David~M. Blei.
 \newblock {Stochastic Gradient Descent as Approximate Bayesian Inference}.
 \newblock \emph{arXiv preprint arXiv:1704.04289}, 2017.
-\newblock Journal of Machine Learning Research 18 (2017) 1-35.
+\newblock Published in Journal of Machine Learning Research.
 
 \bibitem[Maranzatto et~al.(2026)Maranzatto, Akkoc, and
   Ulukus]{maranzatto2026role}
@@ -706,28 +939,68 @@ Thomas~Jacob Maranzatto, Semih Akkoc, and Sennur Ulukus.
 \newblock {The Role of Feed-Forward Layers in Transformer Dynamics}.
 \newblock \emph{arXiv preprint arXiv:2609.36230}, 2026.
 
+\bibitem[Marion(2026)]{marion2026edge}
+Pierre Marion.
+\newblock {Edge Flow: A Tractable and Predictive Continuous-Time Model for
+  Gradient Descent at the Edge of Stability}.
+\newblock arXiv preprint arXiv:2606.18080, 2026.
+
+\bibitem[Marwan et~al.(2007)Marwan, Romano, Thiel, and
+  Kurths]{marwan2007recurrence}
+Norbert Marwan, M.~Carmen Romano, Marco Thiel, and J{\"u}rgen Kurths.
+\newblock Recurrence plots for the analysis of complex systems.
+\newblock \emph{Physics Reports}, 438, 2007.
+\newblock \doi{10.1016/j.physrep.2006.11.001}.
+
+\bibitem[May(1976)]{may1976simple}
+Robert~M. May.
+\newblock {Simple mathematical models with very complicated dynamics}.
+\newblock \emph{Nature}, 261, 1976.
+\newblock \doi{10.1038/261459a0}.
+
+\bibitem[McDonald et~al.(1985)McDonald, Grebogi, Ott, and
+  Yorke]{mcdonald1985fractal}
+Steven~W. McDonald, Celso Grebogi, Edward Ott, and James~A. Yorke.
+\newblock {Fractal basin boundaries}.
+\newblock \emph{Physica D: Nonlinear Phenomena}, 17\penalty0 (2), 1985.
+\newblock \doi{10.1016/0167-2789(85)90001-6}.
+
 \bibitem[Mei et~al.(2018)Mei, Montanari, and Nguyen]{mei2018mean}
 Song Mei, Andrea Montanari, and Phan-Minh Nguyen.
 \newblock {A Mean Field View of the Landscape of Two-Layers Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:1804.06561}, 2018.
+\newblock Published in Proceedings of the National Academy of Sciences.
 
 \bibitem[Meister et~al.(2022)Meister, Pimentel, Wiher, and
   Cotterell]{meister2022locally}
 Clara Meister, Tiago Pimentel, Gian Wiher, and Ryan Cotterell.
 \newblock {Locally Typical Sampling}.
 \newblock \emph{arXiv preprint arXiv:2202.00666}, 2022.
+\newblock Published in Transactions of the Association for Computational
+  Linguistics.
+
+\bibitem[Mezi{\'c}(2005)]{mezic2005spectral}
+Igor Mezi{\'c}.
+\newblock {Spectral properties of dynamical systems, model reduction and
+  decompositions}.
+\newblock \emph{Nonlinear Dynamics}, 41, 2005.
+\newblock \doi{10.1007/s11071-005-2824-x}.
 
 \bibitem[Michaud et~al.(2023)Michaud, Liu, Girit, and
   Tegmark]{michaud2023quantization}
 Eric~J. Michaud, Ziming Liu, Uzay Girit, and Max Tegmark.
 \newblock {The Quantization Model of Neural Scaling}.
 \newblock \emph{arXiv preprint arXiv:2303.13506}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Mikhaeil et~al.(2021)Mikhaeil, Monfared, and
   Durstewitz]{mikhaeil2021difficulty}
 Jonas~M. Mikhaeil, Zahra Monfared, and Daniel Durstewitz.
 \newblock {On the difficulty of learning chaotic dynamics with RNNs}.
 \newblock \emph{arXiv preprint arXiv:2110.07238}, 2021.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Molybog et~al.(2023)Molybog, Albert, Chen, DeVito, Esiobu, Goyal,
   Koura, Narang, Poulton, Silva, Tang, Liskovich, Xu, Zhang, Kambadur, Roller,
@@ -743,6 +1016,13 @@ Igor Molybog, Peter Albert, Moya Chen, Zachary DeVito, David Esiobu, Naman
 Takashi Mori, Liu Ziyin, Kangqiao Liu, and Masahito Ueda.
 \newblock {Power-law escape rate of SGD}.
 \newblock \emph{arXiv preprint arXiv:2105.09557}, 2021.
+\newblock Published in International Conference on Machine Learning (ICML).
+
+\bibitem[Mulayoff \& Stich(2026)Mulayoff and Stich]{mulayoff2026stability}
+Rotem Mulayoff and Sebastian~U. Stich.
+\newblock {On the Stability of Nonlinear Dynamics in GD and SGD: Beyond
+  Quadratic Potentials}.
+\newblock arXiv preprint arXiv:2602.14789, 2026.
 
 \bibitem[Nakaishi et~al.(2024)Nakaishi, Nishikawa, and
   Hukushima]{nakaishi2024phase}
@@ -756,6 +1036,8 @@ Kai Nakaishi, Yoshihiko Nishikawa, and Koji Hukushima.
 Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt.
 \newblock {Progress measures for grokking via mechanistic interpretability}.
 \newblock \emph{arXiv preprint arXiv:2301.05217}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Noci et~al.(2022)Noci, Anagnostidis, Biggio, Orvieto, Singh, and
   Lucchi]{noci2022signal}
@@ -764,6 +1046,8 @@ Lorenzo Noci, Sotiris Anagnostidis, Luca Biggio, Antonio Orvieto, Sidak~Pal
 \newblock {Signal Propagation in Transformers: Theoretical Perspectives and the
   Role of Rank Collapse}.
 \newblock \emph{arXiv preprint arXiv:2206.03126}, 2022.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Olsson et~al.(2022)Olsson, Elhage, Nanda, Joseph, DasSarma, Henighan,
   Mann, Askell, Bai, Chen, Conerly, Drain, Ganguli, Hatfield-Dodds, Hernandez,
@@ -783,6 +1067,7 @@ Antonio Orvieto, Samuel~L Smith, Albert Gu, Anushan Fernando, Caglar Gulcehre,
   Razvan Pascanu, and Soham De.
 \newblock {Resurrecting Recurrent Neural Networks for Long Sequences}.
 \newblock \emph{arXiv preprint arXiv:2303.06349}, 2023.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Ostrow et~al.(2026)Ostrow, Qian, Liu, and
   Fiete]{ostrow2026mathematical}
@@ -790,17 +1075,25 @@ Mitchell Ostrow, Daoyuan Qian, Toni Liu, and Ila Fiete.
 \newblock {A Mathematical Theory of the Jacobian Lens}.
 \newblock \emph{arXiv preprint arXiv:2610.31955}, 2026.
 
+\bibitem[Pantaleone(2002)]{pantaleone2002synchronization}
+James Pantaleone.
+\newblock {Synchronization of metronomes}.
+\newblock \emph{American Journal of Physics}, 70\penalty0 (10), 2002.
+\newblock \doi{10.1119/1.1501118}.
+
 \bibitem[Papyan et~al.(2020)Papyan, Han, and Donoho]{papyan2020prevalence}
 Vardan Papyan, X.~Y. Han, and David~L. Donoho.
 \newblock {Prevalence of Neural Collapse during the terminal phase of deep
   learning training}.
 \newblock \emph{arXiv preprint arXiv:2008.08186}, 2020.
+\newblock Published in Proceedings of the National Academy of Sciences.
 
 \bibitem[Pascanu et~al.(2012)Pascanu, Mikolov, and
   Bengio]{pascanu2012difficulty}
 Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio.
 \newblock {On the difficulty of training Recurrent Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:1211.5063}, 2012.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Pathak et~al.(2018)Pathak, Hunt, Girvan, Lu, and Ott]{pathak2018model}
 Jaideep Pathak, Brian Hunt, Michelle Girvan, Zhixin Lu, and Edward Ott.
@@ -815,6 +1108,8 @@ Jaideep Pathak, Brian Hunt, Michelle Girvan, Zhixin Lu, and Edward Ott.
 Max Peeperkorn, Tom Kouwenhoven, Dan Brown, and Anna Jordanous.
 \newblock {Is Temperature the Creativity Parameter of Large Language Models?}
 \newblock \emph{arXiv preprint arXiv:2405.00492}, 2024.
+\newblock Published in International Conference on Computational Creativity
+  (ICCC).
 
 \bibitem[Pennington et~al.(2017)Pennington, Schoenholz, and
   Ganguli]{pennington2017resurrecting}
@@ -822,6 +1117,21 @@ Jeffrey Pennington, Samuel~S. Schoenholz, and Surya Ganguli.
 \newblock {Resurrecting the sigmoid in deep learning through dynamical
   isometry: theory and practice}.
 \newblock \emph{arXiv preprint arXiv:1711.04735}, 2017.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
+
+\bibitem[Pham et~al.(2026)Pham, Jafari, and Salim]{pham2026mind}
+Quoc~Tuan Pham, Mehdi Jafari, and Flora Salim.
+\newblock Is my model ``mind blurting''? {I}nterpreting the dynamics of
+  reasoning tokens with recurrence quantification analysis ({RQA}).
+\newblock arXiv preprint arXiv:2602.06266, 2026.
+
+\bibitem[Pipis et~al.(2025)Pipis, Garg, Kontonis, Shrivastava, Krishnamurthy,
+  and Papailiopoulos]{pipis2025wait}
+Charilaos Pipis, Shivam Garg, Vasilis Kontonis, Vaishnavi Shrivastava, Akshay
+  Krishnamurthy, and Dimitris Papailiopoulos.
+\newblock {Wait, Wait, Wait... Why Do Reasoning Models Loop?}
+\newblock arXiv preprint arXiv:2512.12895, 2025.
 
 \bibitem[Poole et~al.(2016)Poole, Lahiri, Raghu, Sohl-Dickstein, and
   Ganguli]{poole2016exponential}
@@ -830,6 +1140,8 @@ Ben Poole, Subhaneil Lahiri, Maithra Raghu, Jascha Sohl-Dickstein, and Surya
 \newblock {Exponential expressivity in deep neural networks through transient
   chaos}.
 \newblock \emph{arXiv preprint arXiv:1606.05340}, 2016.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Power et~al.(2022)Power, Burda, Edwards, Babuschkin, and
   Misra]{power2022grokking}
@@ -844,6 +1156,17 @@ Hayden Prairie, Zachary Novack, Taylor Berg-Kirkpatrick, and Daniel~Y. Fu.
 \newblock {Parcae: Scaling Laws For Stable Looped Language Models}.
 \newblock \emph{arXiv preprint arXiv:2604.12946}, 2026.
 
+\bibitem[{Qwen Team}(2024)]{qwen2025qwen25}
+{Qwen Team}.
+\newblock {Qwen2.5 Technical Report}.
+\newblock arXiv preprint arXiv:2412.15115, 2024.
+
+\bibitem[{Qwen Team}(2025)]{qwen3card}
+{Qwen Team}.
+\newblock {Qwen3-0.6B} model card, best practices.
+\newblock \url{https://huggingface.co/Qwen/Qwen3-0.6B}, accessed November 2026,
+  2025.
+
 \bibitem[Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
   Sutskever]{radford2019language}
 Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
@@ -857,7 +1180,7 @@ Nasim Rahaman, Aristide Baratin, Devansh Arpit, Felix Draxler, Min Lin, Fred~A.
   Hamprecht, Yoshua Bengio, and Aaron Courville.
 \newblock {On the Spectral Bias of Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:1806.08734}, 2018.
-\newblock ICML 2019.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Ramasinghe et~al.(2026)Ramasinghe, Thalaiyasingam, Dolatabadi,
   Koneputugodage, Avraham, Shevchenko, Zuo, Pajak, and
@@ -874,6 +1197,8 @@ Gautam Reddy.
 \newblock {The mechanistic basis of data dependence and abrupt learning in an
   in-context classification task}.
 \newblock \emph{arXiv preprint arXiv:2312.03002}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Redman et~al.(2021)Redman, Fonoberova, Mohr, Kevrekidis, and
   Mezic]{redman2021operator}
@@ -881,14 +1206,16 @@ William~T. Redman, Maria Fonoberova, Ryan Mohr, Ioannis~G. Kevrekidis, and Igor
   Mezic.
 \newblock {An Operator Theoretic View on Pruning Deep Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:2110.14856}, 2021.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Renze \& Guven(2024)Renze and Guven]{renze2024effect}
 Matthew Renze and Erhan Guven.
 \newblock {The Effect of Sampling Temperature on Problem Solving in Large
   Language Models}.
 \newblock \emph{arXiv preprint arXiv:2402.05201}, 2024.
-\newblock Findings of the Association for Computational Linguistics: EMNLP
-  2024, pp. 7346-7356.
+\newblock Published in Conference on Empirical Methods in Natural Language
+  Processing (EMNLP).
 
 \bibitem[Ribeiro et~al.(2019)Ribeiro, Tiels, Aguirre, and
   Schön]{ribeiro2019exploding}
@@ -896,22 +1223,37 @@ Antônio~H. Ribeiro, Koen Tiels, Luis~A. Aguirre, and Thomas~B. Schön.
 \newblock {Beyond exploding and vanishing gradients: analysing RNN training
   using attractors and smoothness}.
 \newblock \emph{arXiv preprint arXiv:1906.08482}, 2019.
+\newblock Published in International Conference on Artificial Intelligence and
+  Statistics (AISTATS).
+
+\bibitem[Rowley et~al.(2009)Rowley, Mezi{\'c}, Bagheri, Schlatter, and
+  Henningson]{rowley2009spectral}
+Clarence~W. Rowley, Igor Mezi{\'c}, Shervin Bagheri, Philipp Schlatter, and
+  Dan~S. Henningson.
+\newblock {Spectral analysis of nonlinear flows}.
+\newblock \emph{Journal of Fluid Mechanics}, 641, 2009.
+\newblock \doi{10.1017/S0022112009992059}.
 
 \bibitem[Rubin et~al.(2023)Rubin, Seroussi, and Ringel]{rubin2023grokking}
 Noa Rubin, Inbar Seroussi, and Zohar Ringel.
 \newblock {Grokking as a First Order Phase Transition in Two Layer Networks}.
 \newblock \emph{arXiv preprint arXiv:2310.03789}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Rusch \& Mishra(2020)Rusch and Mishra]{rusch2020coupled}
 T.~Konstantin Rusch and Siddhartha Mishra.
 \newblock {Coupled Oscillatory Recurrent Neural Network (coRNN): An accurate
   and (gradient) stable architecture for learning long time dependencies}.
 \newblock \emph{arXiv preprint arXiv:2010.00951}, 2020.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Ruthotto \& Haber(2018)Ruthotto and Haber]{ruthotto2018deep}
 Lars Ruthotto and Eldad Haber.
 \newblock {Deep Neural Networks Motivated by Partial Differential Equations}.
 \newblock \emph{arXiv preprint arXiv:1804.04272}, 2018.
+\newblock Published in Journal of Mathematical Imaging and Vision.
 
 \bibitem[Sagun et~al.(2017)Sagun, Evci, Guney, Dauphin, and
   Bottou]{sagun2017empirical}
@@ -919,53 +1261,69 @@ Levent Sagun, Utku Evci, V.~Ugur Guney, Yann Dauphin, and Leon Bottou.
 \newblock {Empirical Analysis of the Hessian of Over-Parametrized Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1706.04454}, 2017.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Sander et~al.(2021{\natexlab{a}})Sander, Ablin, Blondel, and
   Peyré]{sander2021momentum}
 Michael~E. Sander, Pierre Ablin, Mathieu Blondel, and Gabriel Peyré.
 \newblock {Momentum Residual Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:2102.07870}, 2021{\natexlab{a}}.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Sander et~al.(2021{\natexlab{b}})Sander, Ablin, Blondel, and
   Peyré]{sander2021sinkformers}
 Michael~E. Sander, Pierre Ablin, Mathieu Blondel, and Gabriel Peyré.
 \newblock {Sinkformers: Transformers with Doubly Stochastic Attention}.
 \newblock \emph{arXiv preprint arXiv:2110.11773}, 2021{\natexlab{b}}.
+\newblock Published in International Conference on Artificial Intelligence and
+  Statistics (AISTATS).
 
 \bibitem[Sander et~al.(2022)Sander, Ablin, and Peyré]{sander2022residual}
 Michael~E. Sander, Pierre Ablin, and Gabriel Peyré.
 \newblock {Do Residual Neural Networks discretize Neural Ordinary Differential
   Equations?}
 \newblock \emph{arXiv preprint arXiv:2205.14612}, 2022.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Sarfati et~al.(2024)Sarfati, Liu, Boullé, and
   Earls]{sarfati2024lines}
 Raphaël Sarfati, Toni J.~B. Liu, Nicolas Boullé, and Christopher~J. Earls.
 \newblock {Lines of Thought in Large Language Models}.
 \newblock \emph{arXiv preprint arXiv:2410.01545}, 2024.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Saxe et~al.(2013)Saxe, McClelland, and Ganguli]{saxe2013exact}
 Andrew~M. Saxe, James~L. McClelland, and Surya Ganguli.
 \newblock {Exact solutions to the nonlinear dynamics of learning in deep linear
   neural networks}.
 \newblock \emph{arXiv preprint arXiv:1312.6120}, 2013.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Schaeffer et~al.(2023)Schaeffer, Miranda, and
   Koyejo]{schaeffer2023emergent}
 Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo.
 \newblock {Are Emergent Abilities of Large Language Models a Mirage?}
 \newblock \emph{arXiv preprint arXiv:2304.15004}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Schlag et~al.(2021)Schlag, Irie, and Schmidhuber]{schlag2021linear}
 Imanol Schlag, Kazuki Irie, and Jürgen Schmidhuber.
 \newblock {Linear Transformers Are Secretly Fast Weight Programmers}.
 \newblock \emph{arXiv preprint arXiv:2102.11174}, 2021.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Schoenholz et~al.(2016)Schoenholz, Gilmer, Ganguli, and
   Sohl-Dickstein]{schoenholz2016deep}
 Samuel~S. Schoenholz, Justin Gilmer, Surya Ganguli, and Jascha Sohl-Dickstein.
 \newblock {Deep Information Propagation}.
 \newblock \emph{arXiv preprint arXiv:1611.01232}, 2016.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Shumailov et~al.(2023)Shumailov, Shumaylov, Zhao, Gal, Papernot, and
   Anderson]{shumailov2023curse}
@@ -981,6 +1339,7 @@ Umut Simsekli, Levent Sagun, and Mert Gurbuzbalaban.
 \newblock {A Tail-Index Analysis of Stochastic Gradient Noise in Deep Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1901.06053}, 2019.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Singh et~al.(2023)Singh, Chan, Moskovitz, Grant, Saxe, and
   Hill]{singh2023transient}
@@ -989,12 +1348,16 @@ Aaditya~K. Singh, Stephanie C.~Y. Chan, Ted Moskovitz, Erin Grant, Andrew~M.
 \newblock {The Transient Nature of Emergent In-Context Learning in
   Transformers}.
 \newblock \emph{arXiv preprint arXiv:2311.08360}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Smith \& Le(2017)Smith and Le]{smith2017bayesian}
 Samuel~L. Smith and Quoc~V. Le.
 \newblock {A Bayesian Perspective on Generalization and Stochastic Gradient
   Descent}.
 \newblock \emph{arXiv preprint arXiv:1710.06451}, 2017.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Sohl-Dickstein(2024)]{sohldickstein2024boundary}
 Jascha Sohl-Dickstein.
@@ -1008,12 +1371,18 @@ H.~Sompolinsky, A.~Crisanti, and H.~J. Sommers.
 \newblock \emph{Physical Review Letters}, 61\penalty0 (3), 1988.
 \newblock \doi{10.1103/PhysRevLett.61.259}.
 
+\bibitem[Song \& Yun(2023)Song and Yun]{song2023trajectory}
+Minhak Song and Chulhee Yun.
+\newblock {Trajectory Alignment: Understanding the Edge of Stability Phenomenon
+  via Bifurcation Theory}.
+\newblock arXiv preprint arXiv:2307.04204, 2023.
+
 \bibitem[Storm et~al.(2023)Storm, Linander, Bec, Gustavsson, and
   Mehlig]{storm2023finitetime}
 L.~Storm, H.~Linander, J.~Bec, K.~Gustavsson, and B.~Mehlig.
 \newblock {Finite-time Lyapunov exponents of deep neural networks}.
 \newblock \emph{arXiv preprint arXiv:2306.12548}, 2023.
-\newblock Phys. Rev. Lett. 132 (2024) 057301.
+\newblock Published in Physical Review Letters.
 
 \bibitem[Strogatz(2018)]{strogatz2018nonlinear}
 Steven~H. Strogatz.
@@ -1049,11 +1418,32 @@ Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua
   and the Grokking Phenomenon}.
 \newblock \emph{arXiv preprint arXiv:2206.04817}, 2022.
 
+\bibitem[Thompson(1997)]{thompson1997designing}
+J.~M.~T. Thompson.
+\newblock {Designing against capsize in beam seas: Recent advances and new
+  insights}.
+\newblock \emph{Applied Mechanics Reviews}, 50\penalty0 (5), 1997.
+\newblock \doi{10.1115/1.3101710}.
+
+\bibitem[Thompson \& Soliman(1990)Thompson and Soliman]{thompson1990fractal}
+J.~M.~T. Thompson and M.~S. Soliman.
+\newblock {Fractal control boundaries of driven oscillators and their relevance
+  to safe engineering design}.
+\newblock \emph{Proceedings of the Royal Society of London. Series A},
+  428\penalty0 (1874), 1990.
+\newblock \doi{10.1098/rspa.1990.0022}.
+
 \bibitem[Tuci et~al.(2026)Tuci, Korkmaz, Şimşekli, and
   Birdal]{tuci2026generalization}
 Mario Tuci, Caner Korkmaz, Umut Şimşekli, and Tolga Birdal.
 \newblock {Generalization at the Edge of Stability}.
 \newblock \emph{arXiv preprint arXiv:2604.19740}, 2026.
+
+\bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell,
+  et~al.]{turner2023steering}
+Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, et~al.
+\newblock Steering language models with activation engineering.
+\newblock arXiv preprint arXiv:2308.10248, 2023.
 
 \bibitem[Vaidya(2026)]{vaidya2026learninginduced}
 Varun Vaidya.
@@ -1076,6 +1466,8 @@ Lucrezia Valeriani, Diego Doimo, Francesca Cuturello, Alessandro Laio, Alessio
   Ansuini, and Alberto Cazzaniga.
 \newblock {The geometry of hidden representations of large transformer models}.
 \newblock \emph{arXiv preprint arXiv:2302.00294}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
   Kaiser, and Polosukhin]{vaswani2017attention}
@@ -1083,6 +1475,8 @@ Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
   Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
 \newblock {Attention Is All You Need}.
 \newblock \emph{arXiv preprint arXiv:1706.03762}, 2017.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Vogt et~al.(2020)Vogt, Touzel, Shlizerman, and
   Lajoie]{vogt2020lyapunov}
@@ -1090,6 +1484,7 @@ Ryan Vogt, Maximilian~Puelma Touzel, Eli Shlizerman, and Guillaume Lajoie.
 \newblock {On Lyapunov Exponents for RNNs: Understanding Information
   Propagation Using Dynamical Systems Tools}.
 \newblock \emph{arXiv preprint arXiv:2006.14123}, 2020.
+\newblock Published in Frontiers in Applied Mathematics and Statistics.
 
 \bibitem[von Oswald et~al.(2022)von Oswald, Niklasson, Randazzo, Sacramento,
   Mordvintsev, Zhmoginov, and Vladymyrov]{oswald2022transformers}
@@ -1097,24 +1492,31 @@ Johannes von Oswald, Eyvind Niklasson, Ettore Randazzo, João Sacramento,
   Alexander Mordvintsev, Andrey Zhmoginov, and Max Vladymyrov.
 \newblock {Transformers learn in-context by gradient descent}.
 \newblock \emph{arXiv preprint arXiv:2212.07677}, 2022.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Wang \& Sennrich(2020)Wang and Sennrich]{wang2020exposure}
 Chaojun Wang and Rico Sennrich.
 \newblock {On Exposure Bias, Hallucination and Domain Shift in Neural Machine
   Translation}.
 \newblock \emph{arXiv preprint arXiv:2005.03642}, 2020.
+\newblock Published in Annual Meeting of the Association for Computational
+  Linguistics (ACL).
 
 \bibitem[Wang et~al.(2022)Wang, Ma, Dong, Huang, Zhang, and
   Wei]{wang2022deepnet}
 Hongyu Wang, Shuming Ma, Li~Dong, Shaohan Huang, Dongdong Zhang, and Furu Wei.
 \newblock {DeepNet: Scaling Transformers to 1,000 Layers}.
 \newblock \emph{arXiv preprint arXiv:2203.00555}, 2022.
+\newblock Published in IEEE Transactions on Pattern Analysis and Machine
+  Intelligence.
 
 \bibitem[Wang et~al.(2025)Wang, Li, Yan, Cheng, and Zhang]{wang2025unveiling}
 Zhilin Wang, Yafu Li, Jianhao Yan, Yu~Cheng, and Yue Zhang.
 \newblock {Unveiling Attractor Cycles in Large Language Models: A Dynamical
   Systems View of Successive Paraphrasing}.
 \newblock \emph{arXiv preprint arXiv:2502.15208}, 2025.
+\newblock Published in Annual Meeting of the Association for Computational
+  Linguistics (ACL).
 
 \bibitem[Wei et~al.(2022)Wei, Tay, Bommasani, Raffel, Zoph, Borgeaud, Yogatama,
   Bosma, Zhou, Metzler, Chi, Hashimoto, Vinyals, Liang, Dean, and
@@ -1125,6 +1527,7 @@ Jason Wei, Yi~Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian
   Fedus.
 \newblock {Emergent Abilities of Large Language Models}.
 \newblock \emph{arXiv preprint arXiv:2206.07682}, 2022.
+\newblock Published in Transactions on Machine Learning Research.
 
 \bibitem[Welleck et~al.(2019)Welleck, Kulikov, Roller, Dinan, Cho, and
   Weston]{welleck2019neural}
@@ -1132,6 +1535,8 @@ Sean Welleck, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho, and
   Jason Weston.
 \newblock {Neural Text Generation with Unlikelihood Training}.
 \newblock \emph{arXiv preprint arXiv:1908.04319}, 2019.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Wen et~al.(2024)Wen, Li, Wang, Hall, Liang, and
   Ma]{wen2024warmupstabledecay}
@@ -1150,22 +1555,30 @@ Mitchell Wortsman, Peter~J. Liu, Lechao Xiao, Katie Everett, Alex Alemi, Ben
 \newblock {Small-scale proxies for large-scale Transformer training
   instabilities}.
 \newblock \emph{arXiv preprint arXiv:2309.14322}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Wu et~al.(2023)Wu, Ajorlou, Wu, and Jadbabaie]{wu2023demystifying}
 Xinyi Wu, Amir Ajorlou, Zihui Wu, and Ali Jadbabaie.
 \newblock {Demystifying Oversmoothing in Attention-Based Graph Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:2305.16102}, 2023.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Wu et~al.(2024)Wu, Ajorlou, Wang, Jegelka, and Jadbabaie]{wu2024role}
 Xinyi Wu, Amir Ajorlou, Yifei Wang, Stefanie Jegelka, and Ali Jadbabaie.
 \newblock {On the Role of Attention Masks and LayerNorm in Transformers}.
 \newblock \emph{arXiv preprint arXiv:2405.18781}, 2024.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Xiao et~al.(2023)Xiao, Tian, Chen, Han, and Lewis]{xiao2023efficient}
 Guangxuan Xiao, Yuandong Tian, Beidi Chen, Song Han, and Mike Lewis.
 \newblock {Efficient Streaming Language Models with Attention Sinks}.
 \newblock \emph{arXiv preprint arXiv:2309.17453}, 2023.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Xiao et~al.(2018)Xiao, Bahri, Sohl-Dickstein, Schoenholz, and
   Pennington]{xiao2018dynamical}
@@ -1174,6 +1587,7 @@ Lechao Xiao, Yasaman Bahri, Jascha Sohl-Dickstein, Samuel~S. Schoenholz, and
 \newblock {Dynamical Isometry and a Mean Field Theory of CNNs: How to Train
   10,000-Layer Vanilla Convolutional Neural Networks}.
 \newblock \emph{arXiv preprint arXiv:1806.05393}, 2018.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Xie et~al.(2020)Xie, Sato, and Sugiyama]{xie2020diffusion}
 Zeke Xie, Issei Sato, and Masashi Sugiyama.
@@ -1187,19 +1601,27 @@ Ruibin Xiong, Yunchang Yang, Di~He, Kai Zheng, Shuxin Zheng, Chen Xing,
   Huishuai Zhang, Yanyan Lan, Liwei Wang, and Tie-Yan Liu.
 \newblock {On Layer Normalization in the Transformer Architecture}.
 \newblock \emph{arXiv preprint arXiv:2002.04745}, 2020.
-\newblock Published on ICML 2020.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Xu et~al.(2022)Xu, Liu, Yan, Cai, Li, and Li]{xu2022learning}
 Jin Xu, Xiaojiang Liu, Jianhao Yan, Deng Cai, Huayang Li, and Jian Li.
 \newblock {Learning to Break the Loop: Analyzing and Mitigating Repetitions for
   Neural Text Generation}.
 \newblock \emph{arXiv preprint arXiv:2206.02369}, 2022.
+\newblock Published in Advances in Neural Information Processing Systems
+  (NeurIPS).
 
 \bibitem[Xu et~al.(2019)Xu, Zhang, Luo, Xiao, and Ma]{xu2019frequency}
 Zhi-Qin~John Xu, Yaoyu Zhang, Tao Luo, Yanyang Xiao, and Zheng Ma.
 \newblock {Frequency Principle: Fourier Analysis Sheds Light on Deep Neural
   Networks}.
 \newblock \emph{arXiv preprint arXiv:1901.06523}, 2019.
+\newblock Published in Communications in Computational Physics.
+
+\bibitem[Yang et~al.(2025)Yang, Li, Yang, et~al.]{yang2025qwen3}
+An~Yang, Anfeng Li, Baosong Yang, et~al.
+\newblock {Qwen3 Technical Report}.
+\newblock arXiv preprint arXiv:2505.09388, 2025.
 
 \bibitem[Yang \& Hu(2020)Yang and Hu]{yang2020feature}
 Greg Yang and Edward~J. Hu.
@@ -1213,8 +1635,7 @@ Shuangfei Zhai, Tatiana Likhomanenko, Etai Littwin, Dan Busbridge, Jason
 \newblock {Stabilizing Transformer Training by Preventing Attention Entropy
   Collapse}.
 \newblock \emph{arXiv preprint arXiv:2303.06296}, 2023.
-\newblock In International Conference on Machine Learning (pp. 40770-40803).
-  PMLR. 2023.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Zhang et~al.(2026{\natexlab{a}})Zhang, Zhou, Jia, Chen, and
   Cheng]{zhang2026stability}
@@ -1228,12 +1649,14 @@ Hongtao Zhang, Wenjie Zhou, Chenxi Jia, Wei Chen, and Xueqi Cheng.
 Muru Zhang, Ofir Press, William Merrill, Alisa Liu, and Noah~A. Smith.
 \newblock {How Language Model Hallucinations Can Snowball}.
 \newblock \emph{arXiv preprint arXiv:2305.13534}, 2023{\natexlab{a}}.
+\newblock Published in International Conference on Machine Learning (ICML).
 
 \bibitem[Zhang et~al.(2023{\natexlab{b}})Zhang, Frei, and
   Bartlett]{zhang2023trained}
 Ruiqi Zhang, Spencer Frei, and Peter~L. Bartlett.
 \newblock {Trained Transformers Learn Linear Models In-Context}.
 \newblock \emph{arXiv preprint arXiv:2306.09927}, 2023{\natexlab{b}}.
+\newblock Published in Journal of Machine Learning Research.
 
 \bibitem[Zhang et~al.(2024)Zhang, Patel, Rizvi, Liu, He, Karbasi, Zappala, and
   van Dijk]{zhang2024intelligence}
@@ -1241,6 +1664,8 @@ Shiyang Zhang, Aakash Patel, Syed~A Rizvi, Nianchen Liu, Sizhuang He, Amin
   Karbasi, Emanuele Zappala, and David van Dijk.
 \newblock {Intelligence at the Edge of Chaos}.
 \newblock \emph{arXiv preprint arXiv:2410.02536}, 2024.
+\newblock Published in International Conference on Learning Representations
+  (ICLR).
 
 \bibitem[Zhang et~al.(2026{\natexlab{b}})Zhang, Zhou, Gao, Zhang, Zhou, Meng,
   Sun, and Su]{zhang2026uncovering}
@@ -1261,5 +1686,11 @@ Zhanxing Zhu, Jingfeng Wu, Bing Yu, Lei Wu, and Jinwen Ma.
 \newblock {The Anisotropic Noise in Stochastic Gradient Descent: Its Behavior
   of Escaping from Sharp Minima and Regularization Effects}.
 \newblock \emph{arXiv preprint arXiv:1803.00195}, 2018.
+
+\bibitem[Zou et~al.(2023)Zou, Phan, Chen, Campbell,
+  et~al.]{zou2023representation}
+Andy Zou, Long Phan, Sarah Chen, James Campbell, et~al.
+\newblock Representation engineering: A top-down approach to {AI} transparency.
+\newblock arXiv preprint arXiv:2310.01405, 2023.
 
 \end{thebibliography}
