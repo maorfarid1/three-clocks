@@ -49,7 +49,7 @@ for mi, m in enumerate(models):
                       chain_err=max(r["chain_err"] for r in rs), kappa=kappa.round(3).tolist(),
                       mean_lam_rel=M.mean(0).round(3).tolist())
 cb = fig.colorbar(im, cax=cax)
-cb.set_label(r"$\tilde\lambda_\ell$", fontsize=8)
+cb.set_label(r"$\tilde\Lambda_\ell$", fontsize=8)
 cb.ax.tick_params(labelsize=6)
 ax[-2].set_xscale("log")
 ax[-2].set_xlabel("training step (0 at 1)")
