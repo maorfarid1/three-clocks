@@ -41,7 +41,7 @@ if div:
 ax[0].set_xscale("log")
 ax[0].set_yscale("symlog", linthresh=1e-4)
 ax[0].set_xlabel(r"step size $\eta$")
-ax[0].set_ylabel(r"$(L_t - \bar L_t)/\bar L_t$, last %d steps" % d["args"]["tail"])
+ax[0].set_ylabel(r"$(\mathcal{L}_t - \bar{\mathcal{L}}_t)/\bar{\mathcal{L}}_t$, last %d steps" % d["args"]["tail"])
 ax[0].set_title("(a) bifurcation diagram", fontsize=8, loc="left")
 
 # (b) sharpness vs 2/eta, all seeds
