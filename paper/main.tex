@@ -5,15 +5,21 @@
 \ifdefined\ARXIV
   \usepackage[preprint]{tmlr}
   \newcommand{\codeurl}{at \url{https://github.com/maorfarid1/three-clocks}}
+  \newcommand{\pdfauthorname}{Maor Farid}
 \else
   \usepackage{tmlr}
   \newcommand{\codeurl}{in the anonymized supplementary material}
+  \newcommand{\pdfauthorname}{Anonymous}
 \fi
 
 \input{math_commands.tex}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
+\hypersetup{pdftitle={Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation},
+  pdfauthor={\pdfauthorname},
+  pdfsubject={Large language models and transformers studied with nonlinear dynamics},
+  pdfkeywords={large language models, transformers, nonlinear dynamics, dynamical systems, edge of stability, loss spikes, repetition loops, sampling temperature, Kramers escape, Arrhenius law, Lyapunov exponents, bifurcation, synchronization, Kuramoto model, reduced-order models}}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{booktabs}
