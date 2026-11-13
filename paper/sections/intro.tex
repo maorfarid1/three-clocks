@@ -53,8 +53,7 @@ At the first level, we show each correspondence directly: each concept is drawn 
 
 \paragraph{Related work and scope.} Several papers develop one of these views in depth, and we rely on them throughout: attention as an interacting particle system over depth \citep{geshkovski2023mathematical,castin2025unified}, gradient descent at the edge of stability \citep{cohen2021gradient}, and stochastic and chaotic accounts of generation \citep{krishnamurthy2026stochastic,jones2026chaos}. To our knowledge, no earlier work treats the three clocks side by side in one vocabulary, with an explicit record of which correspondences are proved, which are measured and which are conjectures. We use the language of dynamical systems in its technical sense wherever a result supports it, and we flag analogies as analogies; for example, we call a loss spike a bifurcation only when a parameter can be shown to cross a stability threshold.
 
-\begin{center}
-\fbox{\begin{minipage}{0.94\linewidth}
+\begin{tcolorbox}[breakable, enhanced jigsaw, colback=white, colframe=black, boxrule=0.5pt, arc=0pt, left=5pt, right=5pt, top=3pt, bottom=3pt]
 \textbf{Practical takeaways.}
 \begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
 \item \emph{Generation.} In GPT-2 and Pythia, coherent text appears only in a narrow band of temperatures between repetition and incoherence, and for some prompts in none. A loop is not locked by a fixed temperature: the temperature needed to leave it within a given budget falls like $1/\ln N$ with the length $N$ of the generation, and larger models need a higher temperature to leave the same kind of loop (Section~\ref{sec:exp3}). In Qwen3-0.6B on GSM8K, accuracy within a fixed budget peaks at the vendor's $T=0.6$, and below it the model rethinks the same step until the budget runs out.
@@ -63,5 +62,4 @@ At the first level, we show each correspondence directly: each concept is drawn 
 \item \emph{Depth.} Training makes each layer stretch perturbations more, while the stretched directions of consecutive layers become less aligned (Section~\ref{sec:exp1}).
 \item \emph{Tools.} Per-layer Lyapunov exponents, learning-rate bifurcation diagrams and exact loop-escape probabilities from a single greedy pass all run on a laptop CPU, and the code is released.
 \end{itemize}
-\end{minipage}}
-\end{center}
+\end{tcolorbox}
