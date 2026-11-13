@@ -1,0 +1,15 @@
+\section{Proofs}
+\label{app:proofs}
+
+\paragraph{Proof of Proposition~\ref{prop:arrhenius}.}
+Since $1-\prod_i p_i\le\sum_i (1-p_i)$ for $p_i\in[0,1]$, and $1-p_i=S_i/(1+S_i)\le S_i$, the bound follows. As $T\to0$, each $S_i(T)$ is dominated by its smallest gaps, $S_i(T)=m_i e^{-\Delta_i/T}(1+o(1))$ with $\Delta_i=\min_y\Delta_i^y$, and $1-\prod_i p_i=\sum_i S_i+O(\max_i S_i^2)$. The terms with $\Delta_i=\Delta_{\min}$ dominate the sum.
+ $\square$
+
+\paragraph{Proof of Proposition~\ref{prop:lock}.}
+By the bound in Proposition~\ref{prop:arrhenius}, $r_c\le k(|\mathcal V|-1)e^{-\Delta_c/T}$, which is summable under linear growth, and $\prod_c(1-r_c)\ge1-\sum_c r_c$. If the logits converge, then $r_c$ tends to a positive limit and the second statement follows from the first part of Proposition~\ref{prop:arrhenius}.
+ $\square$
+
+\paragraph{Proof of Proposition~\ref{prop:tlock}.}
+At the step of cycle $c$ that attains $\Delta_c$, $1-p_i=S_i/(1+S_i)\ge\tfrac12\min(1,e^{-\Delta_c/T})$, so $r_c\ge\tfrac12\min(1,e^{-\Delta_c/T})$, and Proposition~\ref{prop:arrhenius} gives $r_c\le k(|\mathcal V|-1)e^{-\Delta_c/T}$. For large $c$ both bounds are constant multiples of $c^{-\gamma/T}$, so $\sum_c r_c$ converges exactly when $\gamma/T>1$, and $\prod_c(1-r_c)>0$ exactly when the sum converges. For $T>\gamma$, $r_c\to0$, so $-\log\prod_{c\le N}(1-r_c)$ is within constant factors of $\sum_{c\le N}c^{-\gamma/T}=\Theta(N^{1-\gamma/T})$.
+ $\square$
+

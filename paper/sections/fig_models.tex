@@ -1,12 +1,13 @@
 \begin{figure}[t]
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[>=Stealth, font=\small,
   mass/.style={draw, thick, fill=blue!10, minimum width=9mm, minimum height=9mm},
   spring/.style={decorate, decoration={zigzag, amplitude=1.6mm, segment length=2.2mm, pre length=2mm, post length=2mm}, thick},
   ground/.style={pattern=north east lines, draw=none}]
 % ---------------- (a) Duffing oscillator
 \begin{scope}[shift={(0,0)}]
-\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(a) Duffing oscillator};
+\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(a) Duffing oscillator $\leftrightarrow$ generation regimes};
 \fill[ground] (-0.15,0.2) rectangle (0,1.8); \draw[thick] (0,0.2) -- (0,1.8);
 \node[mass] (m) at (3.0,1.0) {$M$};
 \draw[spring] (0,1.35) -- node[above=1.2mm, font=\scriptsize] {$k_1,\ k_3$} ($(m.west)+(0,0.35)$);
@@ -16,10 +17,17 @@
 \draw[->] (3.0,1.65) -- ++(0.6,0) node[above, font=\scriptsize] {$q$};
 \node[anchor=west, font=\footnotesize] at (-0.2,-0.25) {$M\ddot q+\zeta\dot q+k_1q+k_3q^3=A\cos\Omega\tau+\sqrt{2\zeta D}\,\xi(\tau)$};
 \node[anchor=west, font=\scriptsize, text=blue!50!black, align=left] at (-0.2,-0.75) {$k_1<0<k_3$: two wells. Language model: a well is a loop,\\the noise is the sampling temperature (Fig.~\ref{fig:atlas}).};
+% language-model twin: the sampler feeds its output back
+\begin{scope}[shift={(7.0,0.15)}]
+\node[draw, thick, fill=orange!12, rounded corners=2pt, minimum width=1.7cm, minimum height=1.0cm, font=\scriptsize, align=center] (tf) at (0.9,1.35) {transformer\\$\mathrm{softmax}(z/T)$};
+\node[draw, fill=orange!35, rounded corners=1pt, font=\scriptsize, minimum height=0.42cm] (yn) at (0.9,0.05) {$y_{n+1}$};
+\draw[->, thick] (tf.south) -- node[right, font=\tiny] {sample} (yn.north);
+\draw[->, thick, orange!70!black] (yn.east) -- ++(0.55,0) |- node[pos=0.25, right, font=\tiny, align=left] {appended\\to context} (tf.east);
+\end{scope}
 \end{scope}
 % ---------------- (b) particle in a well
-\begin{scope}[shift={(8.2,0)}]
-\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(b) Brownian particle in a well};
+\begin{scope}[shift={(9.0,0)}]
+\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(b) Particle in a well $\leftrightarrow$ repetition loop};
 \draw[thick, domain=-1.55:1.55, samples=60, smooth] plot ({1.15*\x+1.8}, {0.9*(\x*\x-1)*(\x*\x-1)+0.25});
 \fill[blue!60!black] (0.65,0.36) circle (1.4mm);
 \draw[<->, red!70!black] (1.8,0.25) -- (1.8,1.15) node[midway, right, font=\scriptsize] {$\Delta U$};
@@ -27,10 +35,17 @@
 \foreach \a in {30,90,150,210,270,330}{\draw[->, gray, thin] (0.65,0.36) -- ++(\a:0.35);}
 \node[anchor=west, font=\footnotesize] at (-0.2,-0.25) {$\zeta\dot q=-U'(q)+\sqrt{2\zeta D}\,\xi(\tau)$,\quad rate $\propto e^{-\Delta U/D}$};
 \node[anchor=west, font=\scriptsize, text=blue!50!black, align=left] at (-0.2,-0.75) {Language model: leaving a loop, $\Delta U\leftrightarrow$ logit gap $\Delta$,\\$D\leftrightarrow T$, exact by the softmax (Prop.~\ref{prop:arrhenius}, Fig.~\ref{fig:pair_escape}).};
+% language-model twin: a repetition loop with exits
+\begin{scope}[shift={(5.6,0.85)}]
+\foreach \i/\ang in {1/90,2/0,3/270,4/180}{\node[circle, draw, fill=blue!8, inner sep=0pt, minimum size=4.6mm, font=\tiny] (b\i) at (\ang:0.62) {$a_{\i}$};}
+\foreach \i/\j in {1/2,2/3,3/4,4/1}{\draw[->, blue!60!black] (b\i) to[bend left=30] (b\j);}
+\node[circle, draw=gray, fill=gray!10, inner sep=0pt, minimum size=4.2mm, font=\tiny, text=gray] (ex) at (1.55,0.75) {$y$};
+\draw[->, dashed, red!70!black] (b2) -- node[right, pos=0.35, font=\tiny, text=red!70!black] {$e^{-\Delta/T}$} (ex);
+\end{scope}
 \end{scope}
 % ---------------- (c) metronomes on a rolling board
 \begin{scope}[shift={(0,-4.3)}]
-\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(c) Metronomes on a rolling board};
+\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(c) Metronomes $\leftrightarrow$ tokens over depth};
 \draw[thick, fill=brown!20] (0.3,0.55) rectangle (4.3,0.75);
 \foreach \x in {0.8,3.8}{\draw[thick] (\x,0.4) circle (0.15);}
 \fill[ground] (0,0.1) rectangle (4.6,0.25); \draw[thick] (0,0.25) -- (4.6,0.25);
@@ -40,18 +55,33 @@
 \draw[<->, red!70!black] (1.2,0.47) -- (3.4,0.47); \node[font=\scriptsize, red!70!black] at (2.3,0.95) {};
 \node[anchor=west, font=\footnotesize] at (-0.2,-0.25) {$\dot\psi_i=\omega_i+\frac{J}{n}\sum_j\sin(\psi_j-\psi_i)$};
 \node[anchor=west, font=\scriptsize, text=blue!50!black, align=left] at (-0.2,-0.75) {Language model: tokens over depth, coupled by attention;\\on the circle attention is this equation with $\omega_i=0$ (Eq.~\ref{eq:attn_kuramoto}).};
+% language-model twin: tokens on the circle, coupled by attention
+\begin{scope}[shift={(6.0,0.95)}]
+\draw[gray, thin] (0,0) circle (0.75);
+\foreach \a in {20,35,50,160,175,250,270}{\fill[orange!80!black] (\a:0.75) circle (0.07);}
+\foreach \a/\b/\w in {20/35/0.9,20/50/0.8,35/50/0.9,160/175/0.9,250/270/0.9,50/160/0.25,175/250/0.25,20/270/0.25}{\draw[orange!60!black, opacity=\w, line width=0.5pt] (\a:0.75) -- (\b:0.75);}
+\node[font=\tiny, align=center] at (0,-1.05) {tokens on the sphere,\\coupled by attention};
+\end{scope}
 \end{scope}
 % ---------------- (d) a well that deepens
-\begin{scope}[shift={(8.2,-4.3)}]
-\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(d) A well that deepens while occupied};
+\begin{scope}[shift={(9.0,-4.3)}]
+\node[anchor=west, font=\small\bfseries] at (-0.2,2.55) {(d) Deepening well $\leftrightarrow$ loop that reinforces itself};
 \draw[thick, gray, domain=-1.4:1.4, samples=50, smooth] plot ({1.1*\x+1.6}, {0.45*(\x*\x)+0.9});
 \draw[thick, domain=-1.4:1.4, samples=50, smooth] plot ({1.1*\x+1.6}, {1.0*(\x*\x)+0.25});
 \fill[blue!60!black] (1.6,0.39) circle (1.4mm);
 \draw[->, red!70!black, thick] (3.35,1.65) -- (3.35,0.75) node[midway, right, font=\scriptsize, align=left] {depth grows\\with time spent};
 \node[anchor=west, font=\footnotesize] at (-0.2,-0.25) {$\Delta_c=\Delta_\infty-(\Delta_\infty-\Delta_1)\,e^{-(c-1)/c_\ast}$};
 \node[anchor=west, font=\scriptsize, text=blue!50!black, align=left] at (-0.2,-0.75) {Language model: the repeated text in the context deepens\\the loop; reduced model of Section~\ref{sec:reduced} (Fig.~\ref{fig:reduced}).};
+% language-model twin: the repeated text deepens the well
+\begin{scope}[shift={(5.1,0.25)}]
+\foreach \c/\h in {0/0.25,1/0.6,2/0.85,3/0.95}{
+  \foreach \k in {0,1,2}{\node[draw, fill=orange!15, minimum width=0.24cm, minimum height=0.26cm, inner sep=0pt, font=\tiny] at (0.85*\c+0.26*\k,0) {\pgfmathparse{{"A","B","C"}[\k]}\pgfmathresult};}
+  \fill[red!60!black] (0.85*\c+0.12,0.3) rectangle (0.85*\c+0.42,0.3+\h);}
+\node[font=\tiny, text=red!60!black] at (1.9,1.55) {gap $\Delta_c$ grows, then saturates};
+\node[font=\tiny] at (1.4,-0.35) {cycles of the loop in the context};
 \end{scope}
-\end{tikzpicture}
-\caption{Physical models used in this paper, with their governing equations and the behavior of a language model that each one reduces. (a) A mass $M$ on a spring with linear stiffness $k_1$ and cubic stiffness $k_3$, friction coefficient $\zeta$, harmonic forcing of amplitude $A$ and frequency $\Omega$, and white noise $\xi$ of intensity $D$; with $k_1<0$ the potential $\tfrac12k_1q^2+\tfrac14k_3q^4$ has two wells. (b) An overdamped particle in a potential well under thermal noise of intensity $D$, whose escape rate over the barrier $\Delta U$ is given by Kramers' formula \eqref{eq:kramers}. (c) Metronomes on a board that can roll, which synchronize through the small motion of the board; their phases follow the Kuramoto model \eqref{eq:kuramoto}. (d) A well whose depth grows with the time the particle has spent in it and then saturates.}
+\end{scope}
+\end{tikzpicture}}
+\caption{Four physical systems and their language-model twins. In each panel the mechanical system (left, with its governing equation) and the language model (right) look nothing alike, yet they share the term of the governing equation that produces the behavior; Section~\ref{sec:reduced} derives each correspondence. (a) A mass $M$ on a spring with linear stiffness $k_1$ and cubic stiffness $k_3$, friction coefficient $\zeta$, harmonic forcing of amplitude $A$ and frequency $\Omega$, and white noise $\xi$ of intensity $D$; with $k_1<0$ the potential $\tfrac12k_1q^2+\tfrac14k_3q^4$ has two wells. (b) An overdamped particle in a potential well under thermal noise of intensity $D$, whose escape rate over the barrier $\Delta U$ is given by Kramers' formula \eqref{eq:kramers}. (c) Metronomes on a board that can roll, which synchronize through the small motion of the board; their phases follow the Kuramoto model \eqref{eq:kuramoto}. (d) A well whose depth grows with the time the particle has spent in it and then saturates.}
 \label{fig:models}
 \end{figure}

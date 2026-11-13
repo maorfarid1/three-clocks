@@ -1,0 +1,49 @@
+\section{The three clocks}
+\label{sec:maps}
+\label{sec:primer}
+
+Section~\ref{sec:intro} described three ways in which a language model is iterated. This section writes them as maps, so that each can be read as a dynamical system with a state, a time and a rule of evolution. It then explains how the three maps are nested and why they run at different speeds, and it ends with the places where the dynamical reading needs care. The rest of the paper uses these definitions throughout.
+
+Consider a decoder-only transformer \citep{vaswani2017attention} with $L$ residual blocks, model width $d$ and vocabulary $\mathcal{V}$. For a context of $n$ tokens, write $x^{\ell}=(x^{\ell}_1,\dots,x^{\ell}_n)\in\mathbb{R}^{n\times d}$ for the residual stream after block $\ell$, and $\theta$ for all parameters. The model defines three maps. Appendix~\ref{app:notation} lists all symbols used in the paper.
+
+\begin{definition}[Clock 1: layer time]
+\label{def:clock1}
+For fixed $\theta$ and fixed input tokens,
+\begin{equation}
+x^{\ell+1} = x^{\ell} + f^{\ell}_{\theta}(x^{\ell}), \qquad \ell = 0,\dots,L-1,
+\label{eq:clock1}
+\end{equation}
+where $f^{\ell}_\theta$ contains attention, which couples token $i$ to tokens $j\le i$, and a token-wise MLP. The logits are $z = W_U\, \mathrm{LN}(x^{L}_n)$.
+\end{definition}
+
+\paragraph{Clock 1 read as a dynamical system.} Equation~\eqref{eq:clock1} is a forward Euler step, with unit step size, of an ordinary differential equation $\dot x = f(x,\ell)$ for $n$ particles in $\mathbb{R}^d$. The tokens are the particles, their hidden states are the positions, and attention is the force through which they interact. The system is non-autonomous, since each block has its own weights, and it runs for a fixed and small number of steps. This observation was made early for residual networks \citep{he2015deep} by \citet{e2017proposal}, \citet{haber2017stable} and \citet{lu2017finite}, and it led to continuous-depth models \citep{chen2018neural}, to architectures designed from the stability theory of ODEs and PDEs \citep{haber2017stable,ruthotto2018deep,chang2019antisymmetricrnn}, to invertible second-order variants \citep{sander2021momentum}, and to a view of training as optimal control \citep{e2018meanfield}. Whether a trained residual network actually converges to an ODE as depth grows depends on the initialization and on how the residual branch is scaled \citep{sander2022residual}. In transformers, several stabilization methods amount to a choice of this step size, either by scaling the residual branch at initialization \citep{bachlechner2020rezero,wang2022deepnet} or by moving the layer normalization inside the branch \citep{xiong2020layer,liu2020difficulty}.
+
+\begin{definition}[Clock 2: training time]
+\label{def:clock2}
+For a loss $\mathcal{L}$ and a stream of minibatches $\mathcal{B}_t$,
+\begin{equation}
+\theta_{t+1} = \theta_t - \eta_t\, P_t\, \nabla_\theta \mathcal{L}(\theta_t;\mathcal{B}_t), \qquad t = 0,1,\dots
+\label{eq:clock2}
+\end{equation}
+where $P_t$ is a preconditioner (identity for gradient descent, a diagonal matrix built from gradient moments for Adam) and $\mathcal{L}(\cdot;\mathcal{B}_t)$ is the loss on minibatch $\mathcal{B}_t$. With full batches the map is deterministic; with minibatches it is a random dynamical system.
+\end{definition}
+
+\paragraph{Clock 2 read as a dynamical system.} With $P_t$ the identity, \eqref{eq:clock2} is the explicit Euler scheme for the gradient flow $\dot\theta=-\nabla\mathcal L(\theta)$, the motion of an overdamped particle in the potential $\mathcal L$, with the learning rate $\eta$ as time step. The state is the parameter vector, with millions to billions of entries. The data stream is the sequence of minibatches presented to the optimizer, one per step. Because each minibatch is drawn at random, the map is driven by noise, and because the data, the schedule $\eta_t$ and the preconditioner change over training, it is non-autonomous.
+
+\begin{definition}[Clock 3: generation time]
+\label{def:clock3}
+For fixed $\theta$, a sampling temperature $T>0$ and a context $s_n=(y_1,\dots,y_n)$,
+\begin{equation}
+y_{n+1}\sim \pi_T(\cdot\mid s_n) = \mathrm{softmax}\big(z(s_n;\theta)/T\big), \qquad s_{n+1} = (s_n, y_{n+1}).
+\label{eq:clock3}
+\end{equation}
+This is a Markov chain on the growing space of contexts. Truncation rules such as top-k or nucleus sampling change $\pi_T$ but not the structure.
+\end{definition}
+
+\paragraph{Clock 3 read as a dynamical system.} Each step chooses one of $|\mathcal V|$ discrete states, and the chosen token becomes part of the input of the next step, so the output is fed back as input. Definition~\ref{def:clock3} makes generation a Markov chain whose state is the whole context. The state space grows with $n$, so the usual results on stationary distributions do not apply directly, but the questions of dynamical systems still make sense: which sets of contexts trap the chain, how long the chain stays in them, and how these answers depend on the temperature $T$ and on truncation. \citet{krishnamurthy2026stochastic} formulate language models as high-dimensional nonlinear autoregressive models and analyze networks of interacting models with mean-field equations. A deterministic version of clock~3, obtained by feeding back the expected embedding of the next-token distribution instead of a sample, is a continuous map that can be analyzed with standard tools \citep{jones2026chaos}. Temperature divides the logits by $T$, so $\pi_T$ in \eqref{eq:clock3} is a Gibbs distribution with energy $-z$ at temperature $T$. Greedy decoding is the limit $T\to0$, and $T$ sets how often the chain leaves the most likely path, so it serves as both the noise intensity and the natural bifurcation parameter of clock~3. Its effect on task accuracy \citep{renze2024effect} and on novelty and coherence \citep{peeperkorn2024temperature} has been measured directly.
+
+\paragraph{Nested clocks and separated time scales.} The three maps are nested. Evaluating $z(s_n;\theta)$ in \eqref{eq:clock3} means running \eqref{eq:clock1} to the end, and computing the gradient in \eqref{eq:clock2} means running \eqref{eq:clock1} on teacher-forced contexts, taken from the training text and not from the model's own samples. The weights produced by \eqref{eq:clock2} define the maps in \eqref{eq:clock1} and \eqref{eq:clock3}. The clocks also run at very different speeds. Generation never changes $\theta$, and one training step changes it by an amount proportional to the small learning rate $\eta$, so the forward map changes only by $O(\eta)$ per step, an amount bounded by a constant times $\eta$. Counted in optimizer steps $t$, the weights therefore evolve on the slow time $\eta t$, while each forward pass and each generation runs to completion at frozen weights. In the notation of the method of multiple scales, with $\varepsilon=\eta$, the fast time is $\tau_0=t$ and the weights depend on the slow time $\tau_1=\varepsilon t$, and \citet{berthier2026multiple} carry this expansion to three time scales, $\tau_2=\varepsilon^2t$ included, for gradient descent at the edge of stability. In the language of slow-fast systems, clock~2 is the slow variable and clocks~1 and~3 are fast dynamics evaluated at a frozen slow state \citep{strogatz2018nonlinear}.
+
+Two well-studied effects break this separation. With in-context learning the fast clock imitates the slow one: for in-context regression, a linear self-attention layer can implement one step of gradient descent on examples given in the prompt, so a stack of layers runs an optimizer whose iterations are the layers \citep{oswald2022transformers,akyurek2022learning,garg2022transformers}. Trained linear transformers learn preconditioned versions of this algorithm \citep{ahn2023transformers}, and the gradient-flow dynamics that produce them can be solved in closed form \citep{zhang2023trained}. In self-training the fast clock drives the slow one: text produced by clock~3 is used as training data for clock~2 \citep{shumailov2023curse,bertrand2023stability}, which we discuss in Appendix~\ref{app:related}.
+
+\paragraph{Where the analogies are weak.} First, clock~1 runs for a fixed and small number of steps (between 6 and about 100 layers), so asymptotic notions such as attractors and Lyapunov exponents must be replaced by finite-time versions. Second, clock~2 is driven by a data stream whose statistics are not stationary in general, and by learning-rate schedules, which makes it a non-autonomous system. Third, the state of clock~3 is the whole context, so its dimension grows with time and the chain never returns to an earlier state. Statements about loops and attractors on clock~3 are therefore about the projection of the state onto recent tokens. Each of these differences limits which theorems can be imported from the classical theory without change.

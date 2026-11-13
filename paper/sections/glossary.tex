@@ -1,0 +1,48 @@
+\section{Glossary for readers from either field}
+\label{app:glossary}
+
+The first list defines terms of machine learning for readers from nonlinear dynamics, and the second defines terms of nonlinear dynamics for readers from machine learning. Each definition is the minimum needed to follow the paper.
+
+\subsection*{Terms from machine learning}
+\begin{description}[leftmargin=0pt,itemsep=1pt,font=\normalfont\bfseries]
+\item[Token, vocabulary.] The unit of text a model reads and writes, usually a word or a piece of a word; the vocabulary $\mathcal V$ is the finite set of all tokens (about 50{,}000 for GPT-2).
+\item[Context.] The sequence of tokens the model conditions on when it predicts the next one.
+\item[Embedding, hidden state, residual stream.] Each token is mapped to a vector in $\mathbb{R}^d$; the vector of a token after block $\ell$ is its hidden state, and the sequence of these vectors through the blocks is called the residual stream.
+\item[Transformer block.] One step of clock~1: an attention sublayer that mixes information across tokens, followed by a multilayer perceptron (MLP) that acts on each token separately, each added to the hidden state through a residual (skip) connection.
+\item[Attention.] A weighted average of the hidden states of earlier tokens, with weights given by a softmax of inner products between learned projections (queries and keys); it is the coupling between tokens.
+\item[Layer normalization.] Rescaling of each hidden state to zero mean and unit variance before a sublayer, which keeps the tokens near a sphere.
+\item[Logits, softmax.] The logits $z$ are the scores the model assigns to each token of the vocabulary; the softmax $e^{z_y}/\sum_{y'}e^{z_{y'}}$ turns them into probabilities.
+\item[Sampling temperature.] The divisor $T$ of the logits before the softmax; $T\to0$ always picks the most likely token (greedy decoding), and large $T$ makes all tokens nearly equally likely.
+\item[Top-k and nucleus (top-p) sampling.] Truncation rules that sample only from the $k$ most likely tokens, or from the smallest set whose probabilities sum to $p$.
+\item[Autoregressive generation.] Producing text one token at a time, each sampled token being appended to the context for the next step.
+\item[Loss, cross-entropy.] The training objective; for language models, the mean negative log-probability that the model assigns to the true next token.
+\item[Surprisal, perplexity.] The surprisal of a token is $-\log p$ of that token; perplexity is the exponential of the mean surprisal.
+\item[Minibatch, SGD, learning rate.] Stochastic gradient descent (SGD) estimates the gradient on a random subset of the data (a minibatch) and steps against it with step size $\eta$, the learning rate.
+\item[Adam, preconditioner.] Adam rescales each coordinate of the gradient by running estimates of its first and second moments, which acts as a diagonal preconditioner.
+\item[Pretraining, checkpoint.] Training a model on a large text corpus to predict the next token; a checkpoint is a saved copy of the weights at one training step.
+\item[Teacher forcing, exposure bias.] During training the model always conditions on true text; during generation it conditions on its own samples, and the resulting mismatch is called exposure bias.
+\item[Sharpness.] The largest eigenvalue $\lambda_{\max}$ of the Hessian of the loss.
+\item[Loss spike, grokking, induction head.] A sudden, temporary rise of the training loss; a late jump in test accuracy long after the training loss has saturated; an attention circuit that copies a token that followed an earlier occurrence of the current token, which forms abruptly during training.
+\item[In-context learning.] Learning a task from examples given in the prompt, without changing the weights.
+\item[Interpretability, tuned lens.] The study of what the internal states of a network represent; the tuned lens decodes a next-token prediction from an intermediate layer.
+\end{description}
+
+\subsection*{Terms from nonlinear dynamics}
+\begin{description}[leftmargin=0pt,itemsep=1pt,font=\normalfont\bfseries]
+\item[Map, flow.] A discrete-time system $u_{t+1}=F(u_t)$; a flow is its continuous-time counterpart $\dot u=f(u)$.
+\item[Fixed point, linear stability.] A state with $F(u^\ast)=u^\ast$; it is linearly stable when every eigenvalue of the Jacobian $\mathrm{D}F(u^\ast)$ has modulus below one, so small perturbations decay.
+\item[Periodic orbit, limit cycle.] A sequence of states that repeats with period $k$; an isolated attracting periodic orbit is a limit cycle.
+\item[Attractor, basin of attraction.] A set that nearby trajectories approach; its basin is the set of initial states whose trajectories end on it.
+\item[Bifurcation.] A qualitative change of the long-term behavior as a parameter crosses a critical value; in a period-doubling (flip) bifurcation an eigenvalue crosses $-1$ and a period-2 orbit appears, and in a saddle-node bifurcation two fixed points collide and vanish.
+\item[Ghost.] The slow passage of trajectories through the region where a fixed point existed just before a saddle-node bifurcation.
+\item[Chaos, Lyapunov exponent.] Chaos is bounded, aperiodic motion with sensitive dependence on initial conditions; the largest Lyapunov exponent is the mean exponential rate at which nearby trajectories separate, and a finite-time exponent measures it over a finite number of steps.
+\item[Fractal boundary.] A boundary between basins with structure on every scale, so that arbitrarily small changes of the initial state can change the outcome.
+\item[Metastable state.] A state that is not an attractor but holds trajectories for a very long time.
+\item[Duffing oscillator.] A mass on a spring with a cubic term in its restoring force; with a negative linear stiffness its potential has two wells.
+\item[Kramers escape, Arrhenius law.] The mean time for a noisy particle to leave a potential well of depth $\Delta U$ grows as $e^{\Delta U/D}$ with the noise intensity $D$; for chemical reactions this is the Arrhenius law with temperature in place of $D$.
+\item[Kuramoto model, order parameter.] A model of oscillators that pull each other's phases together; the order parameter, the length of the mean of their phase vectors, measures how synchronized they are, from 0 to 1.
+\item[Slow-fast system, multiple scales.] A system whose variables evolve on separated time scales; the method of multiple scales writes the solution as a function of a fast time and of slower times that differ by powers of a small parameter.
+\item[Reduced-order model.] A low-dimensional model that keeps the term of the governing equations responsible for a behavior, such as an equivalent oscillator for a sloshing tank.
+\item[Time history, power spectrum, phase portrait, recurrence plot.] Four standard pictures of a measured signal: the signal against time, its power at each frequency, the trajectory in the plane of two state variables, and the matrix of pairs of times at which the state returns close to itself.
+\item[Koopman operator.] The linear operator that advances functions of the state (observables) along a nonlinear map.
+\end{description}

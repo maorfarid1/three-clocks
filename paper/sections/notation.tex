@@ -33,8 +33,10 @@ $\chi_1$ & factor by which one layer multiplies the distance between nearby inpu
 \midrule
 \multicolumn{2}{@{}l}{\emph{Clock 2 (training time)}}\\
 $t$ & optimizer step; the training time of clock~2 \\
+$\varepsilon$; $\tau_0,\tau_1,\tau_2$ & small parameter of a multiple-scales expansion ($\varepsilon=\eta$ in Section~\ref{sec:maps}); fast and slow times $\tau_k=\varepsilon^k t$ \\
 $\theta$, $\theta_t$, $\theta^\ast$ & all trainable parameters; at step $t$; at a minimum \\
 $\mathcal L$, $\mathcal L(\theta;\mathcal B_t)$ & training loss; loss on the minibatch $\mathcal B_t$ \\
+$\mathcal B_t$ & minibatch of training sequences used at step $t$; the sequence $\mathcal B_0,\mathcal B_1,\dots$ is the data stream \\
 $B$ & batch size \\
 $\eta$, $\eta_t$ & learning rate (step size); at step $t$ \\
 $P_t$ & preconditioner (identity for gradient descent) \\
@@ -51,10 +53,10 @@ $w_1,w_2$ & the two weights of the catapult model (Figure~\ref{fig:catapult}) \\
 \midrule
 \multicolumn{2}{@{}l}{\emph{Clock 3 (generation time)}}\\
 $n$ & number of tokens in the context; the generation time of clock~3 \\
-$y_n$, $s_n$ & token at position $n$; context $(y_1,\dots,y_n)$ \\
+$y_n$, $s_n$ & token at position $n$, an element of $\mathcal V$; context $s_n=(y_1,\dots,y_n)\in\mathcal V^n$, whose length grows by one per step of clock~3 \\
 $y$ & a token of the vocabulary \\
 $T$, $T_0$ & sampling temperature; base temperature of a controller \\
-$\pi_T$ & next-token distribution at temperature $T$ \\
+$\pi_T(\cdot\mid s_n)$ & next-token distribution at temperature $T$, a probability vector with $|\mathcal V|$ entries \\
 $E$, $E_y$, $k_B$ & energy; energy of token $y$, $E_y=-z_y$; Boltzmann constant, set to 1 \\
 $k$ & period of a loop in tokens; period of an orbit \\
 $a_i$ & $i$-th token of a loop \\
@@ -97,7 +99,7 @@ $\Lambda$, $\tilde\Lambda_\ell$ & exponent of the whole stack; relative exponent
 $\sigma_{\max}$, $\sigma_\ell$ & largest singular value; largest singular value of the Jacobian of block $\ell$ \\
 $\kappa$ & coherence of stretching between blocks (Section~\ref{sec:exp1}) \\
 $\delta$ & size of an initial perturbation \\
-$R_{ij}$, $\varepsilon$ & recurrence matrix; recurrence threshold \\
+$R_{ij}$, $\epsilon_R$ & recurrence matrix; recurrence threshold \\
 $\mathcal H_s$, DET & normalized spectral entropy; determinism of a recurrence plot \\
 $h$ & an observable acted on by the Koopman operator \\
 $I$ & identity matrix \\
