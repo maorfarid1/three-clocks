@@ -7,6 +7,8 @@ Code, data and reading list for
 
 A transformer language model is iterated in three ways: over layers (clock 1), over optimizer steps (clock 2) and over generated tokens (clock 3). The paper reviews the dynamical-systems results on each clock (about 200 papers), collects them in the **Three-Clock Dictionary**, and runs experiments on open models. Everything here runs on a laptop CPU.
 
+**Keywords:** large language models, transformers, nonlinear dynamics, dynamical systems, edge of stability, loss spikes, repetition loops, sampling temperature, Kramers escape, Arrhenius law, Lyapunov exponents, bifurcations, synchronization, Kuramoto model, reduced-order models.
+
 ## Key results
 
 - **Repetition loops are Kramers escape problems.** Escape from a loop at sampling temperature T follows the Arrhenius law with the logit gap as the barrier (fitted vs measured barrier: correlation 0.997, GPT-2 and Pythia-160M).
